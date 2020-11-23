@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=oxigen_api
+POSTGRES_USER=gvowboqIOWcYJtTLgJtBudtJcKjkvqXN
+POSTGRES_PASSWORD=OrTL7sazh2IsDbO0WAORkM6Y1JF9wW28yR3lRlDRPDnkSrcgnUB0g7IU6cthgYkF
