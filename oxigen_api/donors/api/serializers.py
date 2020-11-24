@@ -13,7 +13,7 @@ class DonorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Donor
-        exclude = ['display']
+        exclude = ['display', 'name', 'date_added']
 
     def get_campaign(self, obj):
         return obj.campaign.name

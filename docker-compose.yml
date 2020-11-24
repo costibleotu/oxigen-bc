@@ -76,10 +76,10 @@ services:
     ports: []
     command: /start-celerybeat
 
-  flower:
-    <<: *django
-    image: oxigen_api_local_flower
-    container_name: flower
-    ports:
-      - "5555:5555"
-    command: /start-flower
+  # flower:
+  #   <<: *django
+  #   image: oxigen_api_local_flower
+  #   container_name: flower
+  #   ports:
+  #     - "5555:5555"
+  #   command: /start-flower

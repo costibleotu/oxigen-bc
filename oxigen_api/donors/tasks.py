@@ -22,17 +22,22 @@ def get_campaign_stats():
     donors_table = soup.find('table', attrs={"class": "donations"})
     trs = donors_table.find_all('tr')
     trs.reverse()
+    i = 0
     for tr in trs:
+        i += 1
         donor_name = tr.find_all('td')[0].text
         donor_amount = float(tr.find_all('td')[1].text.replace(' RON', '').replace(',', ''))
         donor_comment = tr.find_all('td')[2].text
-        donor = models.Donor.objects.get_or_create(
+        donor, created = models.Donor.objects.get_or_create(
             name=donor_name.strip(),
             campaign=campaign,
             amount=donor_amount,
             comment=donor_comment
             )
-        print(donor)
+        if created:
+            donor.display_name = donor.name.split(' ')[0]
+            donor.save()
+        # print(donor)
 
     # Expenses
     expenses_table = soup.find(attrs={'class': 'entry combo'}).find('table')
@@ -47,6 +52,6 @@ def get_campaign_stats():
             status=tds[4].text,
             comment=tds[5].text,
             )
-        print(expense)
+        # print(expense)
     return len(trs)
 

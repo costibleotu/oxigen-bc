@@ -39,9 +39,9 @@ class Donor(Model):
     display = BooleanField(default=True)
     date_added = DateTimeField(null=True, blank=True, auto_now_add=True)
 
-
     def __str__(self):
         return self.name
+
 
 class Expense(Model):
     name = CharField(max_length=255, null=True)
@@ -53,9 +53,9 @@ class Expense(Model):
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
 
-
     def __str__(self):
         return self.name
+
 
 class Need(Model):
     name = CharField(max_length=255, null=True)
@@ -66,9 +66,9 @@ class Need(Model):
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
 
-
     def __str__(self):
         return self.name
+
 
 class Partner(Model):
     name = CharField(max_length=255, null=True)
@@ -77,16 +77,15 @@ class Partner(Model):
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
 
-
     def __str__(self):
         return self.name
+
 
 class Quote(Model):
     name = CharField(max_length=255, null=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
-
 
     def __str__(self):
         return self.name

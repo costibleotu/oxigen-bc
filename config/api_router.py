@@ -17,8 +17,8 @@ else:
     router = SimpleRouter()
 
 router.register("campains", CampaignViewSet)
-router.register("donors", DonorViewSet)
-router.register("named-donors", NamedDonorViewSet)
+router.register("donors", DonorViewSet, 'donor')
+router.register("named-donors", NamedDonorViewSet, 'named-donor')
 router.register("expenses", ExpenseViewSet)
 router.register("partners", PartnerViewSet)
 router.register("quotes", QuoteViewSet)
