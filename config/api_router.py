@@ -4,10 +4,10 @@ from rest_framework.routers import DefaultRouter, SimpleRouter
 
 from oxigen_api.donors.api import views
 
-if settings.DEBUG:
-    router = DefaultRouter()
-else:
-    router = SimpleRouter()
+# if settings.DEBUG:
+#     router = DefaultRouter()
+# else:
+router = DefaultRouter()
 
 router.register("campaigns", views.CampaignViewSet)
 router.register("donors", views.DonorViewSet, 'donor')
