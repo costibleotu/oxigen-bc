@@ -9,6 +9,7 @@ from oxigen_api.donors.api import views
 # else:
 router = DefaultRouter()
 
+router.register("dashboard", views.DashboardViewSet, basename='dash')
 router.register("campaigns", views.CampaignViewSet)
 router.register("donors", views.DonorViewSet, 'donor')
 router.register("named-donors", views.NamedDonorViewSet, 'named-donor')
