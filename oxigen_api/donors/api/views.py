@@ -25,7 +25,7 @@ class DashboardViewSet(ViewSet):
     Dashboard with all data
     """
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -53,7 +53,11 @@ class DashboardViewSet(ViewSet):
             many=True)
 
         partners = PartnerSerializer(
-            models.Partner.objects.filter(display=True).order_by('order'),
+            models.Partner.objects.filter(display=True, partner_type='project').order_by('order'),
+            many=True)
+
+        media_partners = PartnerSerializer(
+            models.Partner.objects.filter(display=True, partner_type='media').order_by('order'),
             many=True)
 
         covid_stats = CovidStatSerializer(
@@ -68,6 +72,7 @@ class DashboardViewSet(ViewSet):
             'faqs': faqs.data,
             'covid_stats': covid_stats.data,
             'partners': partners.data,
+            'media_partners': media_partners.data,
         }
         return Response(result)
 
