@@ -32,10 +32,30 @@ http:
       middlewares:
         - redirect
         - csrf
-      service: django
+      service: frontend
 
     web-secure-router:
-      rule: "Host(`oxigen.primariatm.ro`)"
+      rule: "Host(`api.oxigen.primariatm.ro`)"
+      entryPoints:
+        - web-secure
+      middlewares:
+        - csrf
+      service: frontend
+      tls:
+        # https://docs.traefik.io/master/routing/routers/#certresolver
+        certResolver: letsencrypt
+
+    api-router:
+      rule: "Host(`api.oxigen.primariatm.ro`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect
+        - csrf
+      service: django
+
+    api-secure-router:
+      rule: "Host(`api.oxigen.primariatm.ro`)"
       entryPoints:
         - web-secure
       middlewares:
@@ -67,6 +87,10 @@ http:
         hostsProxyHeaders: ["X-CSRFToken"]
 
   services:
+    frontend:
+      loadBalancer:
+        servers:
+          - url: http://frontend
     django:
       loadBalancer:
         servers:
