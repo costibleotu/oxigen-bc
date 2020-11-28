@@ -25,7 +25,7 @@ jobs:
         host: ${{ secrets.OXIGEN_HOST }}
         username: ${{ secrets.OXIGEN_USER }}
         key: ${{ secrets.OXIGEN_KEY }}
-        script: ". ~/production/creativa/deploy/deploy.sh"
+        script: ". ~/oxigen_api/deploy/deploy.sh"
 
 #   flake8:
 #     runs-on: ubuntu-latest
