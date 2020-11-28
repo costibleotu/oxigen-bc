@@ -1,7 +1,10 @@
 @import 'buefy/src/scss/utils/_all.scss';
 
+@import 'bulma/sass/form/shared.sass';
+
 @import 'buefy/src/scss/components/_carousel.scss';
 @import 'buefy/src/scss/components/_progress.scss';
+@import 'buefy/src/scss/components/_table.scss';
 
 .progress-wrapper {
   .progress {

@@ -20,8 +20,10 @@ a {
   }
 }
 
-.table {
+.b-table .table {
   th {
     font-size: $size-6;
   }
+
+  // max-height: 400px;
 }

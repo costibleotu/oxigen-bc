@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section">
       <div class="columns">
-        <div class="column is-5">
+        <div class="column is-6">
           <div class="box">@TODO: LOGO BIG <br /></div>
           <h2>
             Solidari în fața Covid-19, donăm
@@ -38,7 +38,7 @@
             </router-link>
           </div>
         </div>
-        <div class="column is-7">
+        <div class="column is-6">
           <div class="box">
             <div id="animation-scene">@TODO: Animation</div>
           </div>
@@ -90,18 +90,21 @@
         <div class="column is-4">
           <h2>Ce s-a reușit până acum</h2>
 
-          <h2>{{ data.campaign.donors_count }}</h2>
+          <p class="is-size-2">
+            <b>{{ data.campaign.donors_count }}</b>
+          </p>
           Donații individuale
-
-          <h2 class="has-text-primary">
-            {{ data.campaign.donors_sum }}
+          <h2 class="has-text-primary currency">
+            {{ data.campaign.donors_sum | currency }}
           </h2>
           <br />
 
-          <h2>{{ data.campaign.companies_count }}</h2>
+          <p class="is-size-2">
+            <b>{{ data.campaign.companies_count }}</b>
+          </p>
           Companii
-          <h2 class="has-text-primary">
-            {{ data.campaign.companies_sum }}
+          <h2 class="has-text-primary currency">
+            {{ data.campaign.companies_sum | currency }}
           </h2>
         </div>
         <div class="column">
@@ -110,6 +113,7 @@
             :data="data.expenses"
             :columns="tablecolumns.expenses"
             class="is-size-4"
+
           ></b-table>
         </div>
       </div>
@@ -351,5 +355,9 @@ export default {
     box-shadow: 0 0 0 0 rgba(225, 10, 20, 0.45);
     animation: pulse-big 2.5s infinite cubic-bezier(0.3, 0, 0, 1);
   }
+}
+
+.currency {
+  margin-top: 10px;
 }
 </style>
