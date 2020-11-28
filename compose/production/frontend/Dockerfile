@@ -1,5 +1,6 @@
 FROM node:lts-alpine as build-stage
 
+RUN apk add git
 WORKDIR /app
 
 COPY frontend/package*.json ./
