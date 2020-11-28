@@ -25,7 +25,7 @@ class DashboardViewSet(ViewSet):
     Dashboard with all data
     """
 
-    # @method_decorator(cache_page(60))
+    @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
