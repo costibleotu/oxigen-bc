@@ -23,7 +23,7 @@ h3 {
 @include touch {
   h1, h2, h3 {
     // @TODO: handle this better?
-    word-break: break-all;
+    // word-break: break-all;
   }
 }
 

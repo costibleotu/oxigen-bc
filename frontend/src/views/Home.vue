@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="section">
+    <div class="section head-section">
       <div class="columns">
         <div class="column is-6">
           <div class="box">@TODO: LOGO BIG <br /></div>
@@ -155,10 +155,36 @@
         </div>
       </div>
 
-      <div class="columns">
+      <div class="columns" v-if="data">
         <div class="column is-4">
-          <h3>40 companii</h3>
-          <div class="box">@TODO: Carousel</div>
+          <h3>{{ data.campaign.companies_count }} companii</h3>
+
+          <div class="carousel-container company has-text-centered">
+            <p><b>Cele mai recente sponsorizări</b></p>
+            <br><br>
+
+            <b-carousel
+              v-bind="{
+                autoplay: false,
+                arrowHover: false,
+                indicatorStyle: 'is-lines',
+              }"
+            >
+              <b-carousel-item
+                v-for="(company, index) in data.companies.slice(0, 5)"
+                :key="index"
+              >
+                <figure class="image is-square">
+                  <img :src="company.logo" alt="" />
+                </figure>
+
+                <p class="title">
+                  <b>{{ company.display_name }}</b>
+                </p>
+                <p>{{ company.amount | currency }}</p>
+              </b-carousel-item>
+            </b-carousel>
+          </div>
 
           <p>
             <router-link :to="{}">
@@ -167,7 +193,7 @@
           </p>
         </div>
         <div class="column">
-          <h3>1323 cetateni</h3>
+          <h3>{{ data.campaign.donors_count }} cetateni</h3>
           <div class="box">@TODO: Carousel</div>
 
           <p class="has-text-right">
@@ -192,13 +218,25 @@
         </div>
       </div>
 
-      <div class="box">@TODO: ONG Grid</div>
+      <br />
+
+      <h2>Parteneri</h2>
+      <GridBoxes v-if="data" :data="data.partners" />
+
+      <h2>Parteneri media</h2>
+      <GridBoxes v-if="data" :data="data.media_partners" />
     </div>
 
-    <div class="section has-text-centered">
-      <div class="container box">
-        <h2>Intrebări frecvente</h2>
-        <div>@TODO: FAQ</div>
+    <div class="section">
+      <div class="container box has-background-light">
+        <h2 class="has-text-centered">Întrebări frecvente</h2>
+        <br />
+
+        <div class="columns is-gapless is-centered">
+          <div class="column is-8">
+            <HomeFAQ v-if="data" :data="data.faqs" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -257,13 +295,16 @@
 </template>
 
 <script>
-import ApiService from '@/services/api'
+import GridBoxes from '@/components/GridBoxes'
 import HomeProgress from '@/components/HomeProgress'
+import HomeFAQ from '@/components/HomeFAQ'
+
+import ApiService from '@/services/api'
 import * as oxigen_animation from 'oxigen-animation'
 
 export default {
   name: 'Home',
-  components: { HomeProgress },
+  components: { GridBoxes, HomeProgress, HomeFAQ },
   data() {
     return {
       data: null,
@@ -307,40 +348,31 @@ export default {
   },
   mounted() {
     this.getData()
-
-    console.log(oxigen_animation)
-
-    document.addEventListener('DOMContentLoaded', function() {
-      oxigen_animation.init({
-        element: document.querySelector('#animation-scene'),
-        total_necesar: 2500000,
-      })
-
-      oxigen_animation.update({
-        total_strans: 1100000,
-        donatori: 146,
-      })
-
-      oxigen_animation.animate([
-        {
-          nume: 'John',
-          suma: 200,
-        },
-        {
-          nume: 'Alex',
-          suma: 100,
-        },
-        {
-          nume: 'Hâț',
-          suma: 300,
-        },
-      ])
-    })
   },
   methods: {
     getData() {
       ApiService.get('dashboard/').then((response) => {
         this.data = response
+        this.initAnimation()
+      })
+    },
+
+    initAnimation() {
+      window.addEventListener('load', () => {
+        oxigen_animation.init({
+          element: document.querySelector('#animation-scene'),
+          total_necesar: this.data.campaign.target,
+        })
+
+        oxigen_animation.update({
+          total_strans: this.data.campaign.amount_collected,
+          donatori: this.data.campaign.donations,
+        })
+
+        oxigen_animation.animate({
+          suma: 2,
+          nume: 'Alex',
+        })
       })
     },
   },
@@ -351,6 +383,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.head-section {
+  padding-bottom: 0;
+}
+
 .button-pulse {
   position: relative;
   width: 90px;

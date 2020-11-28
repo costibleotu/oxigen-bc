@@ -27,3 +27,28 @@
     display: none;
   }
 }
+
+.carousel {
+  .carousel-arrow {
+    .icon {
+      font-size: $size-1;
+      border: 0;
+    }
+  }
+
+  .carousel-indicator {
+    .indicator-item {
+      .indicator-style {
+        background-color: #e2e2e2;
+        border-color: #e2e2e2;
+      }
+
+      &.is-active {
+        .indicator-style {
+          background-color: $black;
+          border-color: $black;
+        }
+      }
+    }
+  }
+}
