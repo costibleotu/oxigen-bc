@@ -40,6 +40,10 @@ class DashboardViewSet(ViewSet):
             models.Expense.objects.filter(display=True),
             many=True)
 
+        companies = DonorSerializer(
+            models.Donor.objects.filter(display=True, is_company=True),
+            many=True)
+
         quotes = QuoteSerializer(
             models.Quote.objects.filter(display=True),
             many=True)
@@ -57,6 +61,7 @@ class DashboardViewSet(ViewSet):
 
         result = {
             'campaign': campaign.data,
+            'companies': companies.data,
             'needs': needs.data,
             'expenses': expenses.data,
             'quotes': quotes.data,

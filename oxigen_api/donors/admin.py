@@ -11,7 +11,8 @@ class DonorAdmin(admin.ModelAdmin):
 
 @admin.register(models.Campaign)
 class CampaignAdmin(admin.ModelAdmin):
-    list_display = ["name", "target", "amount_collected", "donations", "display"]
+    list_display = [
+        "name", "target", "amount_collected", "donations", "display"]
     search_fields = ["name"]
 
 
@@ -47,4 +48,5 @@ class FAQAdmin(admin.ModelAdmin):
 
 @admin.register(models.CovidStats)
 class CovidStatsAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in models.CovidStats._meta.get_fields()]
+    list_display = [
+        field.name for field in models.CovidStats._meta.get_fields()]
