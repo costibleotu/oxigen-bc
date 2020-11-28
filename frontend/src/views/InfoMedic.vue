@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <br>
+      <br />
 
       <div class="columns">
         <div class="column is-4">

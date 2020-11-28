@@ -18,6 +18,10 @@ $primary: $red;
 $link: $primary;
 $link-hover: $primary;
 
+:root {
+  --color-primary:#{$red};
+}
+
 $text: $black;
 
 // sizes

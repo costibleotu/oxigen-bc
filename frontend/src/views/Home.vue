@@ -39,9 +39,7 @@
           </div>
         </div>
         <div class="column is-6">
-          <div class="box">
-            <div id="animation-scene">@TODO: Animation</div>
-          </div>
+          <div id="animation-scene" class="has-text-weight-bold"></div>
         </div>
       </div>
     </div>
@@ -67,7 +65,7 @@
           </router-link>
         </div>
 
-        <div class="column">
+        <div class="column" v-if="data">
           <div class="columns is-multiline">
             <div
               v-for="need in data.needs"
@@ -86,7 +84,7 @@
     </div>
 
     <div class="section">
-      <div class="columns">
+      <div class="columns" v-if="data">
         <div class="column is-4">
           <h2>Ce s-a reușit până acum</h2>
 
@@ -113,7 +111,6 @@
             :data="data.expenses"
             :columns="tablecolumns.expenses"
             class="is-size-4"
-
           ></b-table>
         </div>
       </div>
@@ -262,7 +259,7 @@
 <script>
 import ApiService from '@/services/api'
 import HomeProgress from '@/components/HomeProgress'
-// import * as oxigen_animation from 'oxigen-animation'
+import * as oxigen_animation from 'oxigen-animation'
 
 export default {
   name: 'Home',
@@ -310,10 +307,35 @@ export default {
   },
   mounted() {
     this.getData()
-    // oxigen_animation.init({
-    //   element: document.querySelector('#animation-scene'),
-    //   total_necesar: 250000000,
-    // })
+
+    console.log(oxigen_animation)
+
+    document.addEventListener('DOMContentLoaded', function() {
+      oxigen_animation.init({
+        element: document.querySelector('#animation-scene'),
+        total_necesar: 2500000,
+      })
+
+      oxigen_animation.update({
+        total_strans: 1100000,
+        donatori: 146,
+      })
+
+      oxigen_animation.animate([
+        {
+          nume: 'John',
+          suma: 200,
+        },
+        {
+          nume: 'Alex',
+          suma: 100,
+        },
+        {
+          nume: 'Hâț',
+          suma: 300,
+        },
+      ])
+    })
   },
   methods: {
     getData() {
