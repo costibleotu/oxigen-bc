@@ -11,7 +11,7 @@
         <div class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
-              <a href="" class="button is-primary is-large">Donează acum</a>
+              <a href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/" class="button is-primary is-large">Donează acum</a>
             </div>
             <div class="navbar-item">
               <a

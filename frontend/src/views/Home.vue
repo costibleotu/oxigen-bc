@@ -24,9 +24,12 @@
           </div>
 
           <div class="buttons">
-            <router-link :to="{}" class="button is-primary">
+            <a
+              href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
+              class="button is-primary"
+            >
               Donează acum
-            </router-link>
+            </a>
             <router-link
               :to="{ name: 'infomedic' }"
               class="button is-primary is-outlined"
@@ -124,9 +127,12 @@
 
     <div class="section">
       <div class="has-text-centered">
-        <div class="button button-pulse is-primary is-size-1">
+        <router-link
+          :to="{ name: 'volunteering' }"
+          class="button button-pulse is-primary is-size-1"
+        >
           <b-icon icon="arrow-right" />
-        </div>
+        </router-link>
 
         <h2>Vrei să te implici?</h2>
 
@@ -142,6 +148,8 @@
       <router-link :to="{ name: 'community' }">
         Vezi toți donatorii<b-icon icon="arrow-right" />
       </router-link>
+
+      <br /><br />
 
       <div class="columns">
         <div class="column is-4">

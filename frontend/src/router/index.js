@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import InfoMedic from '@/views/InfoMedic.vue'
 import Community from '@/views/Community.vue'
+import Volunteering from '@/views/Volunteering.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,14 @@ const routes = [
       title: 'Comunitate',
     },
   },
+  {
+    path: '/implică-te',
+    name: 'volunteering',
+    component: Volunteering,
+    meta: {
+      title: 'Vrei să te implici?',
+    },
+  },
 ]
 
 const router = new VueRouter({
@@ -47,6 +56,8 @@ router.beforeEach((to, from, next) => {
   document.title =
     'Oxigen pentru Timișoara - ' +
     (nearestWithTitle && nearestWithTitle.meta.title)
+
+  window.scrollTo(0, 0)
 
   next()
 })
