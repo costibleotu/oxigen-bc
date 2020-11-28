@@ -92,6 +92,7 @@ class Partner(Model):
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
     link = URLField(max_length=200, null=True, blank=True)
+    order = IntegerField(default=0)
 
     def __str__(self):
         return self.name
