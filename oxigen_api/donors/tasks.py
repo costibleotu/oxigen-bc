@@ -14,7 +14,7 @@ def sync_spreadsheet():
     sheet = client.open("Date centralizate").worksheet('buget + nevoi identificate').get_all_records()
     for row in sheet:
         if row['denumire'] and row['denumire'] != 'Total':
-            pprint(row)
+            # pprint(row)
             need, _ = models.Need.objects.get_or_create(
                 name=row['denumire'], campaign=campaign)
 
@@ -28,7 +28,7 @@ def sync_spreadsheet():
     sheet = client.open("Date centralizate").worksheet('Cheltuieli realizate').get_all_records()
     for row in sheet:
         if row['item']:
-            pprint(row)
+            # pprint(row)
             expense, _ = models.Expense.objects.get_or_create(
                 name=row['item'], campaign=campaign)
             expense.supplier = row['furnizor']
@@ -64,7 +64,7 @@ def get_campaign_stats():
     i = 0
     for tr in trs:
         i += 1
-        pprint(tr)
+        # pprint(tr)
         donor_name = tr.find_all('td')[0].text
         donor_amount = float(tr.find_all('td')[1].text.replace(' RON', '').replace(',', ''))
         donor_comment = tr.find_all('td')[2].text

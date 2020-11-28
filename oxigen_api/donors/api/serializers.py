@@ -17,10 +17,12 @@ class CampaignSerializer(serializers.ModelSerializer):
         return models.Donor.objects.filter(is_company=True).count()
 
     def get_companies_sum(self, obj):
-        return models.Donor.objects.filter(is_company=True).aggregate(Sum('amount'))['amount__sum']
+        return models.Donor.objects.filter(
+            is_company=True).aggregate(Sum('amount'))['amount__sum']
 
     def get_donors_sum(self, obj):
-        return models.Donor.objects.filter(is_company=False).aggregate(Sum('amount'))['amount__sum']
+        return models.Donor.objects.filter(
+            is_company=False).aggregate(Sum('amount'))['amount__sum']
 
     def get_donors_count(self, obj):
         return models.Donor.objects.exclude(is_company=True).count()
@@ -72,4 +74,5 @@ class CovidStatSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.CovidStats
-        fields = ["hospitals_ocupation_rate", "new_cases", "infection_rate", "date"]
+        fields = [
+            "hospitals_ocupation_rate", "new_cases", "infection_rate", "date"]

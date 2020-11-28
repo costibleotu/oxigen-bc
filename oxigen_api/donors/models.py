@@ -9,7 +9,8 @@ from django.db.models import (
     ImageField,
     DateTimeField,
     DateField,
-    CASCADE
+    CASCADE,
+    URLField
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -31,7 +32,7 @@ class Campaign(Model):
 
 
 class Donor(Model):
-    name = CharField(_("Name of Donor"),null=True, blank=True, max_length=255)
+    name = CharField(_("Name of Donor"), null=True, blank=True, max_length=255)
     order = IntegerField(default=0)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display_name = CharField(_("Display Name"), blank=True, max_length=255)
@@ -41,6 +42,13 @@ class Donor(Model):
     logo = ImageField(upload_to="logos", null=True, blank=True)
     display = BooleanField(default=True)
     date_added = DateTimeField(null=True, blank=True, auto_now_add=True)
+    link = URLField(max_length=200, null=True, blank=True)
+    is_anonym = BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.name == "Anonim":
+            self.is_anonym = True
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -83,6 +91,7 @@ class Partner(Model):
     logo = ImageField(upload_to="logos", null=True)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
+    link = URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name

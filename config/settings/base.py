@@ -326,8 +326,11 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-
-
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[
+    "oxigen.primariatm.ro",
+    "oxigen.banatit.ro",
+    "http://localhost:8080"
+    ])
 
 # django-jazzmin
 # -------------------------------------------------------------------------------
