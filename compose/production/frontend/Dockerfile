@@ -7,7 +7,7 @@ COPY frontend/package*.json ./
 
 RUN yarn
 COPY frontend/ .
-RUN rm /app/frontend/yarn.lock
+# RUN rm /app/frontend/yarn.lock
 RUN yarn build
 
 FROM nginx:stable-alpine as production-stage
