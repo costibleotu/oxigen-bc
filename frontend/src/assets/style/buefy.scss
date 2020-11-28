@@ -1,0 +1,26 @@
+@import 'buefy/src/scss/utils/_all.scss';
+
+@import 'buefy/src/scss/components/_carousel.scss';
+@import 'buefy/src/scss/components/_progress.scss';
+
+.progress-wrapper {
+  .progress {
+    height: 30px;
+  }
+
+  .progress-value {
+    display: block;
+    background-color: $primary;
+    border-radius: 15px;
+    height: 30px;
+    min-width: 30px;
+    font-size: $size-6;
+    color: $white;
+  }
+}
+
+.b-table {
+  .icon.sort-icon.is-invisible {
+    display: none;
+  }
+}
