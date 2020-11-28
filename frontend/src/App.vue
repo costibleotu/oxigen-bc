@@ -4,7 +4,8 @@
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
-            <img src="https://bulma.io/images/bulma-logo.png" />
+            <h1><span class="has-text-primary is-size-2">O2</span>TM</h1>
+            <img style="display: none" src="https://bulma.io/images/bulma-logo.png" />
           </a>
         </div>
 

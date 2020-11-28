@@ -69,25 +69,16 @@
 
         <div class="column">
           <div class="columns is-multiline">
-            <div class="column is-6">
+            <div
+              v-for="need in data.needs"
+              :key="`need-${need.id}`"
+              class="column is-6"
+            >
               <HomeProgress
-                title="Concentratoare oxigen"
-                :value="12"
-                :max="500"
+                :title="need.name"
+                :value="need.stock"
+                :max="need.quantity"
               />
-            </div>
-            <div class="column is-6">
-              <HomeProgress title="Pulsoximetre" :value="10" :max="10" />
-            </div>
-            <div class="column is-6">
-              <HomeProgress
-                title="Echipament protecție"
-                :value="245"
-                :max="520"
-              />
-            </div>
-            <div class="column is-6">
-              <HomeProgress title="Voluntari" :value="5" :max="10" />
             </div>
           </div>
         </div>
@@ -97,24 +88,25 @@
     <div class="section">
       <div class="columns">
         <div class="column is-4">
-          <h2>Ce s-a reușit până acum<br /></h2>
+          <h2>Ce s-a reușit până acum</h2>
 
-          <h2>120</h2>
+          <h2>{{ data.campaign.donors_count }}</h2>
           Donații individuale
 
           <h2 class="has-text-primary">
-            234.567 lei
+            {{ data.campaign.donors_sum }}
           </h2>
           <br />
 
-          <h2>80</h2>
+          <h2>{{ data.campaign.companies_count }}</h2>
           Companii
           <h2 class="has-text-primary">
-            234.567 lei
+            {{ data.campaign.companies_sum }}
           </h2>
         </div>
         <div class="column">
           <b-table
+            v-if="data && data.expenses"
             :data="data.expenses"
             :columns="tablecolumns.expenses"
             class="is-size-4"
@@ -128,7 +120,7 @@
     <div class="section">
       <div class="has-text-centered">
         <router-link
-          :to="{ name: 'volunteering' }"
+          :to="{ name: 'helping' }"
           class="button button-pulse is-primary is-size-1"
         >
           <b-icon icon="arrow-right" />
@@ -273,6 +265,7 @@ export default {
   components: { HomeProgress },
   data() {
     return {
+      data: null,
       tablecolumns: {
         expenses: [
           {
@@ -309,61 +302,10 @@ export default {
           },
         ],
       },
-      data: {
-        campaign: {
-          id: 1,
-          companies_count: 0,
-          companies_sum: null,
-          donors_count: 298,
-          donors_sum: 1851402,
-          name: 'Oxigen pentru Timisoara',
-          target: 2500000.0,
-          amount_collected: 925901.0,
-          donations: 151,
-        },
-        needs: [],
-        expenses: [
-          {
-            id: 1,
-            name:
-              '2 aparate oxigen High Flow Therapy +consumabilele pentru 40 pacienti',
-            supplier: 'Linde Gaz Romania',
-            document: 'fact. nr. 110/17.11.2020',
-            status: 'in curs de livrare',
-            quantity: 71756.0,
-            in_use: 0.0,
-            available: 0.0,
-            price: 0.0,
-            comment: 'pentru Spitalul de Boli Infecțioase Victor Babeș',
-          },
-          {
-            id: 2,
-            name: '500 pulsoximetre',
-            supplier: 'Dante International S.A',
-            document: '\nfact. nr. 627281\n/19.11.20\n',
-            status: 'in curs de livrare',
-            quantity: 27600.0,
-            in_use: 0.0,
-            available: 0.0,
-            price: 0.0,
-            comment:
-              'pentru persoane fizice cu forme moderate ale bolii Covid19',
-          },
-        ],
-        quotes: [],
-        faqs: [],
-        covid_stats: {
-          hospitals_ocupation_rate: null,
-          new_cases: null,
-          infection_rate: null,
-          date: null,
-        },
-        partners: [],
-      },
     }
   },
   mounted() {
-    // this.getData()
+    this.getData()
     // oxigen_animation.init({
     //   element: document.querySelector('#animation-scene'),
     //   total_necesar: 250000000,
@@ -372,8 +314,7 @@ export default {
   methods: {
     getData() {
       ApiService.get('dashboard/').then((response) => {
-        this.data = response.dashboard
-        console.log(this.data)
+        this.data = response
       })
     },
   },

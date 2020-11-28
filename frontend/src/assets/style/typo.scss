@@ -26,3 +26,9 @@ h3 {
     word-break: break-all;
   }
 }
+
+@include fullhd {
+  .content.is-small {
+    // font-size: $size-5;
+  }
+}
