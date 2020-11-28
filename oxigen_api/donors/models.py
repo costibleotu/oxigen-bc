@@ -6,7 +6,7 @@ from django.db.models import (
     FloatField,
     BooleanField,
     ForeignKey,
-    ImageField,
+    FileField,
     DateTimeField,
     DateField,
     CASCADE,
@@ -39,7 +39,7 @@ class Donor(Model):
     amount = IntegerField(default=0)
     comment = TextField(null=True, blank=True)
     is_company = BooleanField(default=False)
-    logo = ImageField(upload_to="logos", null=True, blank=True)
+    logo = FileField(upload_to="logos", null=True, blank=True)
     display = BooleanField(default=True)
     date_added = DateTimeField(null=True, blank=True, auto_now_add=True)
     link = URLField(max_length=200, null=True, blank=True)
@@ -88,7 +88,7 @@ class Need(Model):
 class Partner(Model):
     name = CharField(max_length=255, null=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
-    logo = ImageField(upload_to="logos", null=True)
+    logo = FileField(upload_to="logos", null=True)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
     link = URLField(max_length=200, null=True, blank=True)
