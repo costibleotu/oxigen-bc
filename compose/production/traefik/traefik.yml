@@ -35,7 +35,7 @@ http:
       service: frontend
 
     web-secure-router:
-      rule: "Host(`api.oxigen.primariatm.ro`)"
+      rule: "Host(`oxigen.primariatm.ro`)"
       entryPoints:
         - web-secure
       middlewares:
@@ -46,7 +46,7 @@ http:
         certResolver: letsencrypt
 
     api-router:
-      rule: "Host(`api.oxigen.primariatm.ro`)"
+      rule: "(Host(`oxigen.primariatm.ro`) && Path(`/api`)) || Host((`oxigen.primariatm.ro`) && Path(`/admin`)) || Host((`oxigen.primariatm.ro`) && Path(`/static`)) || Host((`oxigen.primariatm.ro`) && Path(`/media`))"
       entryPoints:
         - web
       middlewares:
@@ -55,7 +55,7 @@ http:
       service: django
 
     api-secure-router:
-      rule: "Host(`api.oxigen.primariatm.ro`)"
+      rule: "(Host(`oxigen.primariatm.ro`) && Path(`/api`)) || Host((`oxigen.primariatm.ro`) && Path(`/admin`)) || Host((`oxigen.primariatm.ro`) && Path(`/static`)) || Host((`oxigen.primariatm.ro`) && Path(`/media`))"
       entryPoints:
         - web-secure
       middlewares:
