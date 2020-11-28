@@ -46,7 +46,7 @@ http:
         certResolver: letsencrypt
 
     api-router:
-      rule: "(Host(`oxigen.primariatm.ro`) && Path(`/api`)) || (Host(`oxigen.primariatm.ro`) && Path(`/admin`)) || (Host(`oxigen.primariatm.ro`) && Path(`/static`)) || (Host(`oxigen.primariatm.ro`) && Path(`/media`))"
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
       entryPoints:
         - web
       middlewares:
@@ -55,7 +55,7 @@ http:
       service: django
 
     api-secure-router:
-      rule: "(Host(`oxigen.primariatm.ro`) && Path(`/api`)) || (Host(`oxigen.primariatm.ro`) && Path(`/admin`)) || (Host(`oxigen.primariatm.ro`) && Path(`/static`)) || (Host(`oxigen.primariatm.ro`) && Path(`/media`))"
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
       entryPoints:
         - web-secure
       middlewares:
