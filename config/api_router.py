@@ -17,6 +17,7 @@ router.register("expenses", views.ExpenseViewSet)
 router.register("partners", views.PartnerViewSet)
 router.register("quotes", views.QuoteViewSet)
 router.register("needs", views.NeedViewSet)
+router.register("faqs", views.FAQViewSet)
 
 
 app_name = "api"

@@ -110,6 +110,7 @@ class Quote(Model):
     comment = RichTextField(null=True, blank=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display = BooleanField(default=True)
+    order = IntegerField(default=0)
 
     def __str__(self):
         return self.name

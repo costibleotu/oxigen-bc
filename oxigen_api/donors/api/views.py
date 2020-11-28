@@ -32,6 +32,7 @@ class DashboardViewSet(ViewSet):
     def list(self, request):
         campaign = CampaignSerializer(
             models.Campaign.objects.last())
+
         needs = NeedSerializer(
             models.Need.objects.filter(display=True),
             many=True)
@@ -41,15 +42,15 @@ class DashboardViewSet(ViewSet):
             many=True)
 
         companies = DonorSerializer(
-            models.Donor.objects.filter(display=True, is_company=True),
+            models.Donor.objects.filter(display=True, is_company=True).order_by('-order'),
             many=True)
 
         quotes = QuoteSerializer(
-            models.Quote.objects.filter(display=True),
+            models.Quote.objects.filter(display=True).order_by('order'),
             many=True)
 
         faqs = FAQSerializer(
-            models.FAQ.objects.filter(display=True),
+            models.FAQ.objects.filter(display=True).order_by('order'),
             many=True)
 
         partners = PartnerSerializer(
@@ -89,21 +90,21 @@ class CampaignViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
 class DonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = DonorSerializer
     queryset = models.Donor.objects.filter(
-        display=True).prefetch_related('campaign')
+        display=True).prefetch_related('campaign').order_by('-order')
 
     @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
-        return super(DonorViewSet, self).dispatch(*args, **kwargs)
+        return super().dispatch(*args, **kwargs)
 
 
 class NamedDonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = DonorSerializer
     queryset = models.Donor.objects.exclude(
-        name="Anonim").filter(display=True).prefetch_related('campaign')
+        name="Anonim").filter(display=True).prefetch_related('campaign').order_by('-order')
 
     @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
-        return super(NamedDonorViewSet, self).dispatch(*args, **kwargs)
+        return super().dispatch(*args, **kwargs)
 
 
 class ExpenseViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
@@ -111,20 +112,44 @@ class ExpenseViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Expense.objects.filter(
         display=True).prefetch_related('campaign')
 
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 
 class PartnerViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = PartnerSerializer
     queryset = models.Partner.objects.filter(
-        display=True).prefetch_related('campaign')
+        display=True).prefetch_related('campaign').order_by('order')
 
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 class QuoteViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = QuoteSerializer
     queryset = models.Quote.objects.filter(
         display=True).prefetch_related('campaign')
 
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 class NeedViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = NeedSerializer
     queryset = models.Need.objects.filter(
         display=True).prefetch_related('campaign')
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class FAQViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
+    serializer_class = FAQSerializer
+    queryset = models.FAQ.objects.filter(
+        display=True).prefetch_related('campaign').order_by('order')
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
