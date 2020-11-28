@@ -26,7 +26,7 @@ certificatesResolvers:
 http:
   routers:
     api-router:
-      rule: "Host(`api.oxigen.banatit.ro`)"
+      rule: "Host(`api.oxigen.banatit.ro/`) && PathPrefix(`/api/`) "
       entryPoints:
         - web
       middlewares:
@@ -35,7 +35,7 @@ http:
       service: django
 
     api-secure-router:
-      rule: "Host(`api.oxigen.banatit.ro`)"
+      rule: "Host(`api.oxigen.banatit.ro/`) && PathPrefix(`/api/`) "
       entryPoints:
         - web-secure
       middlewares:
