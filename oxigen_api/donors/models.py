@@ -6,9 +6,11 @@ from django.db.models import (
     FloatField,
     BooleanField,
     ForeignKey,
-    ImageField,
+    FileField,
     DateTimeField,
-    CASCADE
+    DateField,
+    CASCADE,
+    URLField
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -30,14 +32,23 @@ class Campaign(Model):
 
 
 class Donor(Model):
-    name = CharField(_("Name of Donor"), blank=True, max_length=255)
+    name = CharField(_("Name of Donor"), null=True, blank=True, max_length=255)
+    order = IntegerField(default=0)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display_name = CharField(_("Display Name"), blank=True, max_length=255)
-    amount = IntegerField()
+    amount = IntegerField(default=0)
     comment = TextField(null=True, blank=True)
     is_company = BooleanField(default=False)
+    logo = FileField(upload_to="logos", null=True, blank=True)
     display = BooleanField(default=True)
     date_added = DateTimeField(null=True, blank=True, auto_now_add=True)
+    link = URLField(max_length=200, null=True, blank=True)
+    is_anonym = BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.name == "Anonim":
+            self.is_anonym = True
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -49,7 +60,10 @@ class Expense(Model):
     supplier = CharField(max_length=255, null=True)
     document = CharField(max_length=255, null=True)
     status = CharField(max_length=255, null=True)
-    amount = FloatField(default=0)
+    quantity = FloatField(default=0)
+    in_use = FloatField(default=0)
+    available = FloatField(default=0)
+    price = FloatField(default=0)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
 
@@ -62,7 +76,8 @@ class Need(Model):
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     quantity = FloatField(default=0)
     stock = FloatField(default=0)
-    supplier = CharField(max_length=255, null=True)
+    price = FloatField(default=0)
+    recipient = CharField(max_length=255, null=True, blank=True)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
 
@@ -73,9 +88,10 @@ class Need(Model):
 class Partner(Model):
     name = CharField(max_length=255, null=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
-    logo = ImageField(upload_to="logos", null=True)
+    logo = FileField(upload_to="logos", null=True)
     comment = TextField(null=True, blank=True)
     display = BooleanField(default=True)
+    link = URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -83,9 +99,30 @@ class Partner(Model):
 
 class Quote(Model):
     name = CharField(max_length=255, null=True)
-    campaign = ForeignKey(Campaign, on_delete=CASCADE)
     comment = TextField(null=True, blank=True)
+    campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display = BooleanField(default=True)
 
     def __str__(self):
         return self.name
+
+
+class FAQ(Model):
+    question = TextField()
+    answer = TextField()
+    order = IntegerField(default=1)
+    campaign = ForeignKey(Campaign, on_delete=CASCADE)
+    display = BooleanField(default=True)
+
+    def __str__(self):
+        return self.question
+
+
+class CovidStats(Model):
+    hospitals_ocupation_rate = IntegerField(default=0)
+    new_cases = IntegerField(default=0)
+    infection_rate = FloatField(default=0)
+    date = DateField(null=True)
+
+    def __str__(self):
+        return self.date

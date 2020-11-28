@@ -276,3 +276,6 @@ oxigen_api/media/
 .env
 .envs/*
 !.envs/.local/
+
+
+secrets
