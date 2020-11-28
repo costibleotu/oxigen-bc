@@ -1,0 +1,71 @@
+$white: #FFFFFF;
+$black: #000000;
+
+$background: #F7F7F7;
+$border: #E5E5E5;
+
+$grey-darker: #8898aa;
+$grey-dark: #7E7E7E;
+$grey: #868686;
+$grey-light: #C9C9C9;
+$grey-lighter: #DBDBDB;
+
+$red: #E10A14;
+$red-dark: #D50913;
+$red-old: #FF0202;
+
+$primary: $red;
+$link: $primary;
+$link-hover: $primary;
+
+$text: $black;
+
+// sizes
+
+$size-1: 2.5rem;    // 40px
+$size-2: 2rem;      // 32px
+$size-3: 1.25rem;   // 20px
+$size-4: 1.125rem;  // 18px
+$size-5: 1rem;      // 16px
+$size-6: 0.875rem;  // 14px
+$size-7: 0.75rem;   // 12px
+
+$size-small: $size-6;
+$size-normal: $size-5;
+$size-medium: $size-4;
+$size-large: $size-3;
+
+// body
+$family-primary: 'Montserrat', sans-serif;
+$body-background-color: $white;
+$body-color: $black;
+$body-line-height: 1.425;
+
+// navbar + footer
+$navbar-background-color: $white;
+// $navbar-item-color: $white;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-img-max-height: none;
+$navbar-height: 6rem;
+$footer-color: #626262;
+$footer-background-color: $white;
+$footer-padding: 120px 70px;
+
+// buttons
+$control-height: 3.125rem;
+$button-padding-horizontal: 20px;
+
+// layout
+$column-gap: 15px;
+$box-padding: 60px;
+$box-background-color: $background;
+$box-shadow: none;
+$box-radius: 0;
+$section-padding: 80px 100px;
+
+// table
+$table-color: $text;
+$table-head-cell-color: $grey-dark;
+$table-cell-padding: 12px 12px 14px 0;
+
+@import '~bulma/sass/utilities/_all.sass';

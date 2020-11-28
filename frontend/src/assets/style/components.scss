@@ -1,0 +1,32 @@
+a {
+  &:not(.button):hover {
+    color: $red-dark;
+  }
+
+  .icon {
+    display: inline-block;
+    margin-left: 18px;
+  }
+
+  &.router-link-active {
+    font-size: $size-5;
+    font-weight: $weight-bold;
+  }
+}
+
+.button {
+  border-radius: 62px;
+  font-weight: $weight-bold;
+
+  &.is-large {
+    padding-right: 24px;
+    padding-left: 24px;
+    height: 64px;
+  }
+}
+
+.table {
+  th {
+    font-size: $size-6;
+  }
+}
