@@ -1,12 +1,13 @@
 FROM node:lts-alpine as build-stage
 
+RUN apk add git
 WORKDIR /app
 
 COPY frontend/package*.json ./
 
 RUN yarn
 COPY frontend/ .
-RUN rm /app/frontend/yarn.lock
+# RUN rm /app/frontend/yarn.lock
 RUN yarn build
 
 FROM nginx:stable-alpine as production-stage
