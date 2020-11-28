@@ -19,6 +19,14 @@ services:
       - ./.envs/.production/.postgres
     command: /start
 
+  frontend:
+    build:
+      context: .
+      dockerfile: ./compose/production/frontend/Dockerfile
+    image: oxigen_api_production_frontend
+    depends_on:
+      - django
+
   postgres:
     build:
       context: .
