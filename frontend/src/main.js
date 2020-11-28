@@ -6,7 +6,7 @@ import ApiService from '@/services/api'
 import './buefy'
 import './assets/style/base.scss'
 
-const API_PATH = 'https://oxigen.banatit.ro/api/'
+const API_PATH = 'https://oxigen.primariatm.ro/api/'
 ApiService.init(API_PATH)
 
 // filters
