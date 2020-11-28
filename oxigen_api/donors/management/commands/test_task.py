@@ -13,5 +13,5 @@ class Command(BaseCommand):
 
     def do_bulk_import(self):
         print('heello')
-        t = tasks.get_campaign_stats()
+        t = tasks.sync_spreadsheet()
         print(t)

@@ -8,6 +8,7 @@ class DonorAdmin(admin.ModelAdmin):
     search_fields = ["name"]
     list_filter = ["campaign"]
     list_filter = ["is_company", "is_anonym"]
+    list_filter = ["display"]
 
 
 @admin.register(models.Campaign)
@@ -15,25 +16,28 @@ class CampaignAdmin(admin.ModelAdmin):
     list_display = [
         "name", "target", "amount_collected", "donations", "display"]
     search_fields = ["name"]
+    list_filter = ["display"]
 
 
 @admin.register(models.Expense)
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Expense._meta.get_fields()]
     search_fields = ["name"]
+    list_filter = ["display"]
 
 
 @admin.register(models.Need)
 class NeedAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Need._meta.get_fields()]
     search_fields = ["name"]
+    list_filter = ["display"]
 
 
 @admin.register(models.Partner)
 class PartnerAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Partner._meta.get_fields()]
     # list_display = ["name", "campaign", "logo", "comment"]
-    list_filter = ["partner_type"]
+    list_filter = ["partner_type", "display"]
     search_fields = ["name"]
 
 
@@ -41,12 +45,13 @@ class PartnerAdmin(admin.ModelAdmin):
 class QuoteAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Quote._meta.get_fields()]
     search_fields = ["name"]
+    list_filter = ["display"]
 
 
 @admin.register(models.FAQ)
 class FAQAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.FAQ._meta.get_fields()]
-
+    list_filter = ["display"]
 
 @admin.register(models.CovidStats)
 class CovidStatsAdmin(admin.ModelAdmin):

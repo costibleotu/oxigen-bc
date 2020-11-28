@@ -1,3 +1,4 @@
+from django.db import transaction
 from oxigen_api.donors import models
 from config import celery_app
 from bs4 import BeautifulSoup
@@ -12,34 +13,41 @@ def sync_spreadsheet():
     client = gspread.service_account(filename='secrets/oxigen-gsheet.json')
     campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Timisoara')
     sheet = client.open("Date centralizate").worksheet('buget + nevoi identificate').get_all_records()
-    for row in sheet:
-        if row['denumire'] and row['denumire'] != 'Total':
-            # pprint(row)
-            need, _ = models.Need.objects.get_or_create(
-                name=row['denumire'], campaign=campaign)
+    with transaction.atomic():
+        models.Need.objects.update(display=False)
+        for row in sheet:
+            if row['denumire'] and row['denumire'] != 'Total':
+                # pprint(row)
+                need, _ = models.Need.objects.get_or_create(
+                    name=row['denumire'], campaign=campaign)
 
-            need.quantity = row['cantitate'] if row['cantitate'] else 0
-            need.stock = row['achiziționat'] if row['achiziționat'] else 0
-            need.price = row['total lei'].replace("RON",'').replace('.', '').replace(',', '.') if row['total lei'] else 0
-            need.recipient = row['beneficiari']
-            need.comment = row['observații']
-            need.save()
+                need.quantity = row['cantitate'] if row['cantitate'] else 0
+                need.stock = row['achiziționat'] if row['achiziționat'] else 0
+                need.price = row['total lei'].replace("RON",'').replace('.', '').replace(',', '.') if row['total lei'] else 0
+                need.recipient = row['beneficiari']
+                need.comment = row['observații']
+                need.display = True
+                need.save()
+                print(need, need.display)
 
     sheet = client.open("Date centralizate").worksheet('Cheltuieli realizate').get_all_records()
-    for row in sheet:
-        if row['item']:
-            # pprint(row)
-            expense, _ = models.Expense.objects.get_or_create(
-                name=row['item'], campaign=campaign)
-            expense.supplier = row['furnizor']
-            expense.document = row['document']
-            expense.status = row['status']
-            expense.quantity = row['cantitate']
-            expense.in_use = row['utilizat']
-            expense.available = row['disponibil']
-            expense.price = str(row['suma']).replace(',', '.')
-            expense.comment = row['observatii']
-            expense.save()
+    with transaction.atomic():
+        models.Expense.objects.update(display=False)
+        for row in sheet:
+            if row['item']:
+                # pprint(row)
+                expense, _ = models.Expense.objects.get_or_create(
+                    name=row['item'], campaign=campaign)
+                expense.supplier = row['furnizor']
+                expense.document = row['document']
+                expense.status = row['status']
+                expense.quantity = row['cantitate']
+                expense.in_use = row['utilizat']
+                expense.available = row['disponibil']
+                expense.price = str(row['suma']).replace(',', '.')
+                expense.comment = row['observatii']
+                expense.display = True
+                expense.save()
     return 'OK'
 
 
