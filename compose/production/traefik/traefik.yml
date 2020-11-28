@@ -26,7 +26,27 @@ certificatesResolvers:
 http:
   routers:
     web-router:
-      rule: "Host(`oxigen.banatit.ro`)"
+      rule: "Host(`oxigen.primariatm.ro`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect
+        - csrf
+      service: frontend
+
+    web-secure-router:
+      rule: "Host(`oxigen.primariatm.ro`)"
+      entryPoints:
+        - web-secure
+      middlewares:
+        - csrf
+      service: frontend
+      tls:
+        # https://docs.traefik.io/master/routing/routers/#certresolver
+        certResolver: letsencrypt
+
+    api-router:
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
       entryPoints:
         - web
       middlewares:
@@ -34,8 +54,8 @@ http:
         - csrf
       service: django
 
-    web-secure-router:
-      rule: "Host(`oxigen.banatit.ro`)"
+    api-secure-router:
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
       entryPoints:
         - web-secure
       middlewares:
@@ -46,7 +66,7 @@ http:
         certResolver: letsencrypt
 
     flower-secure-router:
-      rule: "Host(`oxigen.banatit.ro`)"
+      rule: "Host(`oxigen.primariatm.ro`)"
       entryPoints:
         - flower
       service: flower
@@ -67,6 +87,10 @@ http:
         hostsProxyHeaders: ["X-CSRFToken"]
 
   services:
+    frontend:
+      loadBalancer:
+        servers:
+          - url: http://frontend
     django:
       loadBalancer:
         servers:

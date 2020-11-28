@@ -15,6 +15,12 @@ from django.db.models import (
 from django.utils.translation import gettext_lazy as _
 
 
+PARTNERS_TYPE = (
+    ('project', 'Project partner'),
+    ('media', 'Media partner'),
+    )
+
+
 class Campaign(Model):
     name = CharField(max_length=255)
     target = FloatField(default=0)
@@ -93,6 +99,7 @@ class Partner(Model):
     display = BooleanField(default=True)
     link = URLField(max_length=200, null=True, blank=True)
     order = IntegerField(default=0)
+    partner_type = CharField(max_length=30, choices=PARTNERS_TYPE, default='project')
 
     def __str__(self):
         return self.name

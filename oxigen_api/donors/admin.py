@@ -7,6 +7,7 @@ class DonorAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Donor._meta.get_fields()]
     search_fields = ["name"]
     list_filter = ["campaign"]
+    list_filter = ["is_company", "is_anonym"]
 
 
 @admin.register(models.Campaign)
@@ -31,7 +32,8 @@ class NeedAdmin(admin.ModelAdmin):
 @admin.register(models.Partner)
 class PartnerAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Partner._meta.get_fields()]
-    list_display = ["name", "campaign", "logo", "comment"]
+    # list_display = ["name", "campaign", "logo", "comment"]
+    list_filter = ["partner_type"]
     search_fields = ["name"]
 
 

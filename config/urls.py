@@ -21,7 +21,7 @@ urlpatterns += [
     path("api/", include("config.api_router")),
     # DRF auth token
     path("auth-token/", obtain_auth_token),
-    path("", include("config.api_router")),
+    # path("", include("config.api_router")),
 ]
 
 if settings.DEBUG:
