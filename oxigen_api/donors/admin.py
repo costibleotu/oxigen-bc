@@ -40,6 +40,11 @@ class QuoteAdmin(admin.ModelAdmin):
     search_fields = ["name"]
 
 
+@admin.register(models.FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in models.FAQ._meta.get_fields()]
+
+
 @admin.register(models.CovidStats)
 class CovidStatsAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.CovidStats._meta.get_fields()]
