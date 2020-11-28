@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import InfoMedic from '@/views/InfoMedic.vue'
 import Community from '@/views/Community.vue'
-import Volunteering from '@/views/Volunteering.vue'
+import Helping from '@/views/Helping.vue'
 
 Vue.use(VueRouter)
 
@@ -35,8 +35,8 @@ const routes = [
   },
   {
     path: '/implică-te',
-    name: 'volunteering',
-    component: Volunteering,
+    name: 'helping',
+    component: Helping,
     meta: {
       title: 'Vrei să te implici?',
     },
