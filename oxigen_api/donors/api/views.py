@@ -49,7 +49,7 @@ class DashboardViewSet(ViewSet):
             many=True)
 
         partners = PartnerSerializer(
-            models.Partner.objects.filter(display=True),
+            models.Partner.objects.filter(display=True).order_by('order'),
             many=True)
 
         covid_stats = CovidStatSerializer(
