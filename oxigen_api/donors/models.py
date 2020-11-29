@@ -13,7 +13,7 @@ from django.db.models import (
     URLField
 )
 from django.utils.translation import gettext_lazy as _
-
+from ckeditor.fields import RichTextField
 
 PARTNERS_TYPE = (
     ('project', 'Project partner'),
@@ -43,7 +43,7 @@ class Donor(Model):
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display_name = CharField(_("Display Name"), blank=True, max_length=255)
     amount = IntegerField(default=0)
-    comment = TextField(null=True, blank=True)
+    comment = RichTextField(null=True, blank=True)
     is_company = BooleanField(default=False)
     logo = FileField(upload_to="logos", null=True, blank=True)
     display = BooleanField(default=True)
@@ -70,7 +70,7 @@ class Expense(Model):
     in_use = FloatField(default=0)
     available = FloatField(default=0)
     price = FloatField(default=0)
-    comment = TextField(null=True, blank=True)
+    comment = RichTextField(null=True, blank=True)
     display = BooleanField(default=True)
 
     def __str__(self):
@@ -84,7 +84,7 @@ class Need(Model):
     stock = FloatField(default=0)
     price = FloatField(default=0)
     recipient = CharField(max_length=255, null=True, blank=True)
-    comment = TextField(null=True, blank=True)
+    comment = RichTextField(null=True, blank=True)
     display = BooleanField(default=True)
 
     def __str__(self):
@@ -95,7 +95,7 @@ class Partner(Model):
     name = CharField(max_length=255, null=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     logo = FileField(upload_to="logos", null=True)
-    comment = TextField(null=True, blank=True)
+    comment = RichTextField(null=True, blank=True)
     display = BooleanField(default=True)
     link = URLField(max_length=200, null=True, blank=True)
     order = IntegerField(default=0)
@@ -107,9 +107,10 @@ class Partner(Model):
 
 class Quote(Model):
     name = CharField(max_length=255, null=True)
-    comment = TextField(null=True, blank=True)
+    comment = RichTextField(null=True, blank=True)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display = BooleanField(default=True)
+    order = IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -117,7 +118,7 @@ class Quote(Model):
 
 class FAQ(Model):
     question = TextField()
-    answer = TextField()
+    answer = RichTextField()
     order = IntegerField(default=1)
     campaign = ForeignKey(Campaign, on_delete=CASCADE)
     display = BooleanField(default=True)
