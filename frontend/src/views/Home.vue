@@ -321,7 +321,7 @@ import HomeProgress from '@/components/HomeProgress'
 import HomeFAQ from '@/components/HomeFAQ'
 
 import ApiService from '@/services/api'
-// import * as oxigen_animation from 'oxigen-animation'
+import * as oxigen_animation from 'oxigen-animation'
 
 export default {
   name: 'Home',
@@ -379,20 +379,20 @@ export default {
     },
 
     initAnimation() {
-      // window.addEventListener('load', () => {
-      //   oxigen_animation.init({
-      //     element: document.querySelector('#animation-scene'),
-      //     total_necesar: this.data.campaign.target,
-      //   })
-      //   oxigen_animation.update({
-      //     total_strans: this.data.campaign.amount_collected,
-      //     donatori: this.data.campaign.donations,
-      //   })
-      //   oxigen_animation.animate({
-      //     suma: 2,
-      //     nume: 'Alex',
-      //   })
-      // })
+      window.addEventListener('load', () => {
+        oxigen_animation.init({
+          element: document.querySelector('#animation-scene'),
+          total_necesar: this.data.campaign.target,
+        })
+        oxigen_animation.update({
+          total_strans: this.data.campaign.amount_collected,
+          donatori: this.data.campaign.donations,
+        })
+        oxigen_animation.animate({
+          suma: 2,
+          nume: 'Alex',
+        })
+      })
     },
   },
 }
