@@ -8,9 +8,77 @@ nav.navbar {
   .navbar-item {
     padding: 0.5rem 10px;
   }
+
+  .navbar-menu {
+    padding-right: 40px;
+  }
+
+  .button.is-menu {
+    width: 64px;
+    height: 64px;
+    font-size: $size-7;
+    border-width: 4px;
+    z-index: 3;
+    padding: 0;
+
+    &.is-active {
+      background-color: $white;
+      border-color: $white;
+      color: $grey;
+      font-size: $size-2;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .navbar-brand,
+  .button.is-large {
+    opacity: 1;
+    transition: opacity 0.25s;
+  }
+
+  &.is-inactive {
+    .navbar-brand,
+    .button.is-large {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}
+
+#menu {
+  position: absolute;
+  width: 50%;
+  background-color: $red;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .navbar-item {
+    color: $white;
+    justify-content: center;
+    padding: 15px;
+    font-weight: bold;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .button {
+    margin-top: 85px;
+  }
 }
 
 .section {
+  overflow: hidden;
+
   @include mobile {
     padding-left: 15px;
     padding-right: 15px;

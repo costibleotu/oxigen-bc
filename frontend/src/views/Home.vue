@@ -161,7 +161,7 @@
 
           <div class="carousel-container company has-text-centered">
             <p><b>Cele mai recente sponsorizări</b></p>
-            <br><br>
+            <br /><br />
 
             <b-carousel
               v-bind="{
@@ -193,8 +193,29 @@
           </p>
         </div>
         <div class="column">
-          <h3>{{ data.campaign.donors_count }} cetateni</h3>
-          <div class="box">@TODO: Carousel</div>
+          <h3>{{ data.campaign.donors_count }} cetățeni</h3>
+          <div class="carousel-container quotes">
+            <b-carousel
+              v-bind="{
+                autoplay: false,
+                arrowHover: false,
+                indicatorStyle: 'is-lines',
+              }"
+            >
+              <b-carousel-item
+                v-for="(quote, index) in data.quotes"
+                :key="index"
+              >
+                <h2 class="content has-text-weight-semibold is-italic">
+                  {{ quote.comment }}
+                </h2>
+
+                <b-icon icon="quote-left" />
+                <br />
+                <b>{{ quote.name }}</b>
+              </b-carousel-item>
+            </b-carousel>
+          </div>
 
           <p class="has-text-right">
             <router-link :to="{}">
@@ -300,7 +321,7 @@ import HomeProgress from '@/components/HomeProgress'
 import HomeFAQ from '@/components/HomeFAQ'
 
 import ApiService from '@/services/api'
-import * as oxigen_animation from 'oxigen-animation'
+// import * as oxigen_animation from 'oxigen-animation'
 
 export default {
   name: 'Home',
@@ -358,26 +379,21 @@ export default {
     },
 
     initAnimation() {
-      window.addEventListener('load', () => {
-        oxigen_animation.init({
-          element: document.querySelector('#animation-scene'),
-          total_necesar: this.data.campaign.target,
-        })
-
-        oxigen_animation.update({
-          total_strans: this.data.campaign.amount_collected,
-          donatori: this.data.campaign.donations,
-        })
-
-        oxigen_animation.animate({
-          suma: 2,
-          nume: 'Alex',
-        })
-      })
+      // window.addEventListener('load', () => {
+      //   oxigen_animation.init({
+      //     element: document.querySelector('#animation-scene'),
+      //     total_necesar: this.data.campaign.target,
+      //   })
+      //   oxigen_animation.update({
+      //     total_strans: this.data.campaign.amount_collected,
+      //     donatori: this.data.campaign.donations,
+      //   })
+      //   oxigen_animation.animate({
+      //     suma: 2,
+      //     nume: 'Alex',
+      //   })
+      // })
     },
-  },
-  destroyed() {
-    // document.body.classList.remove('home-view')
   },
 }
 </script>
@@ -393,8 +409,6 @@ export default {
   height: 90px;
   float: right;
   left: -80px;
-  border-radius: 100%;
-  box-shadow: 0 0 0 0 rgba(225, 10, 20, 0.45);
   animation: pulse 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
 
   .icon {
@@ -409,13 +423,21 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
+    animation: pulse-big 2.5s infinite cubic-bezier(0.3, 0, 0, 1);
+  }
+
+  &,
+  &:after {
     border-radius: 100%;
     box-shadow: 0 0 0 0 rgba(225, 10, 20, 0.45);
-    animation: pulse-big 2.5s infinite cubic-bezier(0.3, 0, 0, 1);
   }
 }
 
 .currency {
   margin-top: 10px;
+}
+
+nav.navbar {
+
 }
 </style>

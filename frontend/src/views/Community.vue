@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container" v-if="data.campaign">
       <div class="section">
         <h1>Suntem o comunitate</h1>
 
@@ -16,40 +16,67 @@
         </div>
 
         <h2>
-          <span class="has-text-primary">80</span> de companii susțin cauza
+          <span class="has-text-primary">{{
+            data.campaign.companies_count
+          }}</span>
+          de companii susțin cauza
         </h2>
-        <h2><span class="has-text-primary">234.567lei</span> donați</h2>
+        <h2>
+          <span class="has-text-primary">{{
+            data.campaign.companies_sum | currency
+          }}</span>
+          donați
+        </h2>
 
-        <div class="box">
-          @TODO: ONG List
-        </div>
+        <GridBoxes v-if="data.donors" :data="companies" />
       </div>
     </div>
 
     <div class="box is-paddingless">
-      <div class="section container">
-        <h2><span class="has-text-primary">120</span> donatori individuali</h2>
-        <h2><span class="has-text-primary">234.567lei</span> donați</h2>
+      <div class="section container" v-if="data.campaign">
+        <h2>
+          <span class="has-text-primary">{{ data.campaign.donors_count }}</span>
+          donatori individuali
+        </h2>
+        <h2>
+          <span class="has-text-primary">{{
+            data.campaign.donors_sum | currency
+          }}</span>
+          donați
+        </h2>
 
-        <br>
+        <br />
 
         <div class="columns">
-          <div class="column is-4">
+          <div class="column is-4" v-if="people.data">
             <h3 class="is-size-4">Donatori</h3>
 
             <div class="box-list">
-              <div class="box">
-                <b class="is-pulled-right has-text-primary">200lei</b>
+              <div
+                class="box"
+                v-for="(donor, index) in people.visible"
+                :key="`donor-${index}`"
+              >
+                <b class="is-pulled-right has-text-primary">
+                  {{ donor.amount }}
+                </b>
 
-                <h3 class="is-size-4">Alex Iliescu</h3>
+                <h3 class="is-size-4">{{ donor.display_name }}</h3>
                 <p class="is-size-5 has-text-grey">
-                  #oxigenpentrutimisoara #o2tm
+                  {{ donor.comment }}
                 </p>
               </div>
             </div>
+
+            <p
+              class="has-text-centered"
+              v-if="people.visible.length < people.data.length"
+            >
+              <br /><a @click="loadMore('people')">Vezi mai multe</a>
+            </p>
           </div>
           <div class="column">
-            <h3 class="is-size-4">Povesti scurte din carantina</h3>
+            <h3 class="is-size-4" v-if="stories.data">Povesti scurte din carantina</h3>
 
             <div class="box-list">
               <div class="box is-large">
@@ -69,6 +96,13 @@
                 </p>
               </div>
             </div>
+
+            <p
+              class="has-text-centered"
+              v-if="stories.visible.length < stories.data.length"
+            >
+              <br /><a @click="loadMore('stories')">Vezi mai multe</a>
+            </p>
           </div>
         </div>
       </div>
@@ -77,10 +111,54 @@
 </template>
 
 <script>
+import ApiService from '@/services/api'
+
+import GridBoxes from '@/components/GridBoxes'
+
 export default {
   name: 'Community',
-  components: {},
-  mounted() {},
+  components: { GridBoxes },
+  data() {
+    return {
+      data: {
+        donors: null,
+        campaign: null,
+      },
+      people: {
+        data: [],
+        visible: [],
+        index: 10,
+      },
+      stories: {
+        data: [],
+        visible: [],
+        index: 10,
+      },
+      companies: null,
+    }
+  },
+  mounted() {
+    ApiService.get('donors').then((response) => {
+      this.data.donors = response
+
+      this.people.data = this.data.donors.filter((e) => !e.is_company)
+      this.companies = this.data.donors.filter((e) => e.is_company)
+
+      this.loadMore('people')
+    })
+
+    ApiService.get('campaigns').then((response) => {
+      this.data.campaign = response[0]
+    })
+  },
+  methods: {
+    loadMore(type) {
+      // console.log('loadItems', type)
+
+      this[type].visible = this[type].data.slice(0, this[type].index)
+      this[type].index += 10
+    },
+  },
 }
 </script>
 
@@ -90,6 +168,7 @@ export default {
     background-color: $white;
     padding: 30px;
     border-radius: 10px;
+    overflow: hidden;
 
     h3 {
       margin-bottom: 10px;

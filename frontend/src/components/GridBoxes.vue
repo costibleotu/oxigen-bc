@@ -11,9 +11,11 @@
         </figure>
 
         <b class="title">
-          {{ item.name }}
+          {{ item.name || item.display_name }}
         </b>
+
       </a>
+      <p v-if="item.amount">{{ item.amount }}</p>
     </div>
   </div>
 </template>
@@ -36,6 +38,14 @@ export default {
   margin-top: 16px;
 
   .column {
+    a {
+      color: $black;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
     .image {
       margin-bottom: 20px;
     }

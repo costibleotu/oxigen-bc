@@ -8,6 +8,7 @@ import {
   faArrowUp,
   faQuoteLeft,
   faQuestionCircle,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -24,6 +25,7 @@ library.add(
   faArrowUp,
   faQuoteLeft,
   faQuestionCircle,
+  faTimes,
   faFacebookSquare,
   faInstagram
 )

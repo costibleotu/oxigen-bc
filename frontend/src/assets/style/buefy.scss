@@ -33,6 +33,11 @@
     .icon {
       font-size: $size-1;
       border: 0;
+      background-color: transparent;
+
+      &:hover {
+        color: $black !important;
+      }
     }
   }
 
@@ -41,6 +46,17 @@
       .indicator-style {
         background-color: #e2e2e2;
         border-color: #e2e2e2;
+
+        &.is-lines {
+          width: 48px;
+        }
+      }
+
+      &:hover {
+        .indicator-style {
+          border-color: inherit;
+          // background-color: $black;
+        }
       }
 
       &.is-active {

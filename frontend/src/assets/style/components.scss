@@ -30,6 +30,8 @@ a {
 }
 
 .carousel-container {
+  margin-bottom: 40px;
+
   &.company {
     padding: 40px 0;
     border: 2px solid $border;
@@ -45,10 +47,6 @@ a {
         &.has-icons-right {
           right: 18px;
         }
-
-        &:hover {
-          color: $black;
-        }
       }
     }
 
@@ -61,6 +59,29 @@ a {
     }
   }
 
-  .quotes {
+  &.quotes {
+    background-color: $primary;
+    color: $white;
+    padding: 40px 0;
+
+    .carousel-arrow {
+      .icon {
+        color: $white;
+      }
+    }
+
+    .carousel-indicator {
+      justify-content: flex-start;
+      padding-left: 68px;
+    }
+
+    .carousel-item {
+      padding: 32px 68px 40px;
+
+      .icon {
+        opacity: 0.35;
+        font-size: 60px;
+      }
+    }
   }
 }
