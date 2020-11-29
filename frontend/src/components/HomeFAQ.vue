@@ -13,8 +13,7 @@
         <span>{{ question.question }}</span>
       </a>
 
-      <div class="content">
-        {{ question.answer }}
+      <div class="content" v-html="question.answer">
       </div>
     </b-collapse>
   </div>

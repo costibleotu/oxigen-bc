@@ -35,6 +35,24 @@ class DonorSerializer(serializers.ModelSerializer):
         exclude = ['display', 'name', 'date_added']
 
 
+class StorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Story
+        exclude = ['display']
+
+
+class FullNameDonorSerializer(serializers.ModelSerializer):
+    display_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = models.Donor
+        exclude = ['display', 'name', 'date_added']
+
+    def get_display_name(self, obj):
+        return obj.name
+
+
 class ExpenseSerializer(serializers.ModelSerializer):
 
     class Meta:

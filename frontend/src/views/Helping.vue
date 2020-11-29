@@ -19,7 +19,7 @@
 
       <div class="columns is-multiline">
         <div class="column is-6">
-          <a href="#" class="box">
+          <a href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/" class="box">
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -32,7 +32,7 @@
           </a>
         </div>
         <div class="column is-6">
-          <a href="#" class="box">
+          <a href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf" class="box">
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -45,7 +45,7 @@
           </a>
         </div>
         <div class="column is-6">
-          <a href="#" class="box">
+          <a href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf" class="box">
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -58,7 +58,7 @@
           </a>
         </div>
         <div class="column is-6">
-          <a href="#" class="box">
+          <a href="https://covid19.primariatm.ro/ajutor" class="box">
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"

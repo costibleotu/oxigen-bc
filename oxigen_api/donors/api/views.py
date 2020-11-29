@@ -9,12 +9,14 @@ from rest_framework.viewsets import GenericViewSet, ViewSet
 from .serializers import (
     CampaignSerializer,
     DonorSerializer,
+    FullNameDonorSerializer,
     ExpenseSerializer,
     PartnerSerializer,
     QuoteSerializer,
     NeedSerializer,
     FAQSerializer,
-    CovidStatSerializer
+    CovidStatSerializer,
+    StorySerializer
 )
 
 from oxigen_api.donors import models
@@ -88,8 +90,18 @@ class CampaignViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
 
 
 class DonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
-    serializer_class = DonorSerializer
+    serializer_class = FullNameDonorSerializer
     queryset = models.Donor.objects.filter(
+        display=True, is_company=False).prefetch_related('campaign').order_by('-order')
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class StoryViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
+    serializer_class = StorySerializer
+    queryset = models.Story.objects.filter(
         display=True).prefetch_related('campaign').order_by('-order')
 
     @method_decorator(cache_page(60))

@@ -12,10 +12,13 @@
           <div class="content is-small">
             <br />
             <p>
-              Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au unit
-              forțele pentru a sprijini spitalele și comunitatea în fața
-              pandemiei de coronavirus. Fiecare dintre noi are puterea de a
-              spori resursele cu care medicii salvează vieți.
+              Primăria Timișoara, ONG-uri timișorene active în comunitate,
+              voluntari și antreprenori și-au unit forțele pentru a sprijini
+              spitalele și comunitatea în fața pandemiei de coronavirus. <br />
+              Fiecare dintre noi are puterea de a spori resursele cu care
+              medicii salvează vieți. Fiecare dintre noi are puterea de a dona
+              respirațiile prețioase de care au nevoie pacienții în drumul lor
+              spre vindecare.
             </p>
             <p class="has-text-weight-bold">
               Cu fiecare respirație suntem mai aproape de a ieși cu bine din
@@ -50,9 +53,13 @@
         <div class="column is-4">
           <div class="content is-small">
             <p>
-              Avem nevoie de cât mai multe pulsoximetre și concentratoare de
-              oxigen, extrem de necesare pentru tratarea la domiciliu, sub
-              supravegherea medicilor de familie, a pacienților infectați cu
+              Oxigen pentru Timișoara își propune să vină în sprijinul
+              comunității prin prioritizarea nevoilor în mai multe etape
+              adaptate contextului pandemic în care ne aflăm.
+              <br />Astfel în prima etapă urgența este reprezentată de
+              achiziționarea de instalații de oxigen, concentratoare de oxigen
+              și pulsoximetre, extrem de necesare pentru tratarea la domiciliu,
+              sub supravegherea medicilor de familie, a pacienților infectați cu
               coronavirus, dar și pentru recuperarea ulterioară a pacienților,
               după depășirea fazei critice. Avem nevoie de donațiile voastre
               pentru ca aceste dispozitive medicale a ajunge la cât mai mulți
@@ -285,7 +292,10 @@
               spitalele și comunitatea în fața pandemiei de coronavirus.
             </div>
 
-            <a href="#" class="button is-primary is-large">
+            <a
+              href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
+              class="button is-primary is-large"
+            >
               Vezi campania
             </a>
           </div>
@@ -303,7 +313,10 @@
               frumos cadou: o șansă.
             </div>
 
-            <a href="#" class="button is-primary is-large">
+            <a
+              href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
+              class="button is-primary is-large"
+            >
               Vezi campania
             </a>
           </div>
@@ -438,6 +451,5 @@ export default {
 }
 
 nav.navbar {
-
 }
 </style>

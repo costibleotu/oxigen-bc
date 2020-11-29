@@ -19,7 +19,7 @@
           <span class="has-text-primary">{{
             data.campaign.companies_count
           }}</span>
-          de companii susțin cauza
+          companii susțin cauza
         </h2>
         <h2>
           <span class="has-text-primary">{{
@@ -79,23 +79,23 @@
             <h3 class="is-size-4" v-if="stories.data">Povesti scurte din carantina</h3>
 
             <div class="box-list">
-              <div class="box is-large">
+              <div class="box is-large" v-for="(story, index) in stories.data"
+                :key="`story-${index}`">
                 <h3>
-                  If you find it in your heart to care for somebody else, you
-                  have succeeded. This is the story format for up to 250
-                  characters.
+
                 </h3>
 
                 <div class="content">
-                  <p>Hello, content.</p>
+                  <p>{{story.comment}}</p>
                 </div>
 
                 <p class="quote">
                   <b-icon icon="quote-left" />
-                  <b>Maya - Timisoara</b>
+                  <b>{{story.name}}</b>
                 </p>
               </div>
             </div>
+
 
             <p
               class="has-text-centered"
@@ -123,6 +123,7 @@ export default {
       data: {
         donors: null,
         campaign: null,
+        quotes: null,
       },
       people: {
         data: [],
@@ -149,6 +150,10 @@ export default {
 
     ApiService.get('campaigns').then((response) => {
       this.data.campaign = response[0]
+    })
+
+    ApiService.get('quotes').then((response) => {
+      this.stories.data = response
     })
   },
   methods: {
