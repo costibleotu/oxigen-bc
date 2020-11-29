@@ -7,8 +7,7 @@ class DonorAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.Donor._meta.get_fields()]
     search_fields = ["name"]
     list_filter = ["campaign"]
-    list_filter = ["is_company", "is_anonym"]
-    list_filter = ["display"]
+    list_filter = ["is_company", "is_anonym", "display"]
 
 
 @admin.register(models.Campaign)
@@ -53,7 +52,14 @@ class FAQAdmin(admin.ModelAdmin):
     list_display = [field.name for field in models.FAQ._meta.get_fields()]
     list_filter = ["display"]
 
+
 @admin.register(models.CovidStats)
 class CovidStatsAdmin(admin.ModelAdmin):
     list_display = [
         field.name for field in models.CovidStats._meta.get_fields()]
+
+
+@admin.register(models.Document)
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = [
+        field.name for field in models.Document._meta.get_fields()]
