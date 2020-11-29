@@ -45,8 +45,28 @@ http:
         # https://docs.traefik.io/master/routing/routers/#certresolver
         certResolver: letsencrypt
 
+    media-router:
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect
+        - csrf
+      service: media
+
+    media-secure-router:
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
+      entryPoints:
+        - web-secure
+      middlewares:
+        - csrf
+      service: media
+      tls:
+        # https://docs.traefik.io/master/routing/routers/#certresolver
+        certResolver: letsencrypt
+
     api-router:
-      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`))"
       entryPoints:
         - web
       middlewares:
@@ -55,7 +75,7 @@ http:
       service: django
 
     api-secure-router:
-      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/media`))"
+      rule: "(Host(`oxigen.primariatm.ro`) && PathPrefix(`/api`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/admin`)) || (Host(`oxigen.primariatm.ro`) && PathPrefix(`/static`))"
       entryPoints:
         - web-secure
       middlewares:
@@ -87,6 +107,11 @@ http:
         hostsProxyHeaders: ["X-CSRFToken"]
 
   services:
+    media:
+      loadBalancer:
+        servers:
+          - url: http://media
+
     frontend:
       loadBalancer:
         servers:
