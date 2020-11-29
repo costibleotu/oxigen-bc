@@ -16,6 +16,7 @@ router.register("named-donors", views.NamedDonorViewSet, 'named-donor')
 router.register("expenses", views.ExpenseViewSet)
 router.register("partners", views.PartnerViewSet)
 router.register("quotes", views.QuoteViewSet)
+router.register("stories", views.StoryViewSet)
 router.register("needs", views.NeedViewSet)
 router.register("faqs", views.FAQViewSet)
 

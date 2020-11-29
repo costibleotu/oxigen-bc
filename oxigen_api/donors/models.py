@@ -135,3 +135,23 @@ class CovidStats(Model):
 
     def __str__(self):
         return self.date
+
+
+class Document(Model):
+    name = CharField(max_length=255, null=True)
+    file = FileField()
+
+    def __str__(self):
+        return self.name
+
+
+class Story(Model):
+    title = CharField(max_length=255, null=True)
+    author = CharField(max_length=255, null=True)
+    body = RichTextField(null=True, blank=True)
+    campaign = ForeignKey(Campaign, on_delete=CASCADE)
+    display = BooleanField(default=True)
+    order = IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
