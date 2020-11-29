@@ -12,10 +12,13 @@
           <div class="content is-small">
             <br />
             <p>
-              Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au unit
-              forțele pentru a sprijini spitalele și comunitatea în fața
-              pandemiei de coronavirus. Fiecare dintre noi are puterea de a
-              spori resursele cu care medicii salvează vieți.
+              Primăria Timișoara, ONG-uri timișorene active în comunitate,
+              voluntari și antreprenori și-au unit forțele pentru a sprijini
+              spitalele și comunitatea în fața pandemiei de coronavirus. <br />
+              Fiecare dintre noi are puterea de a spori resursele cu care
+              medicii salvează vieți. Fiecare dintre noi are puterea de a dona
+              respirațiile prețioase de care au nevoie pacienții în drumul lor
+              spre vindecare.
             </p>
             <p class="has-text-weight-bold">
               Cu fiecare respirație suntem mai aproape de a ieși cu bine din
@@ -50,13 +53,17 @@
         <div class="column is-4">
           <div class="content is-small">
             <p>
-              Avem nevoie de cât mai multe pulsoximetre și concentratoare de
-              oxigen, extrem de necesare pentru tratarea la domiciliu, sub
-              supravegherea medicilor de familie, a pacienților infectați cu
-              coronavirus, dar și pentru recuperarea ulterioară a pacienților,
-              după depășirea fazei critice. Avem nevoie de donațiile voastre
-              pentru ca aceste dispozitive medicale a ajunge la cât mai mulți
-              timișoreni.
+              Oxigen pentru Timișoara își propune să vină în sprijinul
+              comunității prin prioritizarea nevoilor în mai multe etape
+              adaptate contextului pandemic în care ne aflăm.
+              <br>Astfel în prima
+              etapă urgența este reprezentată de achiziționarea de instalații de
+              oxigen, concentratoare de oxigen și pulsoximetre, extrem de necesare pentru tratarea la
+              domiciliu, sub supravegherea medicilor de familie, a pacienților
+              infectați cu coronavirus, dar și pentru recuperarea ulterioară a
+              pacienților, după depășirea fazei critice. Avem nevoie de
+              donațiile voastre pentru ca aceste dispozitive medicale a ajunge
+              la cât mai mulți timișoreni.
             </p>
           </div>
 
@@ -167,7 +174,7 @@
               v-bind="{
                 autoplay: false,
                 arrowHover: false,
-                indicatorStyle: 'is-lines',
+                indicatorStyle: 'is-lines'
               }"
             >
               <b-carousel-item
@@ -199,7 +206,7 @@
               v-bind="{
                 autoplay: false,
                 arrowHover: false,
-                indicatorStyle: 'is-lines',
+                indicatorStyle: 'is-lines'
               }"
             >
               <b-carousel-item
@@ -335,36 +342,36 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare',
+            label: 'Valoare'
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achizitie',
             centered: true,
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold',
+            cellClass: 'has-text-success has-text-weight-bold'
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold',
-          },
-        ],
-      },
+            cellClass: 'has-text-primary has-text-weight-bold'
+          }
+        ]
+      }
     }
   },
   mounted() {
@@ -372,7 +379,7 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then((response) => {
+      ApiService.get('dashboard/').then(response => {
         this.data = response
         this.initAnimation()
       })
@@ -393,8 +400,8 @@ export default {
       //     nume: 'Alex',
       //   })
       // })
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -438,6 +445,5 @@ export default {
 }
 
 nav.navbar {
-
 }
 </style>
