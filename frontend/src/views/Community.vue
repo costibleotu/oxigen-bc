@@ -58,7 +58,7 @@
                 :key="`donor-${index}`"
               >
                 <b class="is-pulled-right has-text-primary">
-                  {{ donor.amount }}
+                  {{ donor.amount | currency }}
                 </b>
 
                 <h3 class="is-size-4">{{ donor.display_name }}</h3>

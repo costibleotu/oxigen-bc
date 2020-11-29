@@ -12,14 +12,14 @@ ApiService.init(API_PATH)
 // filters
 
 let currencyFormatter = new Intl.NumberFormat('ro-RO', {
-  style: 'currency',
-  currency: 'RON',
-  currencyDisplay: 'symbol'
+  // style: 'currency',
+  // currency: 'RON',
+  // currencyDisplay: 'symbol'
 })
 
 Vue.filter('currency', function(value) {
   if (!value) return '0'
-  return currencyFormatter.format(String(value)).replace('RON', 'lei')
+  return currencyFormatter.format(String(value)) + ' lei'
 })
 
 //
