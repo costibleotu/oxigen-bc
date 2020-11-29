@@ -292,7 +292,7 @@
               spitalele și comunitatea în fața pandemiei de coronavirus.
             </div>
 
-            <a href="#" class="button is-primary is-large">
+            <a href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf" class="button is-primary is-large">
               Vezi campania
             </a>
           </div>
@@ -310,7 +310,7 @@
               frumos cadou: o șansă.
             </div>
 
-            <a href="#" class="button is-primary is-large">
+            <a href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf" class="button is-primary is-large">
               Vezi campania
             </a>
           </div>
