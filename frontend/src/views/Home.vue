@@ -241,7 +241,7 @@
             </div>
 
             <p>
-              <a href="#">
+              <a href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing">
                 Model contract sponsorizare<b-icon icon="arrow-right" />
               </a>
             </p>
@@ -272,11 +272,11 @@
               </b-carousel>
             </div>
 
-            <p class="has-text-right">
+            <!-- <p class="has-text-right">
               <router-link :to="{}">
                 Trimite un gând bun<b-icon icon="arrow-right" />
               </router-link>
-            </p>
+            </p> -->
           </div>
         </div>
       </div>

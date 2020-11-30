@@ -1,16 +1,35 @@
 <template>
   <div class="container">
     <div class="section">
-      <h1>Ai nevoie de echipament medical?</h1>
-
+      <h1>Cum funcționează proiectul “Oxigen pentru Timișoara”?</h1>
+      <br />
+      <br />
       <div class="columns">
         <div class="column is-4">
-          <div class="content">
-            Medicul tau de familie este legatura ta cu comunitatea medicala si
-            resursele de suport disponibile. Supraveghetorul parcursului bolii
-            fiecarui pacient din gestiunea sa, poate recunoaste momentul in care
-            intervine nevoia de echipament si o poate semnala.
-          </div>
+          <h2>
+            Programul se adresează doar persoanelor care sunt în una dintre
+            situațiile următoare:
+          </h2>
+        </div>
+        <div class="column">
+          <ol class="a">
+            <li>
+              Ești pacient care a trecut pe la triajul de la Spitalul „Victor
+              Babeș” Timișoara, iar doctorii au decis monitorizarea la domiciliu
+              cu ajutorul unui pulsoximetru
+            </li>
+            <li>
+              Ești pacient care a trecut pe la triajul de la Spitalul „Victor
+              Babeș” Timișoara, iar doctorii au decis monitorizarea la domiciliu
+              cu ajutorul unui pulsoximetru și un concentrator de oxigen
+            </li>
+            <li>
+              Ești pacient în Spitalul „Victor Babeș” Timișoara a cărui stare de
+              sănătate în spital s-a îmbunătățit, dar are nevoie în continuare
+              de oxigenoterapie și este externat cu pulsoximetru și concentrator
+              pt a elibera locul din spital pentru cazuri mai grave
+            </li>
+          </ol>
         </div>
       </div>
 
@@ -20,35 +39,40 @@
         <div class="column is-4">
           <h2>Cum intrii în posesia unui concentrator de oxigen?</h2>
 
-          <div class="box box-bubble">
+          <!-- <div class="box box-bubble">
             <h2>
               Call center <br />
               0372.987
             </h2>
-          </div>
+          </div> -->
         </div>
         <div class="column">
           <ol>
             <li>
-              Medicul de familie anunta necesitatea prin platforma
-              <b class="has-text-primary">Medici de familie.</b>
+              În urma deciziei medicilor de la Spitalul „Victor Babeș” Timișoara
+              de externare, pacientul va primi echipamentul (pulsoximetru și/sau
+              concentrator de oxigen) și va fi instruit cum să le folosească.
             </li>
             <li>
-              Operatorul platformei va inregistra datele pacientului si cererea.
+              Simultan, este anunțat medicul de familie, care va contacta
+              pacientul pentru monitorizarea de la distanță a stării de sănătate
+              a pacientului aflat la domiciliu.
             </li>
             <li>
-              Daca exista echipament disponibil, curierul ti-l va livra acasa
-              impreuna cu un proces verbal de primire pe care trebuie sa il
-              semnezi.
+              Dacă după plecarea din spital monitorizarea s-a făcut doar cu
+              pulsoximetru, iar starea de sănătate s-a agravat, medicul de
+              familie face o cerere pentru un concentrator de oxigen, prin
+              platforma
+              <b class="has-text-primary">Medici de familie.</b>.
             </li>
             <li>
-              Daca nu exista echipament disponibil, vei fi pus intr-o coada de
-              asteptare pana la eliberarea unui echipament sau pana la
-              urmatoarea runda de achizitii.
+              Operatorul platformei va înregistra datele pacientului și cererea
+              de livrare.
             </li>
             <li>
-              Medicul de familie va fi informat in oricare din cazuri de
-              disponibilitate.
+              Dacă există echipament disponibil, acesta va fi livrat la
+              domiciliul pacientului, fiind predat pe baza unui cu un proces
+              verbal de primire.
             </li>
           </ol>
         </div>
@@ -63,25 +87,25 @@
         <div class="column">
           <ol>
             <li>
-              Medicul de familie anunta eliberarea echipamentului prin platforma
+              Medicul de familie anunță eliberarea echipamentului prin platforma
               <b class="has-text-primary">Medici de familie.</b>
             </li>
             <li>
-              Curierul va veni sa ridice echipamentul si iti va cere sa semnezi
-              procesul verbal de predare.
+              Pacientul va pregăti pentru returnare echipamentul primit în
+              ambalajul original, mai puțin elementele de unică folosință ale
+              concentratorului (tuburile de plastic, bidonul de umidificare a
+              aerului).
             </li>
             <li>
-              Aparatul este livrat in zona de dezinfectare pentru igienizare si
-              verificare.
+              Un voluntar va veni să ridice echipamentul, sigilându-l pentru
+              transportarea în siguranță și se va semna un proces-verbal de
+              preluare.
             </li>
             <li>
-              Daca aparatul este functional el va fi dus in zona de stocare si
-              va redeveni disponibil.
+              Aparatul este livrat în spital pentru igienizare, dezinfectare și
+              schimbarea filtrului hepa a concentratorului de oxigen.
             </li>
-            <li>
-              Daca aparatul nu este functional el va fi dus in service pentru
-              repratii.
-            </li>
+            <li>Aparatul va deveni disponibil pentru următorul beneficiar.</li>
           </ol>
         </div>
       </div>
