@@ -27,16 +27,26 @@
 
           <div class="buttons">
             <b-tooltip
-              label="Vei fi redirecționat către site-ul <b>Timotion</b>, care pune la dispoziție modalități rapide de donație"
               position="is-top"
+              type="is-light"
+              size="is-large"
+              multilined
             >
+              <template v-slot:content>
+                Vei fi redirecționat către site-ul <b>Timotion</b>, care pune la
+                dispoziție modalități rapide de donație
+              </template>
+
               <a
                 href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
                 class="button is-primary"
               >
                 Donează acum
               </a>
+
+              <span class="is-hidden"></span>
             </b-tooltip>
+
             <router-link
               :to="{ name: 'infomedic' }"
               class="button is-primary is-outlined"
@@ -215,7 +225,10 @@
                 >
                   <figure class="image is-square">
                     <img :src="company.logo" v-if="company.logo" />
-                    <img src="../assets/images/Placeholder_Sponsor.png" v-else />
+                    <img
+                      src="../assets/images/Placeholder_Sponsor.png"
+                      v-else
+                    />
                   </figure>
 
                   <p class="title">

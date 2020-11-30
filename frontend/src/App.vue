@@ -39,23 +39,45 @@
                   </li>
                 </ul>
 
-                <a
-                  href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
-                  class="button is-white is-outlined is-large"
+                <b-tooltip
+                  position="is-top"
+                  type="is-light"
+                  size="is-large"
+                  multilined
                 >
-                  Donează acum
-                </a>
+                  <template v-slot:content>
+                    Vei fi redirecționat către site-ul <b>Timotion</b>, care
+                    pune la dispoziție modalități rapide de donație
+                  </template>
+                  <a
+                    href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
+                    class="button is-white is-outlined is-large"
+                  >
+                    Donează acum
+                  </a>
+                </b-tooltip>
               </div>
             </div>
           </transition>
           <div class="navbar-end">
             <div class="navbar-item">
-              <a
-                href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
-                class="button is-primary is-large is-size-6-mobile"
+              <b-tooltip
+                position="is-bottom"
+                type="is-light"
+                size="is-large"
+                multilined
               >
-                <div>Donează <span class="is-hidden-mobile">acum</span></div>
-              </a>
+                <template v-slot:content>
+                  Vei fi redirecționat către site-ul <b>Timotion</b>, care pune
+                  la dispoziție modalități rapide de donație
+                </template>
+                <a
+                  href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
+                  class="button is-primary is-large is-size-6-mobile"
+                >
+                  <div>Donează <span class="is-hidden-mobile">acum</span></div>
+                </a>
+              </b-tooltip>
             </div>
             <div class="navbar-item">
               <a
