@@ -23,7 +23,7 @@ Vue.filter('currency', function(value) {
 })
 
 Vue.filter('striptags', function(value) {
-  return value.replace(/(<([^>]+)>)/gi, "");
+  return value.replace(/(<([^>]+)>)/gi, '')
 })
 
 //

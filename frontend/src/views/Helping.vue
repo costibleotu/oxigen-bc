@@ -83,7 +83,7 @@
 
     <div class="has-text-centered">
       <b class="is-size-4 has-text-grey">Respirăm același #oxigen</b>
-      <br><br>
+      <br /><br />
       <img src="../assets/images/Logo_short_O2TM.svg" />
     </div>
 

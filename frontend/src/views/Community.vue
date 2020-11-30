@@ -123,36 +123,36 @@ export default {
       data: {
         donors: null,
         campaign: null,
-        quotes: null,
+        quotes: null
       },
       people: {
         data: [],
         visible: [],
-        index: 10,
+        index: 10
       },
       stories: {
         data: [],
         visible: [],
-        index: 10,
+        index: 10
       },
-      companies: null,
+      companies: null
     }
   },
   mounted() {
-    ApiService.get('donors').then((response) => {
+    ApiService.get('donors').then(response => {
       this.data.donors = response
 
-      this.people.data = this.data.donors.filter((e) => !e.is_company)
-      this.companies = this.data.donors.filter((e) => e.is_company)
+      this.people.data = this.data.donors.filter(e => !e.is_company)
+      this.companies = this.data.donors.filter(e => e.is_company)
 
       this.loadMore('people')
     })
 
-    ApiService.get('campaigns').then((response) => {
+    ApiService.get('campaigns').then(response => {
       this.data.campaign = response[0]
     })
 
-    ApiService.get('quotes').then((response) => {
+    ApiService.get('quotes').then(response => {
       this.stories.data = response
       this.loadMore('stories')
     })
@@ -163,8 +163,8 @@ export default {
 
       this[type].visible = this[type].data.slice(0, this[type].index)
       this[type].index += 10
-    },
-  },
+    }
+  }
 }
 </script>
 
