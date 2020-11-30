@@ -14,7 +14,10 @@
             <p>
               Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au unit
               forțele pentru a sprijini spitalele și comunitatea în fața
-              pandemiei de coronavirus. Fiecare dintre noi are puterea de a crește resursele cu care medicii salvează vieți. Fiecare dintre noi are puterea de a dona respirațiile prețioase de care au nevoie pacienții în drumul lor spre vindecare.
+              pandemiei de coronavirus. Fiecare dintre noi are puterea de a
+              crește resursele cu care medicii salvează vieți. Fiecare dintre
+              noi are puterea de a dona respirațiile prețioase de care au nevoie
+              pacienții în drumul lor spre vindecare.
             </p>
             <p>
               <b>
@@ -209,7 +212,9 @@
           <div class="column is-4-widescreen">
             <h3>{{ data.campaign.companies_count }} companii</h3>
 
-            <div class="carousel-container company has-text-centered has-background-white">
+            <div
+              class="carousel-container company has-text-centered has-background-white"
+            >
               <p><b>Cele mai recente sponsorizări</b></p>
               <br /><br />
 
@@ -217,7 +222,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines',
+                  indicatorStyle: 'is-lines'
                 }"
               >
                 <b-carousel-item
@@ -241,7 +246,9 @@
             </div>
 
             <p>
-              <a href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing">
+              <a
+                href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing"
+              >
                 Model contract sponsorizare<b-icon icon="arrow-right" />
               </a>
             </p>
@@ -253,7 +260,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines',
+                  indicatorStyle: 'is-lines'
                 }"
               >
                 <b-carousel-item
@@ -346,6 +353,7 @@
             <a
               href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
               class="button is-primary is-large"
+              target="_blank"
             >
               Vezi campania
             </a>
@@ -367,6 +375,7 @@
             <a
               href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
               class="button is-primary is-large"
+              target="_blank"
             >
               Vezi campania
             </a>
@@ -399,36 +408,36 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare',
+            label: 'Valoare'
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achizitie',
             centered: true,
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold',
+            cellClass: 'has-text-success has-text-weight-bold'
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold',
-          },
-        ],
-      },
+            cellClass: 'has-text-primary has-text-weight-bold'
+          }
+        ]
+      }
     }
   },
   mounted() {
@@ -439,7 +448,7 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then((response) => {
+      ApiService.get('dashboard/').then(response => {
         this.data = response
         this.initAnimation()
       })
@@ -448,24 +457,24 @@ export default {
     initAnimation() {
       oxigen_animation.init({
         element: document.querySelector('#animation-scene'),
-        total_necesar: this.data.campaign.target,
+        total_necesar: this.data.campaign.target
       })
       oxigen_animation.update({
         total_strans: this.data.campaign.amount_collected,
-        donatori: this.data.campaign.donations,
+        donatori: this.data.campaign.donations
       })
 
-      ApiService.get('named-donors/').then((response) => {
+      ApiService.get('named-donors/').then(response => {
         oxigen_animation.animate(
           response
-            .filter((e) => !e.is_company)
-            .map((e) => {
+            .filter(e => !e.is_company)
+            .map(e => {
               return { nume: e.display_name, suma: e.amount }
             })
         )
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

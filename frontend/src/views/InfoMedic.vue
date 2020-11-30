@@ -8,7 +8,7 @@
         <div class="column is-4">
           <h2>
             Programul se adresează doar persoanelor care sunt în una dintre
-            situațiile următoare:
+            situațiile următoare
           </h2>
         </div>
         <div class="column">
@@ -32,9 +32,8 @@
           </ol>
         </div>
       </div>
-
-      <br />
-
+    </div>
+    <div class="section">
       <div class="columns">
         <div class="column is-4">
           <h2>Cum intrii în posesia unui concentrator de oxigen?</h2>

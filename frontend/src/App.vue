@@ -105,22 +105,38 @@
             <p class="title">
               Alte resurse
             </p>
-
             <ul>
-              <li><a href="#">www.timotion.ro</a></li>
-              <li><a href="#">Primăria Timișoara</a></li>
-              <li><a href="#">Contactează-ne</a></li>
+              <li>
+                <a target="_blank" href="https://covid19.primariatm.ro"
+                  >https://covid19.primariatm.ro</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://fiipregatit.ro/">https://fiipregatit.ro/</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.ctstimisoara.ro/"
+                  >https://www.ctstimisoara.ro/</a
+                >
+              </li>
             </ul>
           </div>
           <div class="column is-3">
             <p class="title">
-              Alte resurse
+              <br>
             </p>
-
             <ul>
-              <li><a href="#">www.timotion.ro</a></li>
-              <li><a href="#">Primăria Timișoara</a></li>
-              <li><a href="#">Contactează-ne</a></li>
+              <li>
+                <a target="_blank" href="https://www.dsptimis.ro/">https://www.dsptimis.ro/</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.cnscbt.ro/">https://www.cnscbt.ro/</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.ctstimisoara.ro/"
+                  >https://www.ctstimisoara.ro/</a
+                >
+              </li>
             </ul>
           </div>
           <div class="column is-4">
@@ -128,21 +144,18 @@
               Press Kit
             </p>
 
-            <p>Distribuie nostru folosind materialele noastre promotionale</p>
-            <br />
-
-            <a href="#" class="is-size-3 has-text-primary">
-              <b>Folder materiale</b><b-icon icon="arrow-right" />
+            <a href="https://drive.google.com/drive/folders/1JJW_90MWmPv-wyxTaM9JMnwrxfGxKj8z?usp=sharing" class="is-size-3 has-text-primary">
+              <b>Mapă materiale</b><b-icon icon="arrow-right" />
             </a>
           </div>
         </div>
 
-        <br /><br />
+        <!--  <br /><br />
         <p class="title">Urmărește-ne pe</p>
         <a class="is-size-2" href="#"
           ><b-icon pack="fab" icon="facebook-square"
         /></a>
-        <a class="is-size-2" href="#"><b-icon pack="fab" icon="instagram"/></a>
+        <a class="is-size-2" href="#"><b-icon pack="fab" icon="instagram"/></a> -->
       </footer>
     </div>
   </div>
