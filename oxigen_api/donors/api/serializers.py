@@ -1,6 +1,8 @@
 from django.db.models import Sum
+from django.utils.html import strip_tags
 from rest_framework import serializers
 from oxigen_api.donors import models
+import html.parser
 
 
 class CampaignSerializer(serializers.ModelSerializer):
@@ -51,6 +53,15 @@ class FullNameDonorSerializer(serializers.ModelSerializer):
 
     def get_display_name(self, obj):
         return obj.name
+
+    def to_representation(self, instance):
+        html_parser = html.parser.HTMLParser()
+        data = super().to_representation(instance)
+        if instance.comment:
+            data['comment'] = strip_tags(
+                html_parser.unescape(instance.comment))
+
+        return data
 
 
 class ExpenseSerializer(serializers.ModelSerializer):

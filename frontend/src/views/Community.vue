@@ -62,8 +62,7 @@
                 </b>
 
                 <h3 class="is-size-4">{{ donor.display_name }}</h3>
-                <p class="is-size-5 has-text-grey">
-                  {{ donor.comment | striptags }}
+                <p class="is-size-5 has-text-grey" v-html="donor.comment ">
                 </p>
               </div>
             </div>
