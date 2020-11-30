@@ -14,8 +14,7 @@
             <p>
               Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au unit
               forțele pentru a sprijini spitalele și comunitatea în fața
-              pandemiei de coronavirus. Fiecare dintre noi are puterea de a
-              spori resursele cu care medicii salvează vieți.
+              pandemiei de coronavirus. Fiecare dintre noi are puterea de a crește resursele cu care medicii salvează vieți. Fiecare dintre noi are puterea de a dona respirațiile prețioase de care au nevoie pacienții în drumul lor spre vindecare.
             </p>
             <p>
               <b>
