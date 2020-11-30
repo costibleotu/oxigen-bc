@@ -1,6 +1,7 @@
-from rest_framework import status
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from django.utils.html import strip_tags
+from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin
 from rest_framework.response import Response
@@ -44,23 +45,28 @@ class DashboardViewSet(ViewSet):
             many=True)
 
         companies = DonorSerializer(
-            models.Donor.objects.filter(display=True, is_company=True).order_by('-order'),
+            models.Donor.objects.filter(
+                display=True, is_company=True).order_by('-order')[:5],
             many=True)
 
         quotes = QuoteSerializer(
-            models.Quote.objects.filter(display=True).order_by('order'),
+            models.Quote.objects.filter(
+                display=True).order_by('order'),
             many=True)
 
         faqs = FAQSerializer(
-            models.FAQ.objects.filter(display=True).order_by('order'),
+            models.FAQ.objects.filter(
+                display=True).order_by('order'),
             many=True)
 
         partners = PartnerSerializer(
-            models.Partner.objects.filter(display=True, partner_type='project').order_by('order'),
+            models.Partner.objects.filter(
+                display=True, partner_type='project').order_by('order'),
             many=True)
 
         media_partners = PartnerSerializer(
-            models.Partner.objects.filter(display=True, partner_type='media').order_by('order'),
+            models.Partner.objects.filter(
+                display=True, partner_type='media').order_by('order'),
             many=True)
 
         covid_stats = CovidStatSerializer(
@@ -92,7 +98,7 @@ class CampaignViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
 class DonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = FullNameDonorSerializer
     queryset = models.Donor.objects.filter(
-        display=True, is_company=False).prefetch_related('campaign').order_by('-order')
+        display=True).prefetch_related('campaign').order_by('-order')
 
     @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
