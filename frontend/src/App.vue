@@ -135,7 +135,8 @@ export default {
       active: {
         menu: false,
         navbar: false
-      }
+      },
+      navbarScrollShow: 600
     }
   },
   mounted() {
@@ -153,7 +154,7 @@ export default {
         return
       }
 
-      this.active.navbar = currentScrollPosition > 300
+      this.active.navbar = currentScrollPosition > this.navbarScrollShow
       // this.lastScrollPosition = currentScrollPosition
     }
   },

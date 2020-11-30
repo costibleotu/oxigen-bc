@@ -67,10 +67,6 @@
               </b>
             </p>
           </div>
-
-          <router-link :to="{ name: 'infomedic' }">
-            Ai nevoie de suport medical?<b-icon icon="arrow-right" />
-          </router-link>
         </div>
       </div>
 
@@ -244,7 +240,9 @@
                   v-for="(quote, index) in data.quotes"
                   :key="index"
                 >
-                  <h3 class="content has-text-weight-semibold is-size-5-touch is-size-4-desktop">
+                  <h3
+                    class="content has-text-weight-semibold is-size-5-touch is-size-4-desktop"
+                  >
                     {{ quote.comment }}
                   </h3>
 
@@ -282,6 +280,8 @@
 
       <h2>Parteneri</h2>
       <GridBoxes v-if="data" :data="data.partners" />
+
+      <br />
 
       <h2>Parteneri media</h2>
       <GridBoxes v-if="data" :data="data.media_partners" />
@@ -451,10 +451,38 @@ export default {
 .head-section {
   padding-bottom: 0;
 
-  img {
-    min-width: 120px;
-    max-width: 320px;
-    width: 60%;
+  @include tablet {
+    padding-top: 0;
+  }
+
+  .logo-big {
+    max-width: 250px;
+    margin-bottom: 40px;
+
+    @include desktop {
+      margin-bottom: 80px;
+      max-width: 320px;
+      width: 60%;
+    }
+  }
+
+  #animation-scene {
+    @include mobile {
+      width: 670px;
+      transform: translateX(-35%);
+    }
+
+    @include desktop {
+      /deep/ svg {
+        margin-right: -40px;
+      }
+    }
+  }
+
+  h2 > span {
+    @include mobile {
+      font-size: 22px;
+    }
   }
 }
 

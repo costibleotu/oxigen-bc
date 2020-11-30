@@ -7,8 +7,7 @@ import './buefy'
 import './vue-mq'
 import './assets/style/base.scss'
 
-const API_PATH = 'https://oxigen.primariatm.ro/api/'
-ApiService.init(API_PATH)
+ApiService.init(process.env.VUE_APP_ROOT_API)
 
 // filters
 
