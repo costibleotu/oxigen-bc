@@ -84,6 +84,15 @@ class QuoteSerializer(serializers.ModelSerializer):
         model = models.Quote
         exclude = ['display', 'campaign']
 
+    def to_representation(self, instance):
+        html_parser = html.parser.HTMLParser()
+        data = super().to_representation(instance)
+        if instance.comment:
+            data['comment'] = strip_tags(
+                html_parser.unescape(instance.comment))
+
+        return data
+
 
 class NeedSerializer(serializers.ModelSerializer):
 
