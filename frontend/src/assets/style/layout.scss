@@ -55,14 +55,14 @@ nav.navbar {
   }
 
   .navbar-brand,
-  .navbar-item > .button.is-large {
+  .navbar-item .button.is-large {
     opacity: 1;
     transition: opacity 0.25s;
   }
 
   &.is-inactive {
     .navbar-brand,
-    .navbar-item > .button.is-large {
+    .navbar-item .button.is-large {
       pointer-events: none;
       opacity: 0;
     }
