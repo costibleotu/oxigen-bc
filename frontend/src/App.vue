@@ -112,7 +112,9 @@
                 >
               </li>
               <li>
-                <a target="_blank" href="https://fiipregatit.ro/">https://fiipregatit.ro/</a>
+                <a target="_blank" href="https://fiipregatit.ro/"
+                  >https://fiipregatit.ro/</a
+                >
               </li>
               <li>
                 <a target="_blank" href="https://www.ctstimisoara.ro/"
@@ -123,14 +125,18 @@
           </div>
           <div class="column is-3">
             <p class="title">
-              <br>
+              <br />
             </p>
             <ul>
               <li>
-                <a target="_blank" href="https://www.dsptimis.ro/">https://www.dsptimis.ro/</a>
+                <a target="_blank" href="https://www.dsptimis.ro/"
+                  >https://www.dsptimis.ro/</a
+                >
               </li>
               <li>
-                <a target="_blank" href="https://www.cnscbt.ro/">https://www.cnscbt.ro/</a>
+                <a target="_blank" href="https://www.cnscbt.ro/"
+                  >https://www.cnscbt.ro/</a
+                >
               </li>
               <li>
                 <a target="_blank" href="https://www.ctstimisoara.ro/"
@@ -144,7 +150,11 @@
               Press Kit
             </p>
 
-            <a href="https://drive.google.com/drive/folders/1JJW_90MWmPv-wyxTaM9JMnwrxfGxKj8z?usp=sharing" class="is-size-3 has-text-primary">
+            <a
+              href="https://drive.google.com/drive/folders/1JJW_90MWmPv-wyxTaM9JMnwrxfGxKj8z?usp=sharing"
+              class="is-size-3 has-text-primary"
+              target="_blank"
+            >
               <b>Mapă materiale</b><b-icon icon="arrow-right" />
             </a>
           </div>

@@ -8,8 +8,18 @@
       <div class="columns">
         <div class="column is-8-tablet is-6-widescreen">
           <div class="content">
-            A simple act of kindness always sparks another. *Acomodam in aceasta
-            pagina si alte initiative conexe proiectului #Oxigen
+            <p>
+              A simple act of kindness always sparks another. <br>
+              *Acomodam in aceasta
+              pagina si alte initiative conexe proiectului #Oxigen
+            </p>
+
+            <p>
+              Una dintre condițiile de bază pentru viață este <a href="/">#Oxigen</a>.
+            </p>
+            <p>
+              Una dintre condițiile de bază pentru o viață este și o comunitate funcțională, care se mobilizează în situație de urgență, dar și care își exersează mușchiul colaborării în fiecare zi. Proiectul #oxigen este despre ÎMPREUNĂ, pe mai multe subiecte importante pentru comunitate și are nevoie de tine, pentru că fiecare dintre noi contează!
+            </p>
           </div>
         </div>
       </div>
