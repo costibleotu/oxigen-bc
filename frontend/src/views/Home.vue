@@ -210,7 +210,7 @@
           <div class="column is-4-widescreen">
             <h3>{{ data.campaign.companies_count }} companii</h3>
 
-            <div class="carousel-container company has-text-centered">
+            <div class="carousel-container company has-text-centered has-background-white">
               <p><b>Cele mai recente sponsorizări</b></p>
               <br /><br />
 
