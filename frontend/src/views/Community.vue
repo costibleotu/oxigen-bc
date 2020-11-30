@@ -63,7 +63,7 @@
 
                 <h3 class="is-size-4">{{ donor.display_name }}</h3>
                 <p class="is-size-5 has-text-grey">
-                  {{ donor.comment | striptags }}
+                  {{ donor.comment }}
                 </p>
               </div>
             </div>
@@ -128,18 +128,20 @@ export default {
       people: {
         data: [],
         visible: [],
-        index: 10
+        increment: 10,
+        index: 0
       },
       stories: {
         data: [],
         visible: [],
-        index: 10
+        increment: 4,
+        index: 0
       },
       companies: null
     }
   },
   mounted() {
-    ApiService.get('donors').then(response => {
+    ApiService.get('donors/').then(response => {
       this.data.donors = response
 
       this.people.data = this.data.donors.filter(e => !e.is_company)
@@ -148,11 +150,11 @@ export default {
       this.loadMore('people')
     })
 
-    ApiService.get('campaigns').then(response => {
+    ApiService.get('campaigns/').then(response => {
       this.data.campaign = response[0]
     })
 
-    ApiService.get('quotes').then(response => {
+    ApiService.get('quotes/').then(response => {
       this.stories.data = response
       this.loadMore('stories')
     })
@@ -161,8 +163,8 @@ export default {
     loadMore(type) {
       // console.log('loadItems', type)
 
+      this[type].index += this[type].increment
       this[type].visible = this[type].data.slice(0, this[type].index)
-      this[type].index += 10
     }
   }
 }
