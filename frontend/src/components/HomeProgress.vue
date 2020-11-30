@@ -1,8 +1,17 @@
 <template>
-  <div>
-    <h3 class="is-size-3">
-      <b>{{ title }}</b>
-    </h3>
+  <div class="progress-component">
+    <div class="columns is-mobile">
+      <div class="column">
+        <h3 class="is-size-3 has-text-weight-normal is-marginless">
+          {{ title }}
+        </h3>
+      </div>
+      <div class="column is-narrow">
+        <p class="is-size-3 has-text-right has-text-weight-bold progress-label">
+          {{ max }}
+        </p>
+      </div>
+    </div>
 
     <div class="progress-wrapper">
       <progress v-bind="{ value, max }" class="progress is-primary">{{
@@ -12,10 +21,6 @@
         {{ value }}
       </p>
     </div>
-
-    <p class="is-size-3 has-text-right has-text-weight-bold progress-label">
-      {{ max }}
-    </p>
   </div>
 </template>
 
@@ -44,11 +49,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.progress-label {
-  margin-top: -1rem;
-}
+.progress-component {
+  @include desktop {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 
-.progress-value {
-  padding: 7px 10px;
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .columns:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .progress-value {
+    padding: 7px 10px;
+  }
 }
 </style>

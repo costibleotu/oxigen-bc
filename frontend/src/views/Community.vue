@@ -6,7 +6,7 @@
 
         <div class="columns">
           <div class="column is-4">
-            <div class="content is-small">
+            <div class="content">
               Fiecare dintre noi are puterea de a spori resursele cu care
               medicii salvează vieți. Fiecare dintre noi are puterea de a dona
               respirațiile prețioase de care au nevoie pacienții în drumul lor
@@ -63,7 +63,7 @@
 
                 <h3 class="is-size-4">{{ donor.display_name }}</h3>
                 <p class="is-size-5 has-text-grey">
-                  {{ donor.comment }}
+                  {{ donor.comment | striptags }}
                 </p>
               </div>
             </div>
@@ -76,26 +76,26 @@
             </p>
           </div>
           <div class="column">
-            <h3 class="is-size-4" v-if="stories.data">Povesti scurte din carantina</h3>
+            <h3 class="is-size-4" v-if="stories.data">
+              Povești scurte din carantină
+            </h3>
 
             <div class="box-list">
-              <div class="box is-large" v-for="(story, index) in stories.data"
-                :key="`story-${index}`">
-                <h3>
-
-                </h3>
-
+              <div
+                class="box is-large"
+                v-for="(story, index) in stories.visible"
+                :key="`story-${index}`"
+              >
                 <div class="content">
-                  <p>{{story.comment}}</p>
+                  <p>{{ story.comment }}</p>
                 </div>
 
                 <p class="quote">
                   <b-icon icon="quote-left" />
-                  <b>{{story.name}}</b>
+                  <b>{{ story.name }}</b>
                 </p>
               </div>
             </div>
-
 
             <p
               class="has-text-centered"
@@ -154,6 +154,7 @@ export default {
 
     ApiService.get('quotes').then((response) => {
       this.stories.data = response
+      this.loadMore('stories')
     })
   },
   methods: {
@@ -180,7 +181,11 @@ export default {
     }
 
     &.is-large {
-      padding: 40px;
+      padding: 20px;
+
+      @include desktop {
+        padding: 40px;
+      }
 
       h3 {
         margin-bottom: 28px;

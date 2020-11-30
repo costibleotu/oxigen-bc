@@ -3,26 +3,25 @@
     <div class="section head-section">
       <div class="columns">
         <div class="column is-6">
-          <div class="box">@TODO: LOGO BIG <br /></div>
+          <img src="../assets/images/Logo_O2TM.svg" class="logo-big" /> <br />
           <h2>
             Solidari în fața Covid-19, donăm
             <span class="has-text-primary">#OxigenPentruTimisoara</span>
           </h2>
 
-          <div class="content is-small">
+          <div class="content">
             <br />
             <p>
-              Primăria Timișoara, ONG-uri timișorene active în comunitate,
-              voluntari și antreprenori și-au unit forțele pentru a sprijini
-              spitalele și comunitatea în fața pandemiei de coronavirus. <br />
-              Fiecare dintre noi are puterea de a spori resursele cu care
-              medicii salvează vieți. Fiecare dintre noi are puterea de a dona
-              respirațiile prețioase de care au nevoie pacienții în drumul lor
-              spre vindecare.
+              Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au unit
+              forțele pentru a sprijini spitalele și comunitatea în fața
+              pandemiei de coronavirus. Fiecare dintre noi are puterea de a
+              spori resursele cu care medicii salvează vieți.
             </p>
-            <p class="has-text-weight-bold">
-              Cu fiecare respirație suntem mai aproape de a ieși cu bine din
-              pandemie. Împreună.
+            <p>
+              <b>
+                Cu fiecare respirație suntem mai aproape de a ieși cu bine din
+                pandemie. Împreună.
+              </b>
             </p>
           </div>
 
@@ -48,22 +47,24 @@
     </div>
 
     <div class="section">
-      <h1 class="is-spaced">De ce este nevoie?</h1>
       <div class="columns">
         <div class="column is-4">
-          <div class="content is-small">
+          <h1 class="is-spaced">De ce este nevoie?</h1>
+        </div>
+        <div class="column is-6">
+          <div class="content">
             <p>
-              Oxigen pentru Timișoara își propune să vină în sprijinul
-              comunității prin prioritizarea nevoilor în mai multe etape
-              adaptate contextului pandemic în care ne aflăm.
-              <br />Astfel în prima etapă urgența este reprezentată de
-              achiziționarea de instalații de oxigen, concentratoare de oxigen
-              și pulsoximetre, extrem de necesare pentru tratarea la domiciliu,
-              sub supravegherea medicilor de familie, a pacienților infectați cu
+              Avem nevoie de cât mai multe pulsoximetre și concentratoare de
+              oxigen, extrem de necesare pentru tratarea la domiciliu, sub
+              supravegherea medicilor de familie, a pacienților infectați cu
               coronavirus, dar și pentru recuperarea ulterioară a pacienților,
-              după depășirea fazei critice. Avem nevoie de donațiile voastre
-              pentru ca aceste dispozitive medicale a ajunge la cât mai mulți
-              timișoreni.
+              după depășirea fazei critice.
+            </p>
+            <p>
+              <b>
+                Avem nevoie de donațiile voastre pentru ca aceste dispozitive
+                medicale a ajunge la cât mai mulți timișoreni!
+              </b>
             </p>
           </div>
 
@@ -71,13 +72,16 @@
             Ai nevoie de suport medical?<b-icon icon="arrow-right" />
           </router-link>
         </div>
+      </div>
 
+      <br />
+      <div class="columns">
         <div class="column" v-if="data">
-          <div class="columns is-multiline">
+          <div class="columns is-multiline columns-progress is-variable is-8">
             <div
               v-for="need in data.needs"
               :key="`need-${need.id}`"
-              class="column is-6"
+              class="column is-6-tablet is-4-desktop"
             >
               <HomeProgress
                 :title="need.name"
@@ -85,6 +89,30 @@
                 :max="need.quantity"
               />
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section is-small">
+      <div class="box">
+        <div class="columns is-centered">
+          <div
+            class="column is-11-tablet is-10-desktop is-8-fullhd has-text-left-mobile has-text-centered"
+          >
+            <h2>Ai nevoie de echipament medical?</h2>
+            <div class="content">
+              Medicul tau de familie este legatura ta cu comunitatea medicala si
+              resursele de suport disponibile. Vezi cum poti intra in posesia
+              echipamentelor medicale.
+            </div>
+
+            <router-link
+              :to="{ name: 'infomedic' }"
+              class="button is-primary is-outlined"
+            >
+              Informații medici și pacienți
+            </router-link>
           </div>
         </div>
       </div>
@@ -136,7 +164,7 @@
 
         <h2>Vrei să te implici?</h2>
 
-        <div class="content is-small">
+        <div class="content">
           Motivatie pentru publicul larg sa se implice in actiunea demarata de
           Primarie + ONGs.
         </div>
@@ -144,91 +172,95 @@
     </div>
 
     <div class="section">
-      <h1>Suntem o comunitate</h1>
-      <router-link :to="{ name: 'community' }">
-        Vezi toți donatorii<b-icon icon="arrow-right" />
-      </router-link>
+      <div class="box">
+        <h1>Suntem o comunitate</h1>
+        <router-link :to="{ name: 'community' }">
+          Vezi toți donatorii<b-icon icon="arrow-right" />
+        </router-link>
 
-      <br /><br />
+        <br /><br />
 
-      <div class="columns">
-        <div class="column is-4">
-          <div class="content is-small">
-            Fiecare dintre noi are puterea de a spori resursele cu care medicii
-            salvează vieți. Fiecare dintre noi are puterea de a dona
-            respirațiile prețioase de care au nevoie pacienții în drumul lor
-            spre vindecare.
+        <div class="columns">
+          <div class="column is-4">
+            <div class="content">
+              Fiecare dintre noi are puterea de a spori resursele cu care
+              medicii salvează vieți. Fiecare dintre noi are puterea de a dona
+              respirațiile prețioase de care au nevoie pacienții în drumul lor
+              spre vindecare.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="columns" v-if="data">
-        <div class="column is-4">
-          <h3>{{ data.campaign.companies_count }} companii</h3>
+        <br />
 
-          <div class="carousel-container company has-text-centered">
-            <p><b>Cele mai recente sponsorizări</b></p>
-            <br /><br />
+        <div class="columns is-multiline is-centered" v-if="data">
+          <div class="column is-4-widescreen">
+            <h3>{{ data.campaign.companies_count }} companii</h3>
 
-            <b-carousel
-              v-bind="{
-                autoplay: false,
-                arrowHover: false,
-                indicatorStyle: 'is-lines',
-              }"
-            >
-              <b-carousel-item
-                v-for="(company, index) in data.companies.slice(0, 5)"
-                :key="index"
+            <div class="carousel-container company has-text-centered">
+              <p><b>Cele mai recente sponsorizări</b></p>
+              <br /><br />
+
+              <b-carousel
+                v-bind="{
+                  autoplay: false,
+                  arrowHover: false,
+                  indicatorStyle: 'is-lines',
+                }"
               >
-                <figure class="image is-square">
-                  <img :src="company.logo" alt="" />
-                </figure>
+                <b-carousel-item
+                  v-for="(company, index) in data.companies.slice(0, 5)"
+                  :key="index"
+                >
+                  <figure class="image is-square">
+                    <img :src="company.logo" alt="" />
+                  </figure>
 
-                <p class="title">
-                  <b>{{ company.display_name }}</b>
-                </p>
-                <p>{{ company.amount | currency }}</p>
-              </b-carousel-item>
-            </b-carousel>
+                  <p class="title">
+                    <b>{{ company.display_name }}</b>
+                  </p>
+                  <p>{{ company.amount | currency }}</p>
+                </b-carousel-item>
+              </b-carousel>
+            </div>
+
+            <p>
+              <router-link :to="{}">
+                Model contract sponsorizare<b-icon icon="arrow-right" />
+              </router-link>
+            </p>
           </div>
-
-          <p>
-            <router-link :to="{}">
-              Model contract sponsorizare<b-icon icon="arrow-right" />
-            </router-link>
-          </p>
-        </div>
-        <div class="column">
-          <h3>{{ data.campaign.donors_count }} cetățeni</h3>
-          <div class="carousel-container quotes">
-            <b-carousel
-              v-bind="{
-                autoplay: false,
-                arrowHover: false,
-                indicatorStyle: 'is-lines',
-              }"
-            >
-              <b-carousel-item
-                v-for="(quote, index) in data.quotes"
-                :key="index"
+          <div class="column is-12-tablet is-8-widescreen">
+            <h3>{{ data.campaign.donors_count }} cetățeni</h3>
+            <div class="carousel-container quotes">
+              <b-carousel
+                v-bind="{
+                  autoplay: false,
+                  arrowHover: false,
+                  indicatorStyle: 'is-lines',
+                }"
               >
-                <h2 class="content has-text-weight-semibold is-italic">
-                  {{ quote.comment }}
-                </h2>
+                <b-carousel-item
+                  v-for="(quote, index) in data.quotes"
+                  :key="index"
+                >
+                  <h3 class="content has-text-weight-semibold is-size-5-touch is-size-4-desktop">
+                    {{ quote.comment }}
+                  </h3>
 
-                <b-icon icon="quote-left" />
-                <br />
-                <b>{{ quote.name }}</b>
-              </b-carousel-item>
-            </b-carousel>
+                  <b-icon icon="quote-left" />
+                  <br />
+                  <b>{{ quote.name }}</b>
+                </b-carousel-item>
+              </b-carousel>
+            </div>
+
+            <p class="has-text-right">
+              <router-link :to="{}">
+                Trimite un gând bun<b-icon icon="arrow-right" />
+              </router-link>
+            </p>
           </div>
-
-          <p class="has-text-right">
-            <router-link :to="{}">
-              Trimite un gând bun<b-icon icon="arrow-right" />
-            </router-link>
-          </p>
         </div>
       </div>
     </div>
@@ -237,8 +269,8 @@
       <h1>Despre noi</h1>
 
       <div class="columns">
-        <div class="column is-4">
-          <div class="content is-small">
+        <div class="column is-10-tablet is-4-desktop">
+          <div class="content">
             Primăria Timișoara, ONG-uri timișorene active în comunitate,
             voluntari și antreprenori și-au unit forțele pentru sprijini
             spitalele și comunitatea în fața pandemiei de coronavirus.
@@ -261,7 +293,7 @@
         <br />
 
         <div class="columns is-gapless is-centered">
-          <div class="column is-8">
+          <div class="column is-11-tablet is-8-desktop">
             <HomeFAQ v-if="data" :data="data.faqs" />
           </div>
         </div>
@@ -273,7 +305,7 @@
 
       <div class="columns">
         <div class="column is-4">
-          <div class="content is-small">
+          <div class="content">
             Alte campanii similare in lupta cu COVID-19.
           </div>
         </div>
@@ -286,7 +318,7 @@
               Donează sânge
             </h1>
 
-            <div class="content is-small">
+            <div class="content">
               Primăria Timișoara, ONG-uri timișorene active în comunitate,
               voluntari și antreprenori și-au unit forțele pentru sprijini
               spitalele și comunitatea în fața pandemiei de coronavirus.
@@ -306,7 +338,7 @@
               Donează plasmă
             </h1>
 
-            <div class="content is-small">
+            <div class="content">
               Plasma este o șansă la viață pentru bolnavii cu forme grave de
               Covid-19. Trei orașe — Cluj, Sibiu și Timișoara — și-au unit
               eforturile pentru ca anul acesta, de Crăciun, să oferim cel mai
@@ -392,19 +424,23 @@ export default {
     },
 
     initAnimation() {
-      window.addEventListener('load', () => {
-        oxigen_animation.init({
-          element: document.querySelector('#animation-scene'),
-          total_necesar: this.data.campaign.target,
-        })
-        oxigen_animation.update({
-          total_strans: this.data.campaign.amount_collected,
-          donatori: this.data.campaign.donations,
-        })
-        oxigen_animation.animate({
-          suma: 2,
-          nume: 'Alex',
-        })
+      oxigen_animation.init({
+        element: document.querySelector('#animation-scene'),
+        total_necesar: this.data.campaign.target,
+      })
+      oxigen_animation.update({
+        total_strans: this.data.campaign.amount_collected,
+        donatori: this.data.campaign.donations,
+      })
+
+      ApiService.get('named-donors/').then((response) => {
+        oxigen_animation.animate(
+          response
+            .filter((e) => !e.is_company)
+            .map((e) => {
+              return { nume: e.display_name, suma: e.amount }
+            })
+        )
       })
     },
   },
@@ -414,15 +450,26 @@ export default {
 <style lang="scss" scoped>
 .head-section {
   padding-bottom: 0;
+
+  img {
+    min-width: 120px;
+    max-width: 320px;
+    width: 60%;
+  }
 }
 
 .button-pulse {
-  position: relative;
   width: 90px;
   height: 90px;
-  float: right;
-  left: -80px;
   animation: pulse 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
+
+  margin-bottom: 30px;
+
+  @include desktop {
+    float: right;
+    left: -80px;
+    margin-bottom: 0;
+  }
 
   .icon {
     transform: rotate(-45deg);
@@ -450,6 +497,11 @@ export default {
   margin-top: 10px;
 }
 
-nav.navbar {
+.columns-progress {
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
 </style>

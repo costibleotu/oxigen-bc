@@ -4,7 +4,11 @@ h1 {
   font-weight: bold;
 
   &.is-spaced {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
   }
 }
 

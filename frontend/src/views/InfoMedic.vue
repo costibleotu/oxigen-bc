@@ -5,7 +5,7 @@
 
       <div class="columns">
         <div class="column is-4">
-          <div class="content is-small">
+          <div class="content">
             Medicul tau de familie este legatura ta cu comunitatea medicala si
             resursele de suport disponibile. Supraveghetorul parcursului bolii
             fiecarui pacient din gestiunea sa, poate recunoaste momentul in care
@@ -93,7 +93,7 @@
 export default {
   name: 'InfoMedic',
   components: {},
-  mounted() {},
+  mounted() {}
 }
 </script>
 
@@ -106,6 +106,8 @@ export default {
   color: $white;
   position: relative;
   padding: 29px 12px 32px;
+  margin-left: 0;
+  margin-right: 0;
 
   &:after {
     position: absolute;

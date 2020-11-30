@@ -26,6 +26,22 @@
   .icon.sort-icon.is-invisible {
     display: none;
   }
+
+  .table-wrapper.has-mobile-cards .table {
+    tr {
+      // height: 100px;
+      // overflow: hidden;
+    }
+
+    td {
+      padding: 10px 15px;
+      font-size: $size-5;
+
+      &:first-child:before {
+        opacity: 0;
+      }
+    }
+  }
 }
 
 .carousel {
@@ -48,7 +64,9 @@
         border-color: #e2e2e2;
 
         &.is-lines {
-          width: 48px;
+          @include fullhd {
+            width: 48px;
+          }
         }
       }
 

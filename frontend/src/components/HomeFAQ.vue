@@ -13,8 +13,7 @@
         <span>{{ question.question }}</span>
       </a>
 
-      <div class="content" v-html="question.answer">
-      </div>
+      <div class="content" v-html="question.answer"></div>
     </b-collapse>
   </div>
 </template>
@@ -41,9 +40,21 @@ export default {
 
   .question-header {
     color: $black;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
 
     .icon {
-      margin-right: 30px;
+      margin-left: 15px;
+
+      @include tablet {
+        margin-left: 0;
+        margin-right: 30px;
+      }
     }
 
     &:hover {
@@ -52,7 +63,11 @@ export default {
   }
 
   .content {
-    padding: 12px 12px 0 50px;
+    padding: 12px 12px 0 0px;
+
+    @include tablet {
+      padding: 12px 12px 0 50px;
+    }
   }
 }
 </style>

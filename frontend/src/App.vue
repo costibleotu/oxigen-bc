@@ -4,14 +4,10 @@
       class="navbar is-mobile is-fixed-top"
       :class="{ 'is-inactive': $route.name == 'home' && !active.navbar }"
     >
-      <div class="container">
+      <div class="container is-fluid">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
-            <h1><span class="has-text-primary is-size-2">O2</span>TM</h1>
-            <img
-              style="display: none"
-              src="https://bulma.io/images/bulma-logo.png"
-            />
+            <img src="./assets/images/Logo_short_O2TM.svg" />
           </a>
         </div>
 
@@ -37,10 +33,7 @@
                     </router-link>
                   </li>
                   <li>
-                    <router-link
-                      :to="{ name: 'helping' }"
-                      class="navbar-item"
-                    >
+                    <router-link :to="{ name: 'helping' }" class="navbar-item">
                       Vrei să te implici?
                     </router-link>
                   </li>
@@ -59,9 +52,9 @@
             <div class="navbar-item">
               <a
                 href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
-                class="button is-primary is-large"
+                class="button is-primary is-large is-size-6-mobile"
               >
-                Donează acum
+                <div>Donează <span class="is-hidden-mobile">acum</span></div>
               </a>
             </div>
             <div class="navbar-item">
@@ -165,7 +158,7 @@ export default {
     }
   },
   watch: {
-    '$route'() {
+    $route() {
       this.active.menu = false
     }
   },

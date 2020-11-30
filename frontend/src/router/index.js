@@ -14,44 +14,44 @@ const routes = [
     name: 'home',
     component: Home,
     meta: {
-      title: '',
-    },
+      title: ''
+    }
   },
   {
-    path: '/ai-nevoie-de-echipament-medical',
+    path: '/echipament-medical',
     name: 'infomedic',
     component: InfoMedic,
     meta: {
-      title: 'Informații medici și pacienți',
-    },
+      title: 'Informații medici și pacienți'
+    }
   },
   {
     path: '/comunitate',
     name: 'community',
     component: Community,
     meta: {
-      title: 'Comunitate',
-    },
+      title: 'Comunitate'
+    }
   },
   {
-    path: '/implică-te',
+    path: '/implica-te',
     name: 'helping',
     component: Helping,
     meta: {
-      title: 'Vrei să te implici?',
-    },
-  },
+      title: 'Vrei să te implici?'
+    }
+  }
 ]
 
 const router = new VueRouter({
-  routes,
+  routes
 })
 
 router.beforeEach((to, from, next) => {
   const nearestWithTitle = to.matched
     .slice()
     .reverse()
-    .find((r) => r.meta && r.meta.title)
+    .find(r => r.meta && r.meta.title)
 
   document.title =
     'Oxigen pentru Timișoara - ' +

@@ -3,12 +3,11 @@
     <div class="section">
       <h1>
         Vrei să te implici?
-        <span class="has-text-grey-lighter">/ Salvează o viață</span>
       </h1>
 
       <div class="columns">
-        <div class="column is-4">
-          <div class="content is-small">
+        <div class="column is-8-tablet is-6-widescreen">
+          <div class="content">
             A simple act of kindness always sparks another. *Acomodam in aceasta
             pagina si alte initiative conexe proiectului #Oxigen
           </div>
@@ -19,7 +18,10 @@
 
       <div class="columns is-multiline">
         <div class="column is-6">
-          <a href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/" class="box">
+          <a
+            href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
+            class="box"
+          >
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -32,7 +34,10 @@
           </a>
         </div>
         <div class="column is-6">
-          <a href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf" class="box">
+          <a
+            href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
+            class="box"
+          >
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -45,7 +50,10 @@
           </a>
         </div>
         <div class="column is-6">
-          <a href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf" class="box">
+          <a
+            href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
+            class="box"
+          >
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
@@ -75,7 +83,8 @@
 
     <div class="has-text-centered">
       <b class="is-size-4 has-text-grey">Respirăm același #oxigen</b>
-      <div class="box">@TODO: LOGO</div>
+      <br><br>
+      <img src="../assets/images/Logo_short_O2TM.svg" />
     </div>
 
     <br /><br />
@@ -87,7 +96,7 @@
 export default {
   name: 'Volunteering',
   components: {},
-  mounted() {},
+  mounted() {}
 }
 </script>
 

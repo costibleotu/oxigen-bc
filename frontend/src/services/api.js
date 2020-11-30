@@ -4,9 +4,7 @@ const ApiService = {
   init(baseURL) {
     axios.defaults.baseURL = baseURL
 
-    axios.interceptors.response.use(
-      response => response.data
-    )
+    axios.interceptors.response.use(response => response.data)
   },
 
   get(resource) {

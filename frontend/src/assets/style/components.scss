@@ -53,8 +53,20 @@ a {
     .carousel-item {
       padding: 0 48px 40px;
 
+      @include tablet {
+        padding: 0 48px 40px;
+      }
+
       .title {
         margin: 30px 0 15px;
+      }
+
+      margin: 0 auto;
+      max-width: 300px;
+      max-height: 390px;
+      @include tablet {
+        max-width: 230px;
+        max-height: 300px;
       }
     }
   }
@@ -64,19 +76,44 @@ a {
     color: $white;
     padding: 40px 0;
 
+    @include mobile {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
     .carousel-arrow {
       .icon {
         color: $white;
+
+        @include mobile {
+          &.has-icons-left {
+            top: 0;
+            left: 40%;
+            transform: none;
+          }
+
+          &.has-icons-right {
+            top: 0;
+            right: 40%;
+            transform: none;
+          }
+        }
       }
     }
 
     .carousel-indicator {
-      justify-content: flex-start;
-      padding-left: 68px;
+      @include tablet {
+        justify-content: flex-start;
+        padding-left: 68px;
+      }
     }
 
     .carousel-item {
-      padding: 32px 68px 40px;
+      padding: 60px 15px 40px;
+
+      @include tablet {
+        padding: 32px 68px 40px;
+      }
 
       .icon {
         opacity: 0.35;

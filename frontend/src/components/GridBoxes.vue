@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-mobile is-variable is-3 is-multiline grid-container">
     <div
-      class="column is-6-mobile is-4-tablet is-3-desktop is-2-widescreen"
+      class="column is-6-mobile is-3-tablet is-3-desktop is-2-widescreen"
       v-for="(item, index) in data"
       :key="`grid-${item.id || index}`"
     >
@@ -13,7 +13,6 @@
         <b class="title">
           {{ item.name || item.display_name }}
         </b>
-
       </a>
       <p v-if="item.amount">{{ item.amount | currency }}</p>
     </div>

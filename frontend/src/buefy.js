@@ -8,7 +8,7 @@ import {
   faArrowUp,
   faQuoteLeft,
   faQuestionCircle,
-  faTimes,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
 
 import {

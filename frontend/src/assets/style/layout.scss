@@ -1,16 +1,37 @@
+.container.is-fluid {
+  max-width: 1366px !important;
+}
+
 nav.navbar {
+  .container.is-fluid {
+    @include mobile {
+      padding-left: 27px;
+      padding-right: 27px;
+    }
+  }
+
   .navbar-brand {
     img {
-      height: 40px;
+      height: 30px;
+
+      @include tablet {
+        height: 40px;
+      }
     }
   }
 
   .navbar-item {
-    padding: 0.5rem 10px;
+    padding: 5px;
+
+    @include desktop {
+      padding: 0.5rem 10px;
+    }
   }
 
   .navbar-menu {
-    padding-right: 40px;
+    .button.is-large {
+      font-size: $size-4;
+    }
   }
 
   .button.is-menu {
@@ -50,15 +71,20 @@ nav.navbar {
 
 #menu {
   position: absolute;
-  width: 50%;
   background-color: $red;
   height: 100vh;
   right: 0;
   top: 0;
+  left: 0;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include tablet {
+    left: auto;
+    width: 50%;
+  }
 
   .navbar-item {
     color: $white;
@@ -80,8 +106,7 @@ nav.navbar {
   overflow: hidden;
 
   @include mobile {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 20px 15px;
   }
 
   h1,
@@ -94,19 +119,25 @@ nav.navbar {
     margin-top: -10px;
   }
 
-  .box {
+  > .box {
     .button.is-large {
       margin-top: 40px;
     }
 
     @include mobile {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 30px 15px;
+      margin-left: -15px;
+      margin-right: -15px;
     }
   }
 
   a {
     font-weight: $weight-bold;
+  }
+
+  &.is-small {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
