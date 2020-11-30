@@ -26,12 +26,17 @@
           </div>
 
           <div class="buttons">
-            <a
-              href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
-              class="button is-primary"
+            <b-tooltip
+              label="Vei fi redirecționat către site-ul <b>Timotion</b>, care pune la dispoziție modalități rapide de donație"
+              position="is-top"
             >
-              Donează acum
-            </a>
+              <a
+                href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
+                class="button is-primary"
+              >
+                Donează acum
+              </a>
+            </b-tooltip>
             <router-link
               :to="{ name: 'infomedic' }"
               class="button is-primary is-outlined"
@@ -47,7 +52,7 @@
     </div>
 
     <div class="section">
-      <div class="columns">
+      <div class="columns is-variable is-8">
         <div class="column is-4">
           <h1 class="is-spaced">De ce este nevoie?</h1>
         </div>
@@ -201,7 +206,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines',
+                  indicatorStyle: 'is-lines'
                 }"
               >
                 <b-carousel-item
@@ -209,7 +214,8 @@
                   :key="index"
                 >
                   <figure class="image is-square">
-                    <img :src="company.logo" alt="" />
+                    <img :src="company.logo" v-if="company.logo" />
+                    <img src="../assets/images/Placeholder_Sponsor.png" v-else />
                   </figure>
 
                   <p class="title">
@@ -233,7 +239,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines',
+                  indicatorStyle: 'is-lines'
                 }"
               >
                 <b-carousel-item
@@ -379,44 +385,47 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare',
+            label: 'Valoare'
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achizitie',
             centered: true,
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold',
+            cellClass: 'has-text-success has-text-weight-bold'
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold',
-          },
-        ],
-      },
+            cellClass: 'has-text-primary has-text-weight-bold'
+          }
+        ]
+      }
     }
   },
   mounted() {
     this.getData()
   },
+  beforeDestroy() {
+    oxigen_animation.stop()
+  },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then((response) => {
+      ApiService.get('dashboard/').then(response => {
         this.data = response
         this.initAnimation()
       })
@@ -425,24 +434,24 @@ export default {
     initAnimation() {
       oxigen_animation.init({
         element: document.querySelector('#animation-scene'),
-        total_necesar: this.data.campaign.target,
+        total_necesar: this.data.campaign.target
       })
       oxigen_animation.update({
         total_strans: this.data.campaign.amount_collected,
-        donatori: this.data.campaign.donations,
+        donatori: this.data.campaign.donations
       })
 
-      ApiService.get('named-donors/').then((response) => {
+      ApiService.get('named-donors/').then(response => {
         oxigen_animation.animate(
           response
-            .filter((e) => !e.is_company)
-            .map((e) => {
+            .filter(e => !e.is_company)
+            .map(e => {
               return { nume: e.display_name, suma: e.amount }
             })
         )
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

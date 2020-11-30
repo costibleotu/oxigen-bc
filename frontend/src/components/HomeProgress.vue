@@ -1,13 +1,13 @@
 <template>
   <div class="progress-component">
-    <div class="columns is-mobile">
+    <div class="columns is-mobile is-variable">
       <div class="column">
-        <h3 class="is-size-3 has-text-weight-normal is-marginless">
+        <p class="is-size-4">
           {{ title }}
-        </h3>
+        </p>
       </div>
       <div class="column is-narrow">
-        <p class="is-size-3 has-text-right has-text-weight-bold progress-label">
+        <p class="is-size-4 has-text-right has-text-weight-bold">
           {{ max }}
         </p>
       </div>
@@ -53,10 +53,6 @@ export default {
   @include desktop {
     padding-top: 15px;
     padding-bottom: 15px;
-  }
-
-  h3 {
-    margin-bottom: 0;
   }
 
   .columns:not(:last-child) {

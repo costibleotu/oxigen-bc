@@ -6245,9 +6245,9 @@ osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-"oxigen-animation@git+https://github.com/andreipfeiffer/oxigen-animation.git":
+"oxigen-animation@git+https://github.com/andreipfeiffer/oxigen-animation.git#f69365d":
   version "1.0.0"
-  resolved "git+https://github.com/andreipfeiffer/oxigen-animation.git#0b65bd20fdfaf1acfe71fdd0c3efe7a33ec9780d"
+  resolved "git+https://github.com/andreipfeiffer/oxigen-animation.git#f69365d4d42b89de716116841eee7c94fb9c1b0f"
   dependencies:
     animejs "^3.2.1"
 

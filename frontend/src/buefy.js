@@ -39,7 +39,8 @@ import {
   Icon,
   Progress,
   Table,
-  Toast
+  Toast,
+  Tooltip
 } from 'buefy'
 
 // Components
@@ -50,6 +51,7 @@ Vue.use(Icon)
 Vue.use(Progress)
 Vue.use(Table)
 Vue.use(Toast)
+Vue.use(Tooltip)
 
 ConfigProgrammatic.setOptions({
   defaultTrapFocus: true,

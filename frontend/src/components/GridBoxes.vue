@@ -7,7 +7,8 @@
     >
       <a :href="item.link" target="_blank">
         <figure class="image is-square">
-          <img :src="item.logo" alt="" />
+          <img :src="item.logo" v-if="item.logo" />
+          <img src="../assets/images/Placeholder_Sponsor.png" v-else />
         </figure>
 
         <b class="title">
