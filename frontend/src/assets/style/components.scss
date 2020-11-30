@@ -130,8 +130,16 @@ a {
 
 figure.image {
   border: 1px solid $grey-lighter;
+  transition: border-color .15s;
+  overflow: hidden;
+
   img {
     object-fit: cover;
+    border: 0;
     background: $background;
   }
+}
+
+a:hover figure.image {
+  border-color: $primary;
 }
