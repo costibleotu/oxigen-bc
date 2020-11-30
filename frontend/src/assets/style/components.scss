@@ -44,10 +44,12 @@ a {
         color: $grey-light;
 
         &.has-icons-left {
+          top: 25%;
           left: 18px;
         }
 
         &.has-icons-right {
+          top: 25%;
           right: 18px;
         }
       }
