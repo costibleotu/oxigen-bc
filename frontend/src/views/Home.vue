@@ -220,7 +220,8 @@
 
               <b-carousel
                 v-bind="{
-                  autoplay: false,
+                  interval: 2230,
+                  pauseInfo: false,
                   arrowHover: false,
                   indicatorStyle: 'is-lines'
                 }"

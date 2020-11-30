@@ -142,38 +142,38 @@ export default {
       data: {
         donors: null,
         campaign: null,
-        quotes: null,
+        quotes: null
       },
       people: {
         data: [],
         visible: [],
         increment: 10,
-        index: 0,
+        index: 0
       },
       stories: {
         data: [],
         visible: [],
         increment: 4,
-        index: 0,
+        index: 0
       },
-      companies: null,
+      companies: null
     }
   },
   mounted() {
-    ApiService.get('donors/').then((response) => {
+    ApiService.get('donors/').then(response => {
       this.data.donors = response
 
-      this.people.data = this.data.donors.filter((e) => !e.is_company)
-      this.companies = this.data.donors.filter((e) => e.is_company)
+      this.people.data = this.data.donors.filter(e => !e.is_company)
+      this.companies = this.data.donors.filter(e => e.is_company)
 
       this.loadMore('people')
     })
 
-    ApiService.get('campaigns/').then((response) => {
+    ApiService.get('campaigns/').then(response => {
       this.data.campaign = response[0]
     })
 
-    ApiService.get('quotes/').then((response) => {
+    ApiService.get('quotes/').then(response => {
       this.stories.data = response
       this.loadMore('stories')
     })
@@ -182,8 +182,8 @@ export default {
     loadMore(type) {
       this[type].index += this[type].increment
       this[type].visible = this[type].data.slice(0, this[type].index)
-    },
-  },
+    }
+  }
 }
 </script>
 
