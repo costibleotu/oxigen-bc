@@ -139,6 +139,10 @@ nav.navbar {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  .columns.is-gapless:first-child {
+    margin-bottom: 0;
+  }
 }
 
 footer.footer {

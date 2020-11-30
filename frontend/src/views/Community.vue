@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container" v-if="data.campaign">
+    <div class="container">
       <div class="section">
         <h1>Suntem o comunitate</h1>
 
@@ -15,18 +15,29 @@
           </div>
         </div>
 
-        <h2>
-          <span class="has-text-primary">{{
-            data.campaign.companies_count
-          }}</span>
-          companii susțin cauza
-        </h2>
-        <h2>
-          <span class="has-text-primary">{{
-            data.campaign.companies_sum | currency
-          }}</span>
-          donați
-        </h2>
+        <template v-if="data.campaign">
+          <div class="columns is-gapless">
+            <div class="column">
+              <h2>
+                <span class="has-text-primary">{{
+                  data.campaign.companies_count
+                }}</span>
+                de companii susțin cauza
+              </h2>
+              <h2>
+                <span class="has-text-primary">{{
+                  data.campaign.companies_sum | currency
+                }}</span>
+                donați
+              </h2>
+            </div>
+            <div class="column is-narrow">
+              <a href="#">
+                Contract de sponsorizare <b-icon icon="arrow-right" />
+              </a>
+            </div>
+          </div>
+        </template>
 
         <GridBoxes v-if="data.donors" :data="companies" />
       </div>
@@ -75,9 +86,18 @@
             </p>
           </div>
           <div class="column">
-            <h3 class="is-size-4" v-if="stories.data">
-              Povești scurte din carantină
-            </h3>
+            <div class="columns is-gapless">
+              <div class="column">
+                <h3 class="is-size-4" v-if="stories.data">
+                  Povești scurte din carantină
+                </h3>
+              </div>
+              <div class="column is-narrow">
+                <a href="#">
+                  Trimite un gând bun <b-icon icon="arrow-right" />
+                </a>
+              </div>
+            </div>
 
             <div class="box-list">
               <div
@@ -122,38 +142,38 @@ export default {
       data: {
         donors: null,
         campaign: null,
-        quotes: null
+        quotes: null,
       },
       people: {
         data: [],
         visible: [],
         increment: 10,
-        index: 0
+        index: 0,
       },
       stories: {
         data: [],
         visible: [],
         increment: 4,
-        index: 0
+        index: 0,
       },
-      companies: null
+      companies: null,
     }
   },
   mounted() {
-    ApiService.get('donors/').then(response => {
+    ApiService.get('donors/').then((response) => {
       this.data.donors = response
 
-      this.people.data = this.data.donors.filter(e => !e.is_company)
-      this.companies = this.data.donors.filter(e => e.is_company)
+      this.people.data = this.data.donors.filter((e) => !e.is_company)
+      this.companies = this.data.donors.filter((e) => e.is_company)
 
       this.loadMore('people')
     })
 
-    ApiService.get('campaigns/').then(response => {
+    ApiService.get('campaigns/').then((response) => {
       this.data.campaign = response[0]
     })
 
-    ApiService.get('quotes/').then(response => {
+    ApiService.get('quotes/').then((response) => {
       this.stories.data = response
       this.loadMore('stories')
     })
@@ -162,8 +182,8 @@ export default {
     loadMore(type) {
       this[type].index += this[type].increment
       this[type].visible = this[type].data.slice(0, this[type].index)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -184,12 +184,14 @@
 
     <div class="section">
       <div class="box">
-        <h1>Suntem o comunitate</h1>
-        <router-link :to="{ name: 'community' }">
-          Vezi toți donatorii<b-icon icon="arrow-right" />
-        </router-link>
-
-        <br /><br />
+        <div class="columns">
+          <div class="column"><h1>Suntem o comunitate</h1></div>
+          <div class="column is-narrow">
+            <router-link :to="{ name: 'community' }">
+              Vezi toți donatorii<b-icon icon="arrow-right" />
+            </router-link>
+          </div>
+        </div>
 
         <div class="columns">
           <div class="column is-4">
@@ -216,7 +218,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines'
+                  indicatorStyle: 'is-lines',
                 }"
               >
                 <b-carousel-item
@@ -240,9 +242,9 @@
             </div>
 
             <p>
-              <router-link :to="{}">
+              <a href="#">
                 Model contract sponsorizare<b-icon icon="arrow-right" />
-              </router-link>
+              </a>
             </p>
           </div>
           <div class="column is-12-tablet is-8-widescreen">
@@ -252,7 +254,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines'
+                  indicatorStyle: 'is-lines',
                 }"
               >
                 <b-carousel-item
@@ -398,36 +400,36 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold'
+            cellClass: 'has-text-weight-bold',
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare'
+            label: 'Valoare',
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achizitie',
             centered: true,
-            cellClass: 'has-text-weight-bold'
+            cellClass: 'has-text-weight-bold',
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold'
+            cellClass: 'has-text-success has-text-weight-bold',
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold'
-          }
-        ]
-      }
+            cellClass: 'has-text-primary has-text-weight-bold',
+          },
+        ],
+      },
     }
   },
   mounted() {
@@ -438,7 +440,7 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then(response => {
+      ApiService.get('dashboard/').then((response) => {
         this.data = response
         this.initAnimation()
       })
@@ -447,24 +449,24 @@ export default {
     initAnimation() {
       oxigen_animation.init({
         element: document.querySelector('#animation-scene'),
-        total_necesar: this.data.campaign.target
+        total_necesar: this.data.campaign.target,
       })
       oxigen_animation.update({
         total_strans: this.data.campaign.amount_collected,
-        donatori: this.data.campaign.donations
+        donatori: this.data.campaign.donations,
       })
 
-      ApiService.get('named-donors/').then(response => {
+      ApiService.get('named-donors/').then((response) => {
         oxigen_animation.animate(
           response
-            .filter(e => !e.is_company)
-            .map(e => {
+            .filter((e) => !e.is_company)
+            .map((e) => {
               return { nume: e.display_name, suma: e.amount }
             })
         )
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
