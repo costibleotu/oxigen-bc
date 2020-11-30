@@ -87,7 +87,7 @@
                 :key="`story-${index}`"
               >
                 <div class="content">
-                  <p>{{ story.comment }}</p>
+                  <p v-html="story.comment"></p>
                 </div>
 
                 <p class="quote">
@@ -161,8 +161,6 @@ export default {
   },
   methods: {
     loadMore(type) {
-      // console.log('loadItems', type)
-
       this[type].index += this[type].increment
       this[type].visible = this[type].data.slice(0, this[type].index)
     }

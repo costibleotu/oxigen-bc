@@ -201,7 +201,7 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines'
+                  indicatorStyle: 'is-lines',
                 }"
               >
                 <b-carousel-item
@@ -233,18 +233,17 @@
                 v-bind="{
                   autoplay: false,
                   arrowHover: false,
-                  indicatorStyle: 'is-lines'
+                  indicatorStyle: 'is-lines',
                 }"
               >
                 <b-carousel-item
                   v-for="(quote, index) in data.quotes"
                   :key="index"
                 >
-                  <h3
+                  <p
                     class="content has-text-weight-semibold is-size-5-touch is-size-4-desktop"
-                  >
-                    {{ quote.comment }}
-                  </h3>
+                    v-html="quote.comment"
+                  ></p>
 
                   <b-icon icon="quote-left" />
                   <br />
@@ -380,36 +379,36 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold'
+            cellClass: 'has-text-weight-bold',
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare'
+            label: 'Valoare',
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achizitie',
             centered: true,
-            cellClass: 'has-text-weight-bold'
+            cellClass: 'has-text-weight-bold',
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold'
+            cellClass: 'has-text-success has-text-weight-bold',
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold'
-          }
-        ]
-      }
+            cellClass: 'has-text-primary has-text-weight-bold',
+          },
+        ],
+      },
     }
   },
   mounted() {
@@ -417,7 +416,7 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then(response => {
+      ApiService.get('dashboard/').then((response) => {
         this.data = response
         this.initAnimation()
       })
@@ -426,24 +425,24 @@ export default {
     initAnimation() {
       oxigen_animation.init({
         element: document.querySelector('#animation-scene'),
-        total_necesar: this.data.campaign.target
+        total_necesar: this.data.campaign.target,
       })
       oxigen_animation.update({
         total_strans: this.data.campaign.amount_collected,
-        donatori: this.data.campaign.donations
+        donatori: this.data.campaign.donations,
       })
 
-      ApiService.get('named-donors/').then(response => {
+      ApiService.get('named-donors/').then((response) => {
         oxigen_animation.animate(
           response
-            .filter(e => !e.is_company)
-            .map(e => {
+            .filter((e) => !e.is_company)
+            .map((e) => {
               return { nume: e.display_name, suma: e.amount }
             })
         )
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
