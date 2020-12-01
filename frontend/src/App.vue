@@ -103,40 +103,43 @@
     <div class="container">
       <footer class="footer">
         <div class="columns">
-          <div class="column is-3">
+          <div class="column is-4">
             <p class="title">
               Alte resurse
             </p>
             <ul>
               <li>
                 <a target="_blank" href="https://covid19.primariatm.ro"
-                  >covid19.primariatm.ro</a
+                  >Situația COVID-19 în Timișoara</a
                 >
               </li>
               <li>
                 <a target="_blank" href="https://fiipregatit.ro/"
-                  >fiipregatit.ro</a
+                  >Ghid situații de urgență</a
                 >
               </li>
               <li>
                 <a target="_blank" href="https://www.ctstimisoara.ro/"
-                  >ctstimisoara.ro</a
+                  >Centrul regional de transfuzie sanguină</a
                 >
               </li>
             </ul>
           </div>
-          <div class="column is-3">
+          <div class="column is-4">
             <p class="title">
               <br />
             </p>
             <ul>
               <li>
                 <a target="_blank" href="https://www.dsptimis.ro/"
-                  >dsptimis.ro</a
-                >
+                  >Direcţia de Sănătate Publică Timiş
+                </a>
               </li>
               <li>
-                <a target="_blank" href="https://www.cnscbt.ro/">cnscbt.ro</a>
+                <a target="_blank" href="https://www.cnscbt.ro/"
+                  >Centrul National de Supraveghere si Control al Bolilor
+                  Transmisibile</a
+                >
               </li>
             </ul>
           </div>
