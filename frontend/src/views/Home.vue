@@ -81,7 +81,7 @@
               <p>
                 <b>
                   Avem nevoie de donațiile voastre pentru ca aceste dispozitive
-                  medicale a ajunge la cât mai mulți timișoreni!
+                  medicale să ajungă la cât mai mulți timișoreni!
                 </b>
               </p>
             </div>
