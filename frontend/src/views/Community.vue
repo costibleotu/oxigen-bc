@@ -160,6 +160,8 @@ export default {
     }
   },
   mounted() {
+    this.$emit('loading', true)
+
     ApiService.get('donors/').then(response => {
       this.data.donors = response
 
@@ -167,6 +169,7 @@ export default {
       this.companies = this.data.donors.filter(e => e.is_company)
 
       this.loadMore('people')
+      this.$emit('loading', false)
     })
 
     ApiService.get('campaigns/').then(response => {

@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <b-loading :is-full-page="true" v-model="loading"></b-loading>
+
     <nav
       class="navbar is-mobile is-fixed-top"
       :class="{ 'is-inactive': $route.name == 'home' && !active.navbar }"
@@ -95,7 +97,7 @@
     </nav>
 
     <div>
-      <router-view />
+      <router-view @loading="loading = $event" />
     </div>
 
     <div class="container">
@@ -134,9 +136,7 @@
                 >
               </li>
               <li>
-                <a target="_blank" href="https://www.cnscbt.ro/"
-                  >cnscbt.ro</a
-                >
+                <a target="_blank" href="https://www.cnscbt.ro/">cnscbt.ro</a>
               </li>
             </ul>
           </div>
@@ -176,7 +176,8 @@ export default {
         menu: false,
         navbar: false
       },
-      navbarScrollShow: 600
+      navbarScrollShow: 600,
+      loading: false
     }
   },
   mounted() {

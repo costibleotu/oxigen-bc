@@ -9,13 +9,20 @@
         <div class="column is-8-tablet is-6-widescreen">
           <div class="content">
             <p>
-              O scânteie de generozitate generează întotdeauna încă una și încă una. Găzduim pe această pagină și alte inițiative conexe proiectului Oxigen Pentru Timișoara.
+              O scânteie de generozitate generează întotdeauna încă una și încă
+              una. Găzduim pe această pagină și alte inițiative conexe
+              proiectului Oxigen Pentru Timișoara.
             </p>
             <p>
               Una dintre condițiile de bază pentru viață este oxigenul.
             </p>
             <p>
-              Astfel construim o comunitate funcțională, care se mobilizează în situație de urgență, dar și care își exersează mușchiul colaborării în fiecare zi. Proiectul Oxigen pentru Timișoara este ne aduce împreună, pe mai multe subiecte importante pentru comunitate și are nevoie de tine, pentru că fiecare dintre noi este valoros!
+              Astfel construim o comunitate funcțională, care se mobilizează în
+              situație de urgență, dar și care își exersează mușchiul
+              colaborării în fiecare zi. Proiectul Oxigen pentru Timișoara este
+              ne aduce împreună, pe mai multe subiecte importante pentru
+              comunitate și are nevoie de tine, pentru că fiecare dintre noi
+              este valoros!
             </p>
           </div>
         </div>
@@ -109,7 +116,7 @@
 export default {
   name: 'Volunteering',
   components: {},
-  mounted() {},
+  mounted() {}
 }
 </script>
 

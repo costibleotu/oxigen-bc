@@ -72,11 +72,18 @@
           <div class="column is-6">
             <div class="content">
               <p>
-                Pulsoximetrele și concentratoarele de oxigen sunt extrem de necesare în monitorizarea și tratamentul pacienților Covid. Atunci când bolnavii cu cazuri medii sunt tratați acasă (pentru degrevarea spitalelor), iar cei externați sunt în perioada de convalescență, este esențial accesul la pulsoximetre și concentratoare de oxigen mobile, la cererea medicului de familie.
+                Pulsoximetrele și concentratoarele de oxigen sunt extrem de
+                necesare în monitorizarea și tratamentul pacienților Covid.
+                Atunci când bolnavii cu cazuri medii sunt tratați acasă (pentru
+                degrevarea spitalelor), iar cei externați sunt în perioada de
+                convalescență, este esențial accesul la pulsoximetre și
+                concentratoare de oxigen mobile, la cererea medicului de
+                familie.
               </p>
               <p>
                 <b>
-                  Acest serviciu se poate dezvolta doar cu susținerea și implicarea comunității.
+                  Acest serviciu se poate dezvolta doar cu susținerea și
+                  implicarea comunității.
                 </b>
               </p>
             </div>
@@ -174,7 +181,11 @@
           <h2>Vrei să te implici?</h2>
 
           <div class="content">
-            Soluțiile de durată se pot dezvolta doar acolo unde ne reunim forțele în mod constant. Crizele ne-au arătat mereu valoarea comunității noastre, însă este momentul să construim împreună pentru viitor, pentru o comunitate timișoreană funcțională, sustenabilă, dincolo de urgențe.
+            Soluțiile de durată se pot dezvolta doar acolo unde ne reunim
+            forțele în mod constant. Crizele ne-au arătat mereu valoarea
+            comunității noastre, însă este momentul să construim împreună pentru
+            viitor, pentru o comunitate timișoreană funcțională, sustenabilă,
+            dincolo de urgențe.
           </div>
         </div>
       </div>
@@ -220,7 +231,7 @@
                     interval: 2230,
                     pauseInfo: false,
                     arrowHover: false,
-                    indicatorStyle: 'is-lines',
+                    indicatorStyle: 'is-lines'
                   }"
                 >
                   <b-carousel-item
@@ -259,7 +270,7 @@
                   v-bind="{
                     autoplay: false,
                     arrowHover: false,
-                    indicatorStyle: 'is-lines',
+                    indicatorStyle: 'is-lines'
                   }"
                 >
                   <b-carousel-item
@@ -408,36 +419,36 @@ export default {
             field: 'name',
             sortable: false,
             label: 'Necesar',
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'price',
             sortable: false,
-            label: 'Valoare',
+            label: 'Valoare'
           },
           {
             field: 'quantity',
             sortable: false,
             label: 'Achiziție',
             centered: true,
-            cellClass: 'has-text-weight-bold',
+            cellClass: 'has-text-weight-bold'
           },
           {
             field: 'available',
             sortable: false,
             label: 'Disponibile',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold',
+            cellClass: 'has-text-success has-text-weight-bold'
           },
           {
             field: 'in_use',
             sortable: false,
             label: 'Utilizate',
             centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold',
-          },
-        ],
-      },
+            cellClass: 'has-text-primary has-text-weight-bold'
+          }
+        ]
+      }
     }
   },
   mounted() {
@@ -448,33 +459,36 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get('dashboard/').then((response) => {
+      this.$emit('loading', true)
+
+      ApiService.get('dashboard/').then(response => {
         this.data = response
-        this.initAnimation()
+
+        this.initAnimation().then(() => this.$emit('loading', false))
       })
     },
 
     initAnimation() {
       oxigen_animation.init({
         element: document.querySelector('#animation-scene'),
-        total_necesar: this.data.campaign.target,
+        total_necesar: this.data.campaign.target
       })
       oxigen_animation.update({
         total_strans: this.data.campaign.amount_collected,
-        donatori: this.data.campaign.donations,
+        donatori: this.data.campaign.donations
       })
 
-      ApiService.get('named-donors/').then((response) => {
+      return ApiService.get('named-donors/').then(response => {
         oxigen_animation.animate(
           response
-            .filter((e) => !e.is_company)
-            .map((e) => {
+            .filter(e => !e.is_company)
+            .map(e => {
               return { nume: e.display_name, suma: e.amount }
             })
         )
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

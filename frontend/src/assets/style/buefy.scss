@@ -2,7 +2,10 @@
 
 @import 'bulma/sass/form/shared.sass';
 
+$loading-background: rgba(255,255,255,0.7);
+
 @import 'buefy/src/scss/components/_carousel.scss';
+@import 'buefy/src/scss/components/_loading.scss';
 @import 'buefy/src/scss/components/_progress.scss';
 @import 'buefy/src/scss/components/_table.scss';
 @import 'buefy/src/scss/components/_tooltip.scss';
@@ -96,4 +99,9 @@
       border-color: transparent !important;
     }
   }
+}
+
+.loading-overlay .loading-icon:after {
+  border-left-color: $primary;
+  border-bottom-color: $primary;
 }

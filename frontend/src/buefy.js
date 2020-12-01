@@ -37,6 +37,7 @@ import {
   ConfigProgrammatic,
   Collapse,
   Icon,
+  Loading,
   Progress,
   Table,
   Toast,
@@ -48,6 +49,7 @@ Vue.use(Button)
 Vue.use(Carousel)
 Vue.use(Collapse)
 Vue.use(Icon)
+Vue.use(Loading)
 Vue.use(Progress)
 Vue.use(Table)
 Vue.use(Toast)
