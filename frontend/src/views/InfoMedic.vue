@@ -36,7 +36,7 @@
     <div class="section">
       <div class="columns">
         <div class="column is-4">
-          <h2>Cum intrii în posesia unui concentrator de oxigen?</h2>
+          <h2>Cum intri în posesia unui concentrator de oxigen?</h2>
 
           <!-- <div class="box box-bubble">
             <h2>
