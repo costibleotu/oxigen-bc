@@ -72,16 +72,11 @@
           <div class="column is-6">
             <div class="content">
               <p>
-                Avem nevoie de cât mai multe pulsoximetre și concentratoare de
-                oxigen, extrem de necesare pentru tratarea la domiciliu, sub
-                supravegherea medicilor de familie, a pacienților infectați cu
-                coronavirus, dar și pentru recuperarea ulterioară a pacienților,
-                după depășirea fazei critice.
+                Pulsoximetrele și concentratoarele de oxigen sunt extrem de necesare în monitorizarea și tratamentul pacienților Covid. Atunci când bolnavii cu cazuri medii sunt tratați acasă (pentru degrevarea spitalelor), iar cei externați sunt în perioada de convalescență, este esențial accesul la pulsoximetre și concentratoare de oxigen mobile, la cererea medicului de familie.
               </p>
               <p>
                 <b>
-                  Avem nevoie de donațiile voastre pentru ca aceste dispozitive
-                  medicale să ajungă la cât mai mulți timișoreni!
+                  Acest serviciu se poate dezvolta doar cu susținerea și implicarea comunității.
                 </b>
               </p>
             </div>
@@ -179,7 +174,7 @@
           <h2>Vrei să te implici?</h2>
 
           <div class="content">
-            Toți împreună, toți o comunitate!
+            Soluțiile de durată se pot dezvolta doar acolo unde ne reunim forțele în mod constant. Crizele ne-au arătat mereu valoarea comunității noastre, însă este momentul să construim împreună pentru viitor, pentru o comunitate timișoreană funcțională, sustenabilă, dincolo de urgențe.
           </div>
         </div>
       </div>
@@ -531,7 +526,7 @@ export default {
 
   @include desktop {
     float: right;
-    left: -80px;
+    /*left: -80px;*/
     margin-bottom: 0;
   }
 

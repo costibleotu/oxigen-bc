@@ -4,39 +4,39 @@
       <h1>Cum funcționează proiectul “Oxigen pentru Timișoara”?</h1>
       <br />
       <br />
-      <div class="columns">
-        <div class="column is-4">
+
+      <div class="columns is-multiline">
+        <div class="column is-12">
           <h2>
-            Programul se adresează doar persoanelor care sunt în una dintre
-            situațiile următoare
+            Ai nevoie de echipament medical dacă:
           </h2>
         </div>
-        <div class="column">
-          <ol class="a">
-            <li>
-              Ești pacient care a trecut pe la triajul de la Spitalul „Victor
-              Babeș” Timișoara, iar doctorii au decis monitorizarea la domiciliu
-              cu ajutorul unui pulsoximetru
-            </li>
-            <li>
-              Ești pacient care a trecut pe la triajul de la Spitalul „Victor
-              Babeș” Timișoara, iar doctorii au decis monitorizarea la domiciliu
-              cu ajutorul unui pulsoximetru și un concentrator de oxigen
-            </li>
-            <li>
-              Ești pacient în Spitalul „Victor Babeș” Timișoara a cărui stare de
-              sănătate în spital s-a îmbunătățit, dar are nevoie în continuare
-              de oxigenoterapie și este externat cu pulsoximetru și concentrator
-              pt a elibera locul din spital pentru cazuri mai grave
-            </li>
-          </ol>
+
+        <div class="column is-4">
+          <div class="bullet">a</div>
+          Ești pacient care a trecut pe la triajul de la Spitalul „Victor Babeș”
+          Timișoara, iar doctorii au decis monitorizarea la domiciliu cu
+          ajutorul unui pulsoximetru
+        </div>
+        <div class="column is-4">
+          <div class="bullet">b</div>
+          Ești pacient care a trecut pe la triajul de la Spitalul „Victor Babeș”
+          Timișoara, iar doctorii au decis monitorizarea la domiciliu cu
+          ajutorul unui pulsoximetru și un concentrator de oxigen
+        </div>
+        <div class="column is-4">
+          <div class="bullet">c</div>
+          Ești pacient în Spitalul „Victor Babeș” Timișoara a cărui stare de
+          sănătate în spital s-a îmbunătățit, dar are nevoie în continuare de
+          oxigenoterapie și este externat cu pulsoximetru și concentrator pt a
+          elibera locul din spital pentru cazuri mai grave
         </div>
       </div>
     </div>
     <div class="section">
       <div class="columns">
         <div class="column is-4">
-          <h2>Cum intrii în posesia unui concentrator de oxigen?</h2>
+          <h2>Cum intri în posesia unui concentrator de oxigen?</h2>
 
           <!-- <div class="box box-bubble">
             <h2>
@@ -149,6 +149,20 @@ export default {
   h2 {
     margin: 0;
   }
+}
+
+.bullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  background-color: $primary;
+  border-radius: 100%;
+  color: $white;
+  font-size: $size-3;
+  font-weight: $weight-semibold;
+  margin-bottom: 20px;
 }
 
 ol {
