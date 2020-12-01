@@ -108,17 +108,17 @@
             <ul>
               <li>
                 <a target="_blank" href="https://covid19.primariatm.ro"
-                  >https://covid19.primariatm.ro</a
+                  >covid19.primariatm.ro</a
                 >
               </li>
               <li>
                 <a target="_blank" href="https://fiipregatit.ro/"
-                  >https://fiipregatit.ro/</a
+                  >fiipregatit.ro</a
                 >
               </li>
               <li>
                 <a target="_blank" href="https://www.ctstimisoara.ro/"
-                  >https://www.ctstimisoara.ro/</a
+                  >ctstimisoara.ro</a
                 >
               </li>
             </ul>
@@ -130,17 +130,12 @@
             <ul>
               <li>
                 <a target="_blank" href="https://www.dsptimis.ro/"
-                  >https://www.dsptimis.ro/</a
+                  >dsptimis.ro</a
                 >
               </li>
               <li>
                 <a target="_blank" href="https://www.cnscbt.ro/"
-                  >https://www.cnscbt.ro/</a
-                >
-              </li>
-              <li>
-                <a target="_blank" href="https://www.ctstimisoara.ro/"
-                  >https://www.ctstimisoara.ro/</a
+                  >cnscbt.ro</a
                 >
               </li>
             </ul>

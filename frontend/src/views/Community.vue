@@ -92,11 +92,11 @@
                   Povești scurte din carantină
                 </h3>
               </div>
-              <div class="column is-narrow">
+              <!-- <div class="column is-narrow">
                 <a href="#">
                   Trimite un gând bun <b-icon icon="arrow-right" />
                 </a>
-              </div>
+              </div> -->
             </div>
 
             <div class="box-list">

@@ -22,7 +22,7 @@ const routes = [
     name: 'infomedic',
     component: InfoMedic,
     meta: {
-      title: 'Informații medici și pacienți'
+      title: '- Informații medici și pacienți'
     }
   },
   {
@@ -30,7 +30,7 @@ const routes = [
     name: 'community',
     component: Community,
     meta: {
-      title: 'Comunitate'
+      title: '- Comunitate'
     }
   },
   {
@@ -38,7 +38,7 @@ const routes = [
     name: 'helping',
     component: Helping,
     meta: {
-      title: 'Vrei să te implici?'
+      title: '- Vrei să te implici?'
     }
   }
 ]

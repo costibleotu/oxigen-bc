@@ -9,12 +9,6 @@
         <div class="column is-8-tablet is-6-widescreen">
           <div class="content">
             <p>
-              A simple act of kindness always sparks another. <br />
-              *Acomodam in aceasta pagina si alte initiative conexe proiectului
-              #Oxigen
-            </p>
-
-            <p>
               Una dintre condițiile de bază pentru viață este
               <a href="/">#Oxigen</a>.
             </p>
@@ -35,6 +29,7 @@
       <div class="columns is-multiline">
         <div class="column is-6">
           <a
+            target="_blank"
             href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
             class="box"
           >
@@ -44,13 +39,14 @@
             />
             <h2 class="has-text-primary">Donează fonduri</h2>
             <p>
-              Explicam redirectionarea pe site-ul Timotion, ca FCTM gestioneaza
-              fondurile si achizitiile.
+              Fiecare dintre noi are puterea de a crește resursele cu care
+              medicii salvează vieți.
             </p>
           </a>
         </div>
         <div class="column is-6">
           <a
+            target="_blank"
             href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
             class="box"
           >
@@ -60,13 +56,14 @@
             />
             <h2 class="has-text-primary">Donează sânge</h2>
             <p>
-              Explicam redirectionarea catre Centrul Regional de Transfuzie
-              Sanguina Timisoara.
+              Nevoia de sânge este permanentă și cu atât mai acută în contextul
+              pandemic.
             </p>
           </a>
         </div>
         <div class="column is-6">
           <a
+            target="_blank"
             href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
             class="box"
           >
@@ -76,21 +73,24 @@
             />
             <h2 class="has-text-primary">Donează plasmă</h2>
             <p>
-              Explicam redirectionarea catre Centrul Regional de Transfuzie
-              Sanguina Timisoara.
+              Plasma este o șansă la viață pentru bolnavii cu forme grave de
+              Covid-19.
             </p>
           </a>
         </div>
         <div class="column is-6">
-          <a href="https://covid19.primariatm.ro/ajutor" class="box">
+          <a
+            target="_blank"
+            href="https://covid19.primariatm.ro/ajutor"
+            class="box"
+          >
             <b-icon
               icon="arrow-right"
               class="is-pulled-right is-size-2 has-text-primary"
             />
             <h2 class="has-text-primary">Oferă-te voluntar</h2>
             <p>
-              Explicam redirectionarea catre formularul de voluntari din pagina
-              covid19.primariatm.ro si cine ii va contacta (CivicTM).
+              Dorești să ajuți în alt fel? Mobilizează-te pentru a salva vieți.
             </p>
           </a>
         </div>
@@ -112,7 +112,7 @@
 export default {
   name: 'Volunteering',
   components: {},
-  mounted() {}
+  mounted() {},
 }
 </script>
 

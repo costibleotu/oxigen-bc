@@ -1,7 +1,6 @@
 {
-  "name": "frontend",
+  "name": "OxigenTM",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -16,7 +15,7 @@
     "buefy": "^0.9.4",
     "bulma": "^0.9.1",
     "core-js": "^3.6.5",
-    "oxigen-animation": "git+https://github.com/andreipfeiffer/oxigen-animation.git#f69365d",
+    "oxigen-animation": "git+https://github.com/andreipfeiffer/oxigen-animation.git#173ccff",
     "vue": "^2.6.11",
     "vue-mq": "^1.0.1",
     "vue-router": "^3.2.0",
