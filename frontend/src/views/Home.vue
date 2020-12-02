@@ -50,12 +50,12 @@
                 <span class="is-hidden"></span>
               </b-tooltip>
 
-              <router-link
+              <!-- <router-link
                 :to="{ name: 'infomedic' }"
                 class="button is-primary is-outlined"
               >
                 Informații medici și pacienți
-              </router-link>
+              </router-link> -->
             </div>
           </div>
           <div class="column is-6">
@@ -110,7 +110,7 @@
         </div>
       </div>
 
-      <div class="section is-small">
+      <!-- <div class="section is-small">
         <div class="box">
           <div class="columns is-centered">
             <div
@@ -132,7 +132,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="section">
         <div class="columns" v-if="data">
