@@ -32,7 +32,7 @@
               </h2>
             </div>
             <div class="column is-narrow">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing">
                 Contract de sponsorizare <b-icon icon="arrow-right" />
               </a>
             </div>

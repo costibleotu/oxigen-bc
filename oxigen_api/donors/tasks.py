@@ -82,12 +82,13 @@ def get_campaign_stats():
             campaign=campaign,
             order=i,
             )
-        if created:
-            donor.name=donor_name.strip()
-            donor.amount=donor_amount
-            donor.comment=donor_comment
+        # if created:
+        donor.name=donor_name.strip()
+        donor.amount=donor_amount
+        donor.comment=donor_comment
+        if not donor.display_name:
             donor.display_name = donor.name.split(' ')[0]
-            donor.save()
+        donor.save()
         # print(donor)
 
     # # Expenses
