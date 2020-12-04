@@ -22,7 +22,7 @@
                 <span class="has-text-primary">{{
                   data.campaign.companies_count
                 }}</span>
-                de companii susțin cauza
+                companii susțin cauza
               </h2>
               <h2>
                 <span class="has-text-primary">{{
