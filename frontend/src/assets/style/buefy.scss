@@ -32,9 +32,10 @@ $loading-background: rgba(255,255,255,0.7);
   }
 
   .table-wrapper.has-mobile-cards .table {
-    tr {
+    th {
       // height: 100px;
       // overflow: hidden;
+      padding: 10px 15px;
     }
 
     td {

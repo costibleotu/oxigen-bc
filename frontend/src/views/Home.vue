@@ -422,31 +422,32 @@ export default {
             cellClass: 'has-text-weight-bold'
           },
           {
-            field: 'price',
-            sortable: false,
-            label: 'Valoare'
-          },
-          {
             field: 'quantity',
             sortable: false,
             label: 'Achiziție',
             centered: true,
-            cellClass: 'has-text-weight-bold'
           },
           {
-            field: 'available',
+            field: 'price',
             sortable: false,
-            label: 'Disponibile',
+            label: 'Valoare',
+            cellClass: 'has-text-weight-bold',
             centered: true,
-            cellClass: 'has-text-success has-text-weight-bold'
           },
-          {
-            field: 'in_use',
-            sortable: false,
-            label: 'Utilizate',
-            centered: true,
-            cellClass: 'has-text-primary has-text-weight-bold'
-          }
+          // {
+          //   field: 'available',
+          //   sortable: false,
+          //   label: 'Disponibile',
+          //   centered: true,
+          //   cellClass: 'has-text-success has-text-weight-bold'
+          // },
+          // {
+          //   field: 'in_use',
+          //   sortable: false,
+          //   label: 'Utilizate',
+          //   centered: true,
+          //   cellClass: 'has-text-primary has-text-weight-bold'
+          // }
         ]
       }
     }
