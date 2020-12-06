@@ -70,25 +70,32 @@ def get_campaign_stats():
     trs = donors_table.find_all('tr')
     trs.reverse()
     i = 0
-    for tr in trs:
-        i += 1
-        # pprint(tr)
-        donor_name = tr.find_all('td')[0].text
-        donor_amount = float(tr.find_all('td')[1].text.replace(' RON', '').replace(',', ''))
-        donor_comment = tr.find_all('td')[2].text
+    with transaction.atomic():
+        models.Donor.objects.update(display=False)
+        for tr in trs:
+            i += 1
+            # pprint(tr)
+            donor_name = tr.find_all('td')[0].text
+            donor_amount = float(tr.find_all('td')[1].text.replace(' RON', '').replace(',', ''))
+            donor_comment = tr.find_all('td')[2].text
 
-        donor, created = models.Donor.objects.get_or_create(
-            # name=donor_name.strip(),
-            campaign=campaign,
-            order=i,
-            )
-        # if created:
-        donor.name=donor_name.strip()
-        donor.amount=donor_amount
-        donor.comment=donor_comment
-        if not donor.display_name:
-            donor.display_name = donor.name.split(' ')[0]
-        donor.save()
+            # donor, created = models.Donor.objects.get_or_create(
+            #     # name=donor_name.strip(),
+            #     campaign=campaign,
+            #     order=i,
+            #     )
+            donor_filter = models.Donor.objects.filter(campaign=campaign, name=donor_name.strip(), amount=donor_amount, display=False)
+            if donor_filter:
+                donor = donor_filter[0]
+            else:
+                donor, _ = models.Donor.objects.create(campaign=campaign, name=donor_name.strip(), amount=donor_amount)
+
+            donor.order = i
+            donor.comment = donor_comment
+            donor.display = True
+            if not donor.display_name:
+                donor.display_name = donor.name.split(' ')[0]
+            donor.save()
         # print(donor)
 
     # # Expenses
