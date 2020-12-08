@@ -170,14 +170,14 @@
       <hr />
 
       <div class="section">
-        <div class="has-text-centered">
-          <router-link
-            :to="{ name: 'helping' }"
-            class="button button-pulse is-primary is-size-1"
-          >
-            <b-icon icon="arrow-right" />
-          </router-link>
+        <router-link
+          :to="{ name: 'helping' }"
+          class="button button-pulse is-primary is-size-1"
+        >
+          <b-icon icon="arrow-right" />
+        </router-link>
 
+        <div class="has-text-centered">
           <h2>Vrei să te implici?</h2>
 
           <div class="content">
@@ -425,15 +425,15 @@ export default {
             field: 'quantity',
             sortable: false,
             label: 'Achiziție',
-            centered: true,
+            centered: true
           },
           {
             field: 'price',
             sortable: false,
             label: 'Valoare',
             cellClass: 'has-text-weight-bold',
-            centered: true,
-          },
+            centered: true
+          }
           // {
           //   field: 'available',
           //   sortable: false,
@@ -515,7 +515,7 @@ export default {
   #animation-scene {
     @include mobile {
       width: 670px;
-      transform: translateX(-35%);
+      transform: translateX(-30%);
     }
 
     @include desktop {
@@ -536,13 +536,16 @@ export default {
   width: 90px;
   height: 90px;
   animation: pulse 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
-
-  margin-bottom: 30px;
+  margin: 30px auto;
+  display: flex;
 
   @include desktop {
+    & + .has-text-centered {
+      padding: 0 90px;
+    }
+
+    margin: -20px 0 0 0;
     float: right;
-    /*left: -80px;*/
-    margin-bottom: 0;
   }
 
   .icon {
