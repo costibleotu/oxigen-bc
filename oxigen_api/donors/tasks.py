@@ -88,7 +88,7 @@ def get_campaign_stats():
             if donor_filter:
                 donor = donor_filter[0]
             else:
-                donor, _ = models.Donor.objects.create(campaign=campaign, name=donor_name.strip(), amount=donor_amount)
+                donor = models.Donor.objects.create(campaign=campaign, name=donor_name.strip(), amount=donor_amount)
 
             donor.order = i
             donor.comment = donor_comment
