@@ -52,6 +52,8 @@ class FullNameDonorSerializer(serializers.ModelSerializer):
         exclude = ['display', 'name', 'date_added']
 
     def get_display_name(self, obj):
+        if obj.is_company:
+            return obj.display_name
         return obj.name
 
     def to_representation(self, instance):
