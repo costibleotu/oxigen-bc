@@ -16,6 +16,7 @@
         </div>
 
         <template v-if="data.campaign">
+          <br />
           <div class="columns is-gapless is-multiline">
             <div class="column">
               <h2>
