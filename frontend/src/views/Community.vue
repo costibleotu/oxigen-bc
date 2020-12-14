@@ -16,7 +16,7 @@
         </div>
 
         <template v-if="data.campaign">
-          <div class="columns is-gapless">
+          <div class="columns is-gapless is-multiline">
             <div class="column">
               <h2>
                 <span class="has-text-primary">
@@ -31,7 +31,7 @@
                 donați
               </h2>
             </div>
-            <div class="column is-narrow">
+            <div class="column is-12-touch is-narrow">
               <a
                 href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing"
               >
