@@ -19,9 +19,9 @@
           <div class="columns is-gapless">
             <div class="column">
               <h2>
-                <span class="has-text-primary">{{
-                  data.campaign.companies_count
-                }}</span>
+                <span class="has-text-primary">
+                  {{ data.campaign.companies_count }}
+                </span>
                 companii susțin cauza
               </h2>
               <h2>
@@ -32,14 +32,41 @@
               </h2>
             </div>
             <div class="column is-narrow">
-              <a href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing">
+              <a
+                href="https://drive.google.com/file/d/1uYpkLREE7bSgcyFSNteXxrREelinv_4a/view?usp=sharing"
+              >
                 Contract de sponsorizare <b-icon icon="arrow-right" />
               </a>
             </div>
           </div>
         </template>
 
-        <GridBoxes v-if="data.donors" :data="companies" />
+        <div class="carousel-container">
+          <b-carousel-list
+            v-if="data.donors"
+            v-bind="{
+              arrowHover: false,
+              repeat: true,
+              data: companies
+            }"
+            :items-to-show="$mq | mq({ xs: 1, sm: 3, md: 4, lg: 5, xl: 6 })"
+            :items-to-list="$mq | mq({ xs: 1, sm: 3, md: 4, lg: 5, xl: 6 })"
+          >
+            <template slot="item" slot-scope="company">
+              <a :href="company.link" target="_blank" class="carousel-link">
+                <figure class="image is-square">
+                  <img :src="company.logo" v-if="company.logo" />
+                  <img src="../assets/images/Placeholder_Sponsor.png" v-else />
+                </figure>
+
+                <p class="title">
+                  <b>{{ company.display_name }}</b>
+                </p>
+                <p class="is-size-4">{{ company.amount | currency }}</p>
+              </a>
+            </template>
+          </b-carousel-list>
+        </div>
       </div>
     </div>
 
@@ -132,11 +159,11 @@
 <script>
 import ApiService from '@/services/api'
 
-import GridBoxes from '@/components/GridBoxes'
+// import GridBoxes from '@/components/GridBoxes'
 
 export default {
   name: 'Community',
-  components: { GridBoxes },
+  // components: { GridBoxes },
   data() {
     return {
       data: {
@@ -223,6 +250,15 @@ export default {
         }
       }
     }
+  }
+}
+
+.carousel-container {
+  margin-left: -6px;
+  margin-right: -6px;
+
+  @include desktop {
+    margin-bottom: 0;
   }
 }
 </style>

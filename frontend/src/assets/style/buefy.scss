@@ -2,7 +2,8 @@
 
 @import 'bulma/sass/form/shared.sass';
 
-$loading-background: rgba(255,255,255,0.7);
+$loading-background: rgba(255, 255, 255, 0.7);
+$carousel-arrow-background: transparent;
 
 @import 'buefy/src/scss/components/_carousel.scss';
 @import 'buefy/src/scss/components/_loading.scss';
@@ -49,12 +50,58 @@ $loading-background: rgba(255,255,255,0.7);
   }
 }
 
-.carousel {
+.carousel,
+.carousel-list {
+  &.has-shadow {
+    box-shadow: none;
+  }
+
+  .carousel-slides {
+    padding-bottom: 30px;
+
+    @include desktop {
+      padding-bottom: 50px;
+    }
+
+    .carousel-slide {
+      padding: 0 6px;
+
+      a {
+        color: $black;
+        font-weight: normal;
+
+        .title {
+          margin: 20px 0 10px;
+        }
+      }
+    }
+
+    & + .carousel-arrow {
+      .icon {
+        top: auto;
+        bottom: -15px;
+        // background-color: $white;
+        width: 40px;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .has-icons-left {
+        transform: translateX(-40px);
+        left: 50%;
+      }
+
+      .has-icons-right {
+        transform: translateX(40px);
+        right: 50%;
+      }
+    }
+  }
+
   .carousel-arrow {
     .icon {
       font-size: $size-1;
       border: 0;
-      background-color: transparent;
 
       &:hover {
         color: $black !important;
