@@ -16,18 +16,18 @@ class CampaignSerializer(serializers.ModelSerializer):
         exclude = ['display', ]
 
     def get_companies_count(self, obj):
-        return models.Donor.objects.filter(is_company=True).count()
+        return models.Donor.objects.filter(is_company=True, display=True).count()
 
     def get_companies_sum(self, obj):
         return models.Donor.objects.filter(
-            is_company=True).aggregate(Sum('amount'))['amount__sum']
+            is_company=True, display=True).aggregate(Sum('amount'))['amount__sum']
 
     def get_donors_sum(self, obj):
         return models.Donor.objects.filter(
-            is_company=False).aggregate(Sum('amount'))['amount__sum']
+            is_company=False, display=True).aggregate(Sum('amount'))['amount__sum']
 
     def get_donors_count(self, obj):
-        return models.Donor.objects.exclude(is_company=True).count()
+        return models.Donor.objects.exclude(is_company=True, display=True).count()
 
 
 class DonorSerializer(serializers.ModelSerializer):

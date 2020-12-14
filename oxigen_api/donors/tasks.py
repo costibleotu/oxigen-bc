@@ -70,6 +70,7 @@ def get_campaign_stats():
     trs = donors_table.find_all('tr')
     trs.reverse()
     i = 0
+    total = 0
     with transaction.atomic():
         models.Donor.objects.update(display=False)
         for tr in trs:
@@ -78,7 +79,7 @@ def get_campaign_stats():
             donor_name = tr.find_all('td')[0].text
             donor_amount = float(tr.find_all('td')[1].text.replace(' RON', '').replace(',', ''))
             donor_comment = tr.find_all('td')[2].text
-
+            total+= donor_amount
             # donor, created = models.Donor.objects.get_or_create(
             #     # name=donor_name.strip(),
             #     campaign=campaign,
@@ -97,7 +98,7 @@ def get_campaign_stats():
                 donor.display_name = donor.name.split(' ')[0]
             donor.save()
         # print(donor)
-
+    print('total:', total)
     # # Expenses
     # expenses_table = soup.find(attrs={'class': 'entry combo'}).find('table')
     # for tr in expenses_table.find_all('tr')[2:]:
