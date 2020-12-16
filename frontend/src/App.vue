@@ -18,14 +18,14 @@
             <div id="menu" v-if="active.menu" class="has-text-centered">
               <div>
                 <ul class="is-size-3">
-                  <!-- <li>
+                  <li>
                     <router-link
                       :to="{ name: 'infomedic' }"
                       class="navbar-item"
                     >
                       Ai nevoie de echipament medical?
                     </router-link>
-                  </li> -->
+                  </li>
                   <li>
                     <router-link
                       :to="{ name: 'community' }"
