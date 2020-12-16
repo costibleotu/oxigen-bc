@@ -5,45 +5,101 @@
       <br />
       <br />
 
-      <div class="columns is-multiline">
-        <div class="column is-12">
+      <div class="columns is-variable is-8 is-multiline">
+        <div class="column is-9">
           <h2>
-            Ai nevoie de echipament medical dacă:
+            Echipamentele medicale achiziționate prin acest proiect sunt
+            distribuite pentru utilizare la domiciliu în următoarele situații:
           </h2>
         </div>
+        <!-- <div class="column is-4"></div> -->
 
         <div class="column is-4">
           <div class="bullet">a</div>
-          Ești pacient care a trecut pe la triajul de la Spitalul „Victor Babeș”
-          Timișoara, iar doctorii au decis monitorizarea la domiciliu cu
-          ajutorul unui pulsoximetru
+          În urma prezentării la serviciul de triaj de la Spitalul „Victor
+          Babeș” Timișoara, medicii au decis că nu este necesară internarea, ci
+          monitorizarea la domiciliu cu ajutorul unui pulsoximetru, iar pentru
+          unele cazuri terapie cu oxigen cu ajutorul unui concentrator de
+          oxigen; Persoana este înscrisă de către personalul medical în
+          aplicația Pandemic Controller și intră sub supravegherea medicului de
+          familie.
         </div>
         <div class="column is-4">
           <div class="bullet">b</div>
-          Ești pacient care a trecut pe la triajul de la Spitalul „Victor Babeș”
-          Timișoara, iar doctorii au decis monitorizarea la domiciliu cu
-          ajutorul unui pulsoximetru și un concentrator de oxigen
+          În urma internării într-o unitate medicală din Timișoara (Spitalul
+          Victor Babeș din Timișoara sau altă unitate medicală suport
+          SARS-CoV-2) starea este stabilă și permite externarea cu condiția
+          monitorizării la domiciliu cu ajutorul unui pulsoximetru iar pentru
+          unele cazuri terapie cu oxigen cu ajutorul unui concentrator de
+          oxigen; Persoana este înscrisă de către personalul medical în
+          aplicația Pandemic Controller și intră sub supravegherea medicului de
+          familie.
         </div>
         <div class="column is-4">
           <div class="bullet">c</div>
-          Ești pacient în Spitalul „Victor Babeș” Timișoara a cărui stare de
-          sănătate în spital s-a îmbunătățit, dar are nevoie în continuare de
-          oxigenoterapie și este externat cu pulsoximetru și concentrator pt a
-          elibera locul din spital pentru cazuri mai grave
+          În urma confirmării infectării SARS-CoV-2 și a supravegherii de către
+          medicul de familie, acesta prescrie monitorizarea cu ajutorul unui
+          pulsoximetru și pentru cazuri atent fundamentate, terapia cu oxigen la
+          domiciliu. Medicul de familie completează
+          <a
+            href="https://docs.google.com/forms/d/122mmvF12Of8h-4S0qnpW9ac7d-L_ukiCbggTFNjNuxo"
+            target="_blank"
+          >
+            formularul de solicitare</a
+          >. Au prioritate persoanele aflate în instituții sociale sau medicale
+          declarate ”focar activ” de către Direcția de Sănătate Publică Timiș.
         </div>
       </div>
     </div>
+
     <div class="section">
+      <div class="columns">
+        <div class="column is-4">
+          <h2>Important</h2>
+
+          <div class="box box-bubble">
+            <h2>
+              Call center <br />
+              0356-981
+            </h2>
+          </div>
+        </div>
+        <div class="column">
+          <ul>
+            <li>
+              Supravegherea medicală este esențială pentru gestionarea în bune
+              condiții a infectării cu SARS-CoV-2. Orice agravare a simptomelor
+              va fi comunicată telefonic medicului de familie sau unui cadru
+              medical de gardă la un Centru de Permanență sau se va contacta
+              serviciul 112.
+            </li>
+            <li>
+              Pentru a sprijini un număr cât mai mare de pacienți SARS-CoV-2 ce
+              necesită monitorizare sau terapie cu oxigen la domiciliu,
+              beneficiarii de echipamente sunt rugați să le utilizeze în mod
+              responsabil și să păstreze și returneze ambalajul de transport.
+            </li>
+            <li>
+              Pentru orice întrebări legate de acest proiect vă puteți adresa
+              numărului de telefon 0356-981 (Direcția de Asistență Socială a
+              Primăriei Municipiului Timișoara, telefonul de Urgențe sociale).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section is-hidden">
       <div class="columns">
         <div class="column is-4">
           <h2>Cum intri în posesia unui concentrator de oxigen?</h2>
 
-          <!-- <div class="box box-bubble">
+          <div class="box box-bubble">
             <h2>
               Call center <br />
-              0372.987
+              0356-981
             </h2>
-          </div> -->
+          </div>
         </div>
         <div class="column">
           <ol>
@@ -81,30 +137,47 @@
     <div class="section">
       <div class="columns">
         <div class="column is-4">
-          <h2>Cum returnezi echipamentul?</h2>
+          <h2>Cum se returnează echipamentul?</h2>
         </div>
         <div class="column">
           <ol>
             <li>
-              Medicul de familie anunță eliberarea echipamentului prin platforma
-              <b class="has-text-primary">Medici de familie.</b>
+              Medicul de familie sau pacientul anunță telefonic sau prin email
+              eliberarea echipamentului.
             </li>
             <li>
-              Pacientul va pregăti pentru returnare echipamentul primit în
-              ambalajul original, mai puțin elementele de unică folosință ale
-              concentratorului (tuburile de plastic, bidonul de umidificare a
-              aerului).
+              Pacientul va pregăti pentru returnare:
+              <ul>
+                <li>
+                  O pungă de plastic cu echipamentul primit în ambalajul
+                  original (dacă este un pulsoximetru)
+                </li>
+                <li>
+                  Un sac de plastic cu echipamentul primit în ambalajul original
+                  (dacă este un concentrator de oxigen), cu excepția elementelor
+                  de unică folosință (tuburi de plastic, bol de umidificare a
+                  aerului).
+                </li>
+                <li>
+                  O pungă de plastic cu elemente de unică folosință (tuburi de
+                  plastic, bol de umidificare a aerului)
+                </li>
+              </ul>
             </li>
             <li>
-              Un voluntar va veni să ridice echipamentul, sigilându-l pentru
-              transportarea în siguranță și se va semna un proces-verbal de
+              Coletele pregătite în acest mod vor fi ridicate de către persoane
+              autorizate care le vor sigila și se va semna un proces-verbal de
               preluare.
             </li>
             <li>
-              Aparatul este livrat în spital pentru igienizare, dezinfectare și
-              schimbarea filtrului hepa a concentratorului de oxigen.
+              Echipamentele sunt transportate la o unitate medicală pentru
+              igienizare, dezinfectare și schimbarea filtrului hepa a
+              concentratorului de oxigen. Elementele de unică folosință vor
+              intra într-un circuit de neutralizare pentru deșeuri medicale.
             </li>
-            <li>Aparatul va deveni disponibil pentru următorul beneficiar.</li>
+            <li>
+              Echipamentele vor deveni disponibile pentru următorii beneficiari.
+            </li>
           </ol>
         </div>
       </div>
@@ -165,10 +238,10 @@ export default {
   margin-bottom: 20px;
 }
 
-ol {
+ol, ul {
   list-style: none;
 
-  li {
+  > li {
     position: relative;
     border-top: 2px solid $border;
     padding: 29px 0 29px 84px;
@@ -179,7 +252,8 @@ ol {
       font-size: $size-4;
       display: inline-flex;
       position: absolute;
-      top: calc(50% - 21px);
+      // top: calc(50% - 21px);
+      top: 19px;
       align-items: center;
       justify-content: center;
       margin-left: -64px;
@@ -188,6 +262,27 @@ ol {
       margin-right: 20px;
       border-radius: 100%;
       border: 4px solid $primary;
+    }
+  }
+}
+
+ol > li ul > li {
+    border: 0;
+  &:first-child {
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+ul {
+  > li {
+    &:before {
+      content: '+';
+      font-size: $size-2;
+      color: $primary;
+      border: 0;
     }
   }
 }
