@@ -539,9 +539,9 @@ export default {
   margin: 30px auto;
   display: flex;
 
-  @include desktop {
+  @include widescreen {
     & + .has-text-centered {
-      padding: 0 90px;
+      padding: 0 200px;
     }
 
     margin: -20px 0 0 0;
