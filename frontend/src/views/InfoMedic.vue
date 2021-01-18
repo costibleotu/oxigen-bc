@@ -60,7 +60,7 @@
           <div class="box box-bubble">
             <h2>
               Call center <br />
-              0256-981
+              0356-981
             </h2>
           </div>
         </div>
@@ -81,7 +81,7 @@
             </li>
             <li>
               Pentru orice întrebări legate de acest proiect vă puteți adresa
-              numărului de telefon 0256-981 (Direcția de Asistență Socială a
+              numărului de telefon 0356-981 (Direcția de Asistență Socială a
               Primăriei Municipiului Timișoara, telefonul de Urgențe sociale).
             </li>
           </ul>
@@ -97,7 +97,7 @@
           <div class="box box-bubble">
             <h2>
               Call center <br />
-              0256-981
+              0356-981
             </h2>
           </div>
         </div>
