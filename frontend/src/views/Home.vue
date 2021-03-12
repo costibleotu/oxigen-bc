@@ -29,7 +29,7 @@
             </div>
 
             <div class="buttons">
-              <b-tooltip
+              <!-- <b-tooltip
                 position="is-top"
                 type="is-light"
                 size="is-large"
@@ -40,7 +40,7 @@
                   la dispoziție modalități rapide de donație
                 </template>
 
-                <a
+                 <a
                   href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
                   class="button is-primary"
                 >
@@ -48,7 +48,7 @@
                 </a>
 
                 <span class="is-hidden"></span>
-              </b-tooltip>
+              </b-tooltip> -->
 
               <router-link
                 :to="{ name: 'infomedic' }"

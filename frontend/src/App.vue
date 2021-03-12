@@ -51,18 +51,18 @@
                     Vei fi redirecționat către site-ul <b>Timotion</b>, care
                     pune la dispoziție modalități rapide de donație
                   </template>
-                  <a
+                  <!-- <a
                     href="https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/"
                     class="button is-white is-outlined is-large"
                   >
                     Donează acum
-                  </a>
+                  </a> -->
                 </b-tooltip>
               </div>
             </div>
           </transition>
           <div class="navbar-end">
-            <div class="navbar-item">
+            <!-- <div class="navbar-item">
               <b-tooltip
                 position="is-bottom"
                 type="is-light"
@@ -80,7 +80,7 @@
                   <div>Donează <span class="is-hidden-mobile">acum</span></div>
                 </a>
               </b-tooltip>
-            </div>
+            </div> -->
             <div class="navbar-item">
               <a
                 @click="toggleMenu"
