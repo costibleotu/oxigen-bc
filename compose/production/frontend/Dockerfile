@@ -1,5 +1,4 @@
-FROM node:lts-alpine as build-stage
-
+FROM node:8.12-alpine as build-stage
 RUN apk add git
 WORKDIR /app
 
