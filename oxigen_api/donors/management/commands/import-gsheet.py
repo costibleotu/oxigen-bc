@@ -24,7 +24,7 @@ class Command(BaseCommand):
     def do_bulk_import(self):
         i = 0
         client = gspread.service_account(filename='secrets/oxigen-gsheet.json')
-        campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Timisoara')
+        campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Bacău')
         sheet = client.open("Date centralizate").worksheet('buget + nevoi identificate').get_all_records()
         for row in sheet:
             if row['denumire'] and row['denumire'] != 'Total':

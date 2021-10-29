@@ -1,6 +1,6 @@
 # PostgreSQL
 # ------------------------------------------------------------------------------
-POSTGRES_HOST=postgres
+POSTGRES_HOST=postgres-ob
 POSTGRES_PORT=5432
 POSTGRES_DB=oxigen_api
 POSTGRES_USER=gvowboqIOWcYJtTLgJtBudtJcKjkvqXN

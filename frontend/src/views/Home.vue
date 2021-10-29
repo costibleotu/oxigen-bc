@@ -4,10 +4,10 @@
       <div class="section head-section">
         <div class="columns">
           <div class="column is-6">
-            <img src="../assets/images/Logo_O2TM.svg" class="logo-big" /> <br />
+            <img src="../assets/images/logo-full.svg" class="logo-big" /> <br />
             <h2>
               Solidari în fața Covid-19, donăm
-              <span class="has-text-primary">#OxigenPentruTimisoara</span>
+              <span class="has-text-primary">#OxigenPentruBacău</span>
             </h2>
 
             <div class="content">
@@ -363,7 +363,7 @@
               </div>
 
               <a
-                href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
+                href="https://oxigen.municipiulbacau.ro/media/Promovare_donare_sange_1.pdf"
                 class="button is-primary is-large"
                 target="_blank"
               >
@@ -385,7 +385,7 @@
               </div>
 
               <a
-                href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
+                href="https://oxigen.municipiulbacau.ro/media/Promovare_donare_plasma.pdf"
                 class="button is-primary is-large"
                 target="_blank"
               >
@@ -482,7 +482,7 @@ export default {
       return ApiService.get('named-donors/').then(response => {
         oxigen_animation.animate(
           response
-            .filter(e => !e.is_company)
+            // .filter(e => !e.is_company)
             .map(e => {
               return { nume: e.display_name, suma: e.amount }
             })

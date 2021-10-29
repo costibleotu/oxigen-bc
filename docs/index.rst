@@ -1,9 +1,9 @@
-.. Oxigen Pentru Timisoara documentation master file, created by
+.. Oxigen Pentru Bacău documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Oxigen Pentru Timisoara's documentation!
+Welcome to Oxigen Pentru Bacău's documentation!
 ======================================================================
 
 .. toctree::

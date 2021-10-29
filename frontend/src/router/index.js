@@ -57,7 +57,7 @@ router.beforeEach((to, from, next) => {
   // console.log(nearestWithTitle != null && nearestWithTitle.meta.title)
 
   document.title =
-    'Oxigen pentru Timișoara' +
+    'Oxigen pentru Bacău' +
     (nearestWithTitle ? ` - ${nearestWithTitle.meta.title}` : '')
 
   window.scrollTo(0, 0)

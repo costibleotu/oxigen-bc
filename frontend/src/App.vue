@@ -9,7 +9,7 @@
       <div class="container is-fluid">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
-            <img src="./assets/images/Logo_short_O2TM.svg" />
+            <img src="./assets/images/logo-IO2BC.svg" />
           </a>
         </div>
 
@@ -109,8 +109,8 @@
             </p>
             <ul>
               <li>
-                <a target="_blank" href="https://covid19.primariatm.ro"
-                  >Situația COVID-19 în Timișoara</a
+                <a target="_blank" href="#"
+                  >Situația COVID-19 în Bacău</a
                 >
               </li>
               <li>
@@ -119,7 +119,7 @@
                 >
               </li>
               <li>
-                <a target="_blank" href="https://www.ctstimisoara.ro/"
+                <a target="_blank" href="https://www.ctsBacău.ro/"
                   >Centrul regional de transfuzie sanguină</a
                 >
               </li>
@@ -154,6 +154,14 @@
               target="_blank"
             >
               <b>Mapă materiale</b><b-icon icon="arrow-right" />
+            </a>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-12 mt-3 has-text-centered">
+            Un concept <a href="https://oxigen.primariatm.ro">
+              Oxigen pentru Timișoara
+              <p class="mt-3"><img src="./assets/images/Logo_short_O2TM.svg" /></p>
             </a>
           </div>
         </div>

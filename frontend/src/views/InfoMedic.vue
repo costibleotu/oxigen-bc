@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="section">
-      <h1>Cum funcționează proiectul “Oxigen pentru Timișoara”?</h1>
+      <h1>Cum funcționează proiectul “Oxigen pentru Bacău”?</h1>
       <br />
       <br />
 

@@ -11,7 +11,7 @@ from datetime import datetime
 @celery_app.task()
 def sync_spreadsheet():
     client = gspread.service_account(filename='secrets/oxigen-gsheet.json')
-    campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Timisoara')
+    campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Bacău')
     sheet = client.open("Date centralizate").worksheet('buget + nevoi identificate').get_all_records()
     with transaction.atomic():
         models.Need.objects.update(display=False)
@@ -53,7 +53,7 @@ def sync_spreadsheet():
 
 @celery_app.task()
 def get_campaign_stats():
-    campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Timisoara')
+    campaign, _ = models.Campaign.objects.get_or_create(name='Oxigen pentru Bacău')
     r = requests.get('https://www.timotion.ro/proiecte-2020/solidari-in-fata-covid-19/')
     soup = BeautifulSoup(r.text, 'html.parser')
 

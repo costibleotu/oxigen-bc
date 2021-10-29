@@ -193,6 +193,7 @@ export default {
     ApiService.get('donors/').then(response => {
       this.data.donors = response
 
+      // this.people.data = this.data.donors.filter(e => !e.is_company)
       this.people.data = this.data.donors.filter(e => !e.is_company)
       this.companies = this.data.donors.filter(e => e.is_company)
 

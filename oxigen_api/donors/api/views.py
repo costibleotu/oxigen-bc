@@ -28,7 +28,7 @@ class DashboardViewSet(ViewSet):
     Dashboard with all data
     """
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -90,7 +90,7 @@ class CampaignViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = CampaignSerializer
     queryset = models.Campaign.objects.all()
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -98,9 +98,9 @@ class CampaignViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
 class DonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = FullNameDonorSerializer
     queryset = models.Donor.objects.filter(
-        display=True).prefetch_related('campaign').order_by('-order')
+        display=True).prefetch_related('campaign').order_by('order')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -110,7 +110,7 @@ class StoryViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Story.objects.filter(
         display=True).prefetch_related('campaign').order_by('-order')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -120,7 +120,7 @@ class NamedDonorViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Donor.objects.exclude(
         name="Anonim").filter(display=True).prefetch_related('campaign').order_by('-order')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -130,7 +130,7 @@ class ExpenseViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Expense.objects.filter(
         display=True).prefetch_related('campaign')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -140,7 +140,7 @@ class PartnerViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Partner.objects.filter(
         display=True).prefetch_related('campaign').order_by('order')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -149,7 +149,7 @@ class QuoteViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Quote.objects.filter(
         display=True).prefetch_related('campaign')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -158,7 +158,7 @@ class NeedViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.Need.objects.filter(
         display=True).prefetch_related('campaign')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
@@ -168,6 +168,6 @@ class FAQViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     queryset = models.FAQ.objects.filter(
         display=True).prefetch_related('campaign').order_by('order')
 
-    @method_decorator(cache_page(60))
+    # @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)

@@ -329,9 +329,10 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # ------------------------------------------------------------------------------
 
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[
-    "https://oxigen.primariatm.ro",
+    "https://oxigen.municipiulbacau.ro",
     "https://oxigen.banatit.ro",
-    "http://localhost:8080"
+    "http://localhost:8080",
+    "http://localhost:8081"
     ])
 
 # django-jazzmin
@@ -340,10 +341,10 @@ CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[
 
 JAZZMIN_SETTINGS = {
     # title of the window
-    "site_title": "Oxigen pentru Timișoara",
+    "site_title": "Oxigen pentru Bacău",
 
     # Title on the brand, and the login screen (19 chars max)
-    "site_header": "#oxigenTM",
+    "site_header": "#oxigenBacau",
 
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
     "site_logo": "images/O2TM.png",

@@ -11,7 +11,7 @@
             <p>
               O scânteie de generozitate generează întotdeauna încă una și încă
               una. Găzduim pe această pagină și alte inițiative conexe
-              proiectului Oxigen Pentru Timișoara.
+              proiectului Oxigen pentru Bacău.
             </p>
             <p>
               Una dintre condițiile de bază pentru viață este oxigenul.
@@ -19,7 +19,7 @@
             <p>
               Astfel construim o comunitate funcțională, care se mobilizează în
               situație de urgență, dar și care își exersează mușchiul
-              colaborării în fiecare zi. Proiectul Oxigen pentru Timișoara este
+              colaborării în fiecare zi. Proiectul Oxigen pentru Bacău este
               ne aduce împreună, pe mai multe subiecte importante pentru
               comunitate și are nevoie de tine, pentru că fiecare dintre noi
               este valoros!
@@ -51,7 +51,7 @@
         <div class="column is-6">
           <a
             target="_blank"
-            href="https://oxigen.primariatm.ro/media/Promovare_donare_sange_1.pdf"
+            href="https://oxigen.municipiulbacau.ro/media/Promovare_donare_sange_1.pdf"
             class="box"
           >
             <b-icon
@@ -68,7 +68,7 @@
         <div class="column is-6">
           <a
             target="_blank"
-            href="https://oxigen.primariatm.ro/media/Promovare_donare_plasma.pdf"
+            href="https://oxigen.municipiulbacau.ro/media/Promovare_donare_plasma.pdf"
             class="box"
           >
             <b-icon
@@ -104,7 +104,7 @@
     <div class="has-text-centered">
       <b class="is-size-4 has-text-grey">Respirăm același #oxigen</b>
       <br /><br />
-      <img src="../assets/images/Logo_short_O2TM.svg" />
+      <img src="../assets/images/logo-IO2BC.svg" width="115" />
     </div>
 
     <br /><br />

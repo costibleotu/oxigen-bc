@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import Sum, Count
 from . import models
 
 
@@ -9,6 +10,14 @@ class DonorAdmin(admin.ModelAdmin):
     list_filter = ["campaign"]
     list_filter = ["is_company", "is_anonym", "display"]
 
+    def save_model(self, request, obj, form, change):
+       super().save_model(request, obj, form, change)
+       campaign = models.Campaign.objects.last()
+       stats = models.Donor.objects.aggregate(amount=Sum('amount'), count=Count('id'))
+       print(stats)
+       campaign.amount_collected = stats['amount']
+       campaign.donations = stats['count']
+       campaign.save()
 
 @admin.register(models.Campaign)
 class CampaignAdmin(admin.ModelAdmin):

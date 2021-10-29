@@ -27,7 +27,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "Oxigen Pentru Timisoara"
+project = "Oxigen Pentru Bacău"
 copyright = """2020, Costin Bleotu"""
 author = "Costin Bleotu"
 
