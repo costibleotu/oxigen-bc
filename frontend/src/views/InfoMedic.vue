@@ -6,25 +6,21 @@
       <br />
 
       <div class="columns is-variable is-8 is-multiline">
-        <div class="column is-9">
+        <!-- <div class="column is-9">
           <h2>
             Echipamentele medicale achiziționate prin acest proiect sunt
             distribuite pentru utilizare la domiciliu în următoarele situații:
           </h2>
-        </div>
+        </div> -->
         <!-- <div class="column is-4"></div> -->
 
-        <div class="column is-4">
-          <div class="bullet">a</div>
-          În urma prezentării la serviciul de triaj de la Spitalul „Victor
-          Babeș” Timișoara, medicii au decis că nu este necesară internarea, ci
-          monitorizarea la domiciliu cu ajutorul unui pulsoximetru, iar pentru
-          unele cazuri terapie cu oxigen cu ajutorul unui concentrator de
-          oxigen; Persoana este înscrisă de către personalul medical în
-          aplicația Pandemic Controller și intră sub supravegherea medicului de
-          familie.
+        <div class="column is-12">
+          <!-- <div class="bullet">a</div> -->
+          Dacă în urma testării și confirmării, și în cazul în care nu este necesară internarea, ci monitorizarea la domiciliu cu ajutorul unui pulsoximetru, iar pentru unele cazuri terapie cu oxigen cu ajutorul unui concentrator de oxigen, persoana este înscrisă în aplicația Pandemic Controller și intră sub supravegherea medicului de familie. <br> <br>
+          Medicul de familie completează <a href="https://docs.google.com/forms/d/1MfOfjGe_pI5_fRRHtVb3CZ5sNBy5Evxhtiz54UbICkY/edit?ts=6178ea93">formularul de solicitare</a>. <br> <br>
+          Au prioritate persoanele aflate în instituții sociale sau medicale declarate ”focar activ” de către Direcția de Sănătate Publică Bacau
         </div>
-        <div class="column is-4">
+        <!-- <div class="column is-4">
           <div class="bullet">b</div>
           În urma internării într-o unitate medicală din Timișoara (Spitalul
           Victor Babeș din Timișoara sau altă unitate medicală suport
@@ -48,7 +44,7 @@
             formularul de solicitare</a
           >. Au prioritate persoanele aflate în instituții sociale sau medicale
           declarate ”focar activ” de către Direcția de Sănătate Publică Timiș.
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -60,7 +56,7 @@
           <div class="box box-bubble">
             <h2>
               Call center <br />
-              0356-981
+              0234-704593
             </h2>
           </div>
         </div>
@@ -81,8 +77,8 @@
             </li>
             <li>
               Pentru orice întrebări legate de acest proiect vă puteți adresa
-              numărului de telefon 0356-981 (Direcția de Asistență Socială a
-              Primăriei Municipiului Timișoara, telefonul de Urgențe sociale).
+              numărului de telefon 0234-704593 (Direcția de Asistență Socială a
+              Primăriei Municipiului Bacau, telefonul de Urgențe sociale).
             </li>
           </ul>
         </div>

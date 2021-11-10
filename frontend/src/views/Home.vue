@@ -6,24 +6,18 @@
           <div class="column is-6">
             <img src="../assets/images/logo-full.svg" class="logo-big" /> <br />
             <h2>
-              Solidari în fața Covid-19, donăm
+              Impreuna în fața COVID-19, oferim o gura de
               <span class="has-text-primary">#OxigenPentruBacău</span>
             </h2>
 
             <div class="content">
               <br />
               <p>
-                Primăria Timișoara, ONG-uri, voluntari și antreprenori și-au
-                unit forțele pentru a sprijini spitalele și comunitatea în fața
-                pandemiei de coronavirus. Fiecare dintre noi are puterea de a
-                crește resursele cu care medicii salvează vieți. Fiecare dintre
-                noi are puterea de a dona respirațiile prețioase de care au
-                nevoie pacienții în drumul lor spre vindecare.
+                Primăria Municipiului Bacău, mediul investitor privat alături de Spitalul de Pneumofiziologie Bacău, Asociația Medicilor de Familie, Direcția de Asistență Socială și Crucea Roșie Bacău, vin în sprijinul combaterii pandemiei de coronavirus. Împreună putem crește resursele cu care medicii salvează vieți.
               </p>
               <p>
                 <b>
-                  Cu fiecare respirație suntem mai aproape de a ieși cu bine din
-                  pandemie. Împreună.
+                  Cu fiecare pacient salvat suntem mai aproape de ieșirea din pandemie.
                 </b>
               </p>
             </div>
@@ -72,13 +66,7 @@
           <div class="column is-6">
             <div class="content">
               <p>
-                Pulsoximetrele și concentratoarele de oxigen sunt extrem de
-                necesare în monitorizarea și tratamentul pacienților Covid.
-                Atunci când bolnavii cu cazuri medii sunt tratați acasă (pentru
-                degrevarea spitalelor), iar cei externați sunt în perioada de
-                convalescență, este esențial accesul la pulsoximetre și
-                concentratoare de oxigen mobile, la cererea medicului de
-                familie.
+                Oxigenoterapia și monitorizarea pacienților la domiciliu sunt extrem de necesare în monitorizarea și tratamentul pacienților COVID-19. Bolnavii cu cazuri ușoare-medii sunt tratați acasă, pentru a degreva secțiile UPU și ATI, iar pentru cei externați și încă se află în perioada de convalescență, este esențială monitorizarea saturației și fluxul continuu de oxigen medicinal, la cererea și sub supravegherea strictă a medicului de familie.
               </p>
               <p>
                 <b>
@@ -170,22 +158,18 @@
       <hr />
 
       <div class="section">
-        <router-link
+        <!-- <router-link
           :to="{ name: 'helping' }"
           class="button button-pulse is-primary is-size-1"
         >
           <b-icon icon="arrow-right" />
-        </router-link>
+        </router-link> -->
 
         <div class="has-text-centered">
           <h2>Vrei să te implici?</h2>
 
           <div class="content">
-            Soluțiile de durată se pot dezvolta doar acolo unde ne reunim
-            forțele în mod constant. Crizele ne-au arătat mereu valoarea
-            comunității noastre, însă este momentul să construim împreună pentru
-            viitor, pentru o comunitate timișoreană funcțională, sustenabilă,
-            dincolo de urgențe.
+            Soluțiile de durată se pot dezvolta doar acolo unde ne reunim forțele în mod constant. Crizele ne-au arătat mereu valoarea comunității noastre, însă este momentul să construim împreună pentru viitor, pentru o comunitate băcăuană funcțională, sustenabilă, dincolo de urgențe.
           </div>
         </div>
       </div>
@@ -307,9 +291,7 @@
         <div class="columns">
           <div class="column is-10-tablet is-4-desktop">
             <div class="content">
-              Primăria Timișoara, ONG-uri timișorene active în comunitate,
-              voluntari și antreprenori și-au unit forțele pentru sprijini
-              spitalele și comunitatea în fața pandemiei de coronavirus.
+              Primăria Municipiului Bacău, mediul investitor privat alături de Spitalul de Pneumofiziologie Bacău, Asociația Medicilor de Familie, Direcția de Asistență Socială și Crucea Roșie Bacău, vin în sprijinul combaterii pandemiei de coronavirus.
             </div>
           </div>
         </div>
@@ -338,7 +320,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <!-- <div class="section">
         <h1>Alte campanii</h1>
 
         <div class="columns">
@@ -358,7 +340,7 @@
 
               <div class="content">
                 Nevoia de sânge este permanentă. Centrul Regional de Transfuzie
-                Sanguină Timișoara apelează la sprijinul comunității pentru
+                Sanguină Bacău apelează la sprijinul comunității pentru
                 asigurarea necesarului de sânge pentru tratarea cazurilor grave.
               </div>
 
@@ -394,7 +376,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

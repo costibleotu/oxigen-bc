@@ -34,11 +34,11 @@
                       Donatori
                     </router-link>
                   </li>
-                  <li>
+                  <!-- <li>
                     <router-link :to="{ name: 'helping' }" class="navbar-item">
                       Vrei să te implici?
                     </router-link>
-                  </li>
+                  </li> -->
                 </ul>
 
                 <b-tooltip
@@ -109,7 +109,7 @@
             </p>
             <ul>
               <li>
-                <a target="_blank" href="#"
+                <a target="_blank" href="https://covid.municipiulbacau.ro/"
                   >Situația COVID-19 în Bacău</a
                 >
               </li>
@@ -118,11 +118,11 @@
                   >Ghid situații de urgență</a
                 >
               </li>
-              <li>
+              <!-- <li>
                 <a target="_blank" href="https://www.ctsBacău.ro/"
                   >Centrul regional de transfuzie sanguină</a
                 >
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="column is-4">
@@ -131,8 +131,8 @@
             </p>
             <ul>
               <li>
-                <a target="_blank" href="https://www.dsptimis.ro/"
-                  >Direcţia de Sănătate Publică Timiş
+                <a target="_blank" href="https://www.aspjbacau.ro/ "
+                  >Direcţia de Sănătate Publică Bacău
                 </a>
               </li>
               <li>
